@@ -1,0 +1,82 @@
+<?php /* Smarty version 2.6.27, created on 2016-03-07 17:02:07
+         compiled from file:/var/www/vhosts/evolve-max.com/httpdocs/maxfields2/careerpro/tpl_syokai.html */ ?>
+<?php 
+define('PAGE_TITLE', '職業紹介・人材派遣事業 - 紹介予定派遣 | 株式会社マックスフィールズ');
+define('PAGE_DESCRIPTION', '静岡・都内の派遣アウトソーシング、コンサルティングはマックスフィールズ。御社求人のベストマッチングを実現します。');
+define('BODY_CLASS', 'careerpro');
+
+include('./maxfields/include/header.php'); ?>
+
+<!-- コンテント -->
+<div id="topicpath">
+	<ol>
+		<li><a href="../">ホーム</a></li>
+		<li><a href="./">職業紹介・人材派遣事業</a></li>
+		<li>紹介予定派遣</li>
+	</ol>
+</div>
+
+
+<!-- コンテント -->
+<div id="contentWrap">
+
+	<div id="contentMain">
+
+		<div class="contentBox">
+
+			<div class="mainHeader">
+				<h2>
+					<img src="img/title.gif" alt="career produce">
+					<span>紹介予定派遣</span>
+				</h2>
+			</div>
+
+			<h4 class="mainH4"><span>紹介予定派遣</span></h4>
+
+			<div class="ml20">
+				<h5 class="mainH5">紹介予定派遣とは</h5>
+				<p class="mt10">紹介予定派遣とは、企業に正社員や契約社員として直接雇用され就業する前に、まず派遣スタッフとして一定期間就業し、就業先企業と求職者との両者の希望が一致した場合、直接雇用への雇用切り替えを行うシステムです。</p>
+				<p class="mt10">※派遣スタッフとしての期間は、最長で6ヶ月間です。</p>
+
+				<h5 class="mainH5">企業様側のメリット</h5>
+				<p class="mt10"><strong>ミスマッチングを防ぐことができます。</strong></p>
+				<p class="mt10">◎派遣就業の間に…</p>
+				<ul class="text_list02">
+				<li>・社内の雰囲気や企業文化などを理解してもらったうえで直接雇用</li>
+				<li>・上司や同僚などとのコミュニケーションが直接雇用後スムース</li>
+				<li>・自分に合った職場・仕事かどうか確認して入社を判断</li>
+				<li>・実際の仕事ぶり等を確認して直接雇用を判断</li>
+				<li>・待遇などの交渉をマックスフィールズが代行することで雇用契約の相互理解</li>
+				</ul>
+			</div>
+
+			<h4 class="mainH4"><span>紹介と紹介予定派遣の違い</span></h4>
+			<table class="syokaiTable">
+				<tr>
+					<th>紹　介</th>
+					<td>求人先企業との直接雇用（正社員、契約社員等）</td>
+				</tr>
+				<tr>
+					<th>紹介予定派遣</th>
+					<td>求人先企業との直接雇用を前提に、最長6ヶ月派遣就業</td>
+				</tr>
+			</table>
+			
+
+			<div class="mainPageTop"><a href="#pageTop">ページトップ</a></div>
+
+<div style="height:280px">
+</div>
+
+		</div><!--/.contentBox-->
+
+	</div><!--/#contentMain-->
+
+	<!-- サイドバーエリア -->
+	
+<?php  include('./maxfields/include/sidebar.php'); ?>
+
+</div><!--/#contentWrap-->
+
+
+<?php  include('./maxfields/include/footer.php'); ?>

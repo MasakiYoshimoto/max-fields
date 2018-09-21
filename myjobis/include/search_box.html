@@ -1,0 +1,79 @@
+<div id="serchbox">
+    <form action="./job2.html" id="search_form" method="get">
+        <div class="category cat1">
+            <h2 class="switchHat"><img src="img/job_serchtitle1.gif" width="138" height="25" alt="職種から探す" /><img class="sp" src="img/sp_job_serchtitle_more.gif" width="36" height="36"></h2>
+            <ul class="accordion_ul switchDetail">
+                <li class="job_category">飲食/フード系</li>
+                <li><label for="job1"><input id="job1" type="checkbox" class="search_chk" name="job[]" value="10000" {{if in_array(10000, $search_job)}}checked{{/if}} />カフェ</label></li>
+                <li><label for="job2"><input id="job2" type="checkbox" class="search_chk" name="job[]" value="10010" {{if in_array(10010, $search_job)}}checked{{/if}} />レストラン・ダイニング</label></li>
+                <li><label for="job3"><input id="job3" type="checkbox" class="search_chk" name="job[]" value="10020" {{if in_array(10020, $search_job)}}checked{{/if}} />ホテル</label></li>
+                <li><label for="job4"><input id="job4" type="checkbox" class="search_chk" name="job[]" value="10999" {{if in_array(10999, $search_job)}}checked{{/if}} />その他</label></li>
+                <li class="job_category">販売/ショップ系</li>
+                <li><label for="job5"><input id="job5" type="checkbox" class="search_chk" name="job[]" value="11000" {{if in_array(11000, $search_job)}}checked{{/if}} />雑貨</label></li>
+                <li><label for="job6"><input id="job6" type="checkbox" class="search_chk" name="job[]" value="11010" {{if in_array(11010, $search_job)}}checked{{/if}} />ファッション</label></li>
+                <li><label for="job7"><input id="job7" type="checkbox" class="search_chk" name="job[]" value="11020" {{if in_array(11020, $search_job)}}checked{{/if}} />コスメ</label></li>
+                <li><label for="job8"><input id="job8" type="checkbox" class="search_chk" name="job[]" value="11030" {{if in_array(11030, $search_job)}}checked{{/if}} />デリカ・ベーカリー・スイーツ</label></li>
+                <li><label for="job9"><input id="job9" type="checkbox" class="search_chk" name="job[]" value="11999" {{if in_array(11999, $search_job)}}checked{{/if}} />その他（フラワーショップ等）</label></li>
+                <li class="job_category">宅配デリバリー系</li>
+                <li><label for="job10"><input id="job10" type="checkbox" class="search_chk" name="job[]" value="12000" {{if in_array(12000, $search_job)}}checked{{/if}} />フード・デリカ</label></li>
+                <li><label for="job11"><input id="job11" type="checkbox" class="search_chk" name="job[]" value="12010" {{if in_array(12010, $search_job)}}checked{{/if}} />オフィス用品</label></li>
+                <li><label for="job12"><input id="job12" type="checkbox" class="search_chk" name="job[]" value="12020" {{if in_array(12020, $search_job)}}checked{{/if}} />ドラッグストアチェーン</label></li>
+                <li><label for="job13"><input id="job13" type="checkbox" class="search_chk" name="job[]" value="12030" {{if in_array(12030, $search_job)}}checked{{/if}} />デパート・百貨店</label></li>
+                <li><label for="job14"><input id="job14" type="checkbox" class="search_chk" name="job[]" value="12999" {{if in_array(12999, $search_job)}}checked{{/if}} />その他（フラワーショップ等）</label></li>
+            </ul>
+        </div>
+        <div class="category cat2">
+            <h2 class="switchHat"><img src="img/job_serchtitle2.gif" width="154" height="25" alt="勤務地から探す" /><img class="sp" src="img/sp_job_serchtitle_more.gif" width="36" height="36"></h2>
+            <ul class="accordion_ul switchDetail">
+                <li><label for="area1"><input id="area1" type="checkbox" class="search_chk" name="area[]" value="100" {{if in_array(100, $search_area)}}checked{{/if}}/>お台場・汐留・新橋・品川</label></li>
+                <li><label for="area2"><input id="area2" type="checkbox" class="search_chk" name="area[]" value="101" {{if in_array(101, $search_area)}}checked{{/if}} />六本木・麻布・赤坂・青山</label></li>
+                <li><label for="area3"><input id="area3" type="checkbox" class="search_chk" name="area[]" value="102" {{if in_array(102, $search_area)}}checked{{/if}} />お茶の水・湯島・九段・後楽園</label></li>
+                <li><label for="area4"><input id="area4" type="checkbox" class="search_chk" name="area[]" value="103" {{if in_array(103, $search_area)}}checked{{/if}} />銀座・日本橋・東京駅周辺</label></li>
+                <li><label for="area5"><input id="area5" type="checkbox" class="search_chk" name="area[]" value="104" {{if in_array(104, $search_area)}}checked{{/if}} />葛飾・江戸川・江東</label></li>
+                <li><label for="area6"><input id="area6" type="checkbox" class="search_chk" name="area[]" value="105" {{if in_array(105, $search_area)}}checked{{/if}} />上野・浅草・両国</label></li>
+                <li><label for="area7"><input id="area7" type="checkbox" class="search_chk" name="area[]" value="106" {{if in_array(106, $search_area)}}checked{{/if}} />蒲田・大森・羽田周辺</label></li>
+                <li><label for="area8"><input id="area8" type="checkbox" class="search_chk" name="area[]" value="107" {{if in_array(107, $search_area)}}checked{{/if}} />渋谷・目黒・世田谷</label></li>
+                <li><label for="area9"><input id="area9" type="checkbox" class="search_chk" name="area[]" value="108" {{if in_array(108, $search_area)}}checked{{/if}} />新宿・中野・杉並・吉祥寺</label></li>
+                <li><label for="area10"><input id="area10" type="checkbox" class="search_chk" name="area[]" value="109" {{if in_array(109, $search_area)}}checked{{/if}} />池袋・目白・板橋・赤羽</label></li>
+                <li><label for="area11"><input id="area11" type="checkbox" class="search_chk" name="area[]" value="110" {{if in_array(110, $search_area)}}checked{{/if}} />八王子・立川・町田・府中・調布</label></li>
+                <li><label for="area12"><input id="area12" type="checkbox" class="search_chk" name="area[]" value="111" {{if in_array(111, $search_area)}}checked{{/if}} />青梅・奥多摩</label></li>
+                <li><label for="area13"><input id="area13" type="checkbox" class="search_chk" name="area[]" value="112" {{if in_array(112, $search_area)}}checked{{/if}} />伊豆七島・小笠原</label></li>
+            </ul>
+        </div>
+        <div class="spcellwrap2">
+            <div class="tableRow">
+                <a class="btn" href="#" id="all_btn"><img class="allow" src="img/common_arrow_blu.png" width="11" height="11" alt="全ての求人情報を見る" />全ての求人情報を見る</a>
+            </div>
+            <div class="clearfix tableTop">
+                <div class="wrap">
+                    <button class="btn" id="clear_btn" type="button" title="選択内容をクリアする"><img class="allow" src="img/common_arrow_blu.png" width="11" height="11" alt="選択内容をクリアする" />選択内容をクリアする</button>
+                    <div class="tableTop"><input class="submit" id="search_btn" type="button" value="送信する" title="送信する" /></div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script>
+        $(function(){
+            $('#all_btn').click(function(){
+                $('.search_chk').attr('checked', 'checked');
+                $('#search_form').submit();
+                return false;
+            });
+
+            $('#clear_btn').click(function(){
+                $('.search_chk').attr('checked', false);
+                return false;
+            });
+            $('#search_btn').click(function(){
+                if($('.search_chk:checked').size() == 0)
+                {
+                    alert('検索条件を選択してください');
+                }
+                else
+                {
+                    $('#search_form').submit();
+                }
+            });
+        });
+    </script>
+</div><!-- #serchbox -->

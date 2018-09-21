@@ -1,0 +1,220 @@
+@charset "UTF-8";
+@import "_core";
+// ============================
+// 大規模アニメ動作
+// ============================
+$anime: true; //アニメ
+@if $anime {
+	$anime-active:"&.active,&.lock,.swiper-slide-active &";
+	$anime-active:"&.active,&.lock";
+	.body-in{
+		overflow-x: hidden;
+	}
+	.anime {
+		animation-delay: 0;//開始時間
+		animation-duration: 1.5s;//1ループの時間
+		animation-timing-function: ease;//アニメーションタイプ
+		animation-fill-mode: forwards;//アニメ開始前後のスタイル [none:維持しない] forwards:最終状態を維持 backwards:開始前から初期状態 both:fb両方
+		&:not(.key){
+			transition-duration: .5s;
+		}
+		&.scramble{	//緊急スタート
+			transition-delay: 0s;
+		}
+	}
+	@keyframes trans-show{//アニメーション定義
+		100%{//最終状態
+			transform: none;
+			opacity: 1;
+		}
+	}
+	.anime {
+		/*
+		███████  █████  ██████  ███████
+		██      ██   ██ ██   ██ ██
+		█████   ███████ ██   ██ █████
+		██      ██   ██ ██   ██ ██
+		██      ██   ██ ██████  ███████
+		*/
+
+		&.fade-in{
+			opacity: 0;
+			#{$anime-active}{
+				&:not(.key){
+					opacity: 1;
+				}
+				&.key{
+					animation-name: trans-show;//アニメーション名
+				}
+			}
+		}
+		/*
+		███████ ██      ██ ██████
+		██      ██      ██ ██   ██
+		█████   ██      ██ ██████
+		██      ██      ██ ██
+		██      ███████ ██ ██
+		*/
+		&.flip-y{
+			transform: rotateX(90deg);
+			opacity: 0;
+			#{$anime-active}{
+				&:not(.key){
+					transform: rotateX(0);
+					opacity: 1;
+				}
+				&.key{
+					animation-name: trans-show;//アニメーション名
+				}
+			}
+		}
+		&.flip-x{
+			transform: rotateY(90deg);
+			opacity: 0;
+			#{$anime-active}{
+				&:not(.key){
+				transform: rotateY(0);
+				opacity: 1;
+				}
+				&.key{
+					animation-name: trans-show;//アニメーション名
+				}
+			}
+		}
+
+		/*
+		███████ ██   ██ ██████   █████  ███    ██ ██████
+		██       ██ ██  ██   ██ ██   ██ ████   ██ ██   ██
+		█████     ███   ██████  ███████ ██ ██  ██ ██   ██
+		██       ██ ██  ██      ██   ██ ██  ██ ██ ██   ██
+		███████ ██   ██ ██      ██   ██ ██   ████ ██████
+		*/
+		&.expand-x{
+			width: auto;
+			max-width:1px;
+			opacity: 0;
+			overflow: hidden;
+			@keyframes expand-x{//アニメーション定義
+				100%{//最終状態
+					max-width:1000px;
+					opacity: 1;
+				}
+			}
+			#{$anime-active}{
+				&:not(.key){
+					max-width:1000px;
+					opacity: 1;
+				}
+				&.key{
+					animation-name: expand-x;//アニメーション名
+				}
+			}
+			img{
+				height:none;
+			}
+		}
+		&.expand-y{
+			height:auto;
+			max-height:1px;
+			opacity: 0;
+			overflow: hidden;
+			@keyframes expand-y{//アニメーション定義
+				100%{//最終状態
+					max-height:1000px;
+					opacity: 1;
+				}
+			}
+			#{$anime-active}{
+				&:not(.key){
+					max-height:1000px;
+					opacity: 1;
+				}
+				&.key{
+					animation-name: expand-y;//アニメーション名
+				}
+			}
+		}
+
+		/*
+		███████ ██      ██ ██████  ███████     ██ ███    ██
+		██      ██      ██ ██   ██ ██          ██ ████   ██
+		███████ ██      ██ ██   ██ █████ █████ ██ ██ ██  ██
+		     ██ ██      ██ ██   ██ ██          ██ ██  ██ ██
+		███████ ███████ ██ ██████  ███████     ██ ██   ████
+		*/
+
+		&.top-in{
+			transform-origin: 0 0;
+			opacity: 0;
+			transform: translate(0,-20px);
+			#{$anime-active}{
+				&:not(.key){
+					opacity: 1;
+					transform: translate(0,0);
+				}
+				&.key{
+					animation-name: top-in;//アニメーション名
+				}
+			}
+		}
+		&.bottom-in{
+			opacity: 0;
+			transform: translate(0,20px);
+			#{$anime-active}{
+				&:not(.key){
+					opacity: 1;
+					transform: translate(0,0);
+				}
+				&.key{
+					animation-name: trans-show;//アニメーション名
+				}
+			}
+		}
+		&.left-in{
+			opacity: 0;
+			transform: translate(-20px,0);
+			#{$anime-active}{
+				&:not(.key){
+					opacity: 1;
+					transform: translate(0,0);
+				}
+				&.key{
+					animation-name: trans-show;//アニメーション名
+				}
+			}
+		}
+		&.right-in{
+			opacity: 0;
+			transform: translate(20px,0);
+			#{$anime-active}{
+				&:not(.key){
+					opacity: 1;
+					transform: translate(0,0);
+				}
+				&.key{
+					animation-name: trans-show;//アニメーション名
+				}
+			}
+		}
+		/*
+		███████  ██████   ██████  ███    ███
+		   ███  ██    ██ ██    ██ ████  ████
+		  ███   ██    ██ ██    ██ ██ ████ ██
+		 ███    ██    ██ ██    ██ ██  ██  ██
+		███████  ██████   ██████  ██      ██
+		*/
+		&.zoom-in{
+			opacity: 0;
+			transform: scale(0,0);
+			#{$anime-active}{
+				&:not(.key){
+					opacity: 1;
+					transform: scale(1,1);
+				}
+				&.key{
+					animation-name: trans-show;//アニメーション名
+				}
+			}
+		}
+	}
+}

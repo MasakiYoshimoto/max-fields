@@ -1,0 +1,149 @@
+{{php}}
+define('PAGE_TITLE', 'お問い合わせ | 株式会社マックスフィールズ');
+define('PAGE_DESCRIPTION', '派遣アウトソーシング、コンサルティングはマックスフィールズグループ。貴社の競争優位を、再生、成長、新事業進出でグループ一貫でサポート。');
+define('BODY_CLASS', 'info');
+
+include('../include/header.php');
+{{/php}}
+
+<script>
+$(function(){
+	$("#inputZip").zip2addr("#inputAddr");
+});
+</script>
+
+<!-- コンテント -->
+<div id="topicpath">
+	<ol>
+		<li><a href="../">ホーム</a></li>
+		<li>お問い合わせ</li>
+	</ol>
+</div>
+
+
+<!-- コンテント -->
+<div id="contentWrap">
+
+	<div id="contentMain">
+
+		<div class="contentBox">
+
+			<div class="mainHeader">
+				<h2>
+					<img src="img/title.gif" alt="recruit">
+					<span>お問い合わせ</span>
+				</h2>
+			</div>
+
+			<p class="contactLead">下記お問い合わせフォームより、お気軽にお問い合わせ下さい。</p>
+
+			<p class="contactStep"><img src="img/step1.gif" alt="STEP1 入力画面" height="38" width="620"></p>
+
+			<p class="contactNotes">お客様情報をご入力ください。</p>
+
+            {{if $error}}
+			<ul class="contactErrors">
+                {{foreach from=$error name='error' item='value'}}
+				<li>{{$value}}</li>
+                {{/foreach}}
+			</ul>
+            {{/if}}
+            <form name="form1" method="post" action="./">
+                <input type="hidden" name="m" value="2" />
+				<div class="formTable">
+					<table>
+						<tbody>
+							<tr>
+								<th><div>会社名</div></th>
+								<td>
+									<input type="text" class="formInput" name="company" value="{{$input.company}}">
+									<div class="formEx">例）株式会社マックスフィールズ</div>
+								</td>
+							</tr>
+							<tr>
+								<th><div>お名前<span class="formRequired">必須</span></div></th>
+								<td>
+									<input type="text" class="formInput" name="name" value="{{$input.name}}">
+									<div class="formEx">例）マックス太郎</div>
+								</td>
+							</tr>
+							<tr>
+								<th><div>ふりがな<span class="formRequired">必須</span></div></th>
+								<td>
+									<input type="text" class="formInput" name="kana" value="{{$input.kana}}">
+									<div class="formEx">例）まっくすたろう</div>
+								</td>
+							</tr>
+							<tr>
+								<th><div>電話番号<span class="formRequired">必須</span></div></th>
+								<td>
+									<input type="tel" class="formInputTel" name="tel" value="{{$input.tel}}">
+									<div class="formEx">例）054-251-3545</div>
+								</td>
+							</tr>
+							<tr>
+								<th><div>FAX番号</div></th>
+								<td>
+									<input type="tel" class="formInputTel" name="fax" value="{{$input.fax}}">
+									<div class="formEx">例）054-251-3538</div>
+								</td>
+							</tr>
+							<tr>
+								<th><div>郵便番号<span class="formRequired">必須</span></div></th>
+								<td>
+									<input type="tel" class="formInputZip" name="zip" id="inputZip" value="{{$input.zip}}">
+									<div class="formEx">例）420-0851<br>※郵便番号を入力すると住所が自動で入力されます</div>
+								</td>
+							</tr>
+							<tr>
+								<th><div>住所<span class="formRequired">必須</span></div></th>
+								<td>
+									<input type="text" class="formInputAddr" name="address" id="inputAddr" value="{{$input.address}}">
+									<div class="formEx">例）静岡県静岡市葵区黒金町11-7</div>
+								</td>
+							</tr>
+							<tr>
+								<th><div>建物名</div></th>
+								<td>
+									<input type="text" class="formInput" name="address2" value="{{$input.address2}}">
+									<div class="formEx">例）三井生命静岡駅前ビル9F</div>
+								</td>
+							</tr>
+							<tr>
+								<th><div>メールアドレス<span class="formRequired">必須</span></div></th>
+								<td>
+									<input type="email" class="formInput" name="email" value="{{$input.email}}">
+									<div class="formEx">例）max@evolve-max.com</div>
+								</td>
+							</tr>
+							<tr>
+								<th><div>メールアドレス（確認用）<span class="formRequired">必須</span></div></th>
+								<td>
+									<input type="email" class="formInput" name="email2" value="{{$input.email2}}">
+									<div class="formEx">例）max@evolve-max.com</div>
+								</td>
+							</tr>
+							<tr>
+								<th><div>お問い合わせ内容<span class="formRequired">必須</span></div></th>
+								<td>
+									<textarea name="contents" class="formTextarea">{{$input.contents}}</textarea>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</diV><!--/.formTable-->
+				<div class="formBtnWrap">
+					<input type="submit" class="formBtn" value="確認画面へ">
+				</div><!--/.formBtn-->
+			</form>
+
+		</div><!--/.contentBox-->
+
+	</div><!--/#contentMain-->
+
+	<!-- サイドバーエリア -->
+	{{php}}include('../include/sidebar.php');{{/php}}
+
+</div><!--/#contentWrap-->
+
+{{php}}include('../include/footer.php');{{/php}}

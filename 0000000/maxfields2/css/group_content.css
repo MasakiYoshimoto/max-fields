@@ -1,0 +1,227 @@
+@charset "utf-8";
+/*
+ * 個人情報保護方針　サイトポリシー　サイトマップ用
+ *
+ */
+
+
+
+/*====================================================================
+
+	パン屑
+
+====================================================================*/
+
+#topicpath02 {
+	margin: 0 auto 24px;
+	width: 940px;
+}
+#topicpath02 ol {
+	overflow: hidden;
+	font-size: 11px;
+
+}
+#topicpath02 li {
+	float: right;
+	margin-right: 0.5em;
+	color:#999;
+	margin-top:15px;
+}
+#topicpath02 li:after {
+	content: "<";
+	margin-left: 0.5em;
+}
+#topicpath02 li:first-child {
+	margin-right: 0;
+}
+#topicpath02 li:first-child:after {
+	content: none;
+}
+#topicpath02 a {
+}
+
+#topicpath02 a:hover {
+	text-decoration:underline;
+}
+
+/*====================================================================
+
+	コンテンツ
+
+====================================================================*/
+
+#contentMain02{
+	width:500px;
+}
+
+
+.contentBox02 {
+	margin:0px;
+	padding:0px;
+	*zoom: 1;
+}
+.contentBox02:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+/*====================================================================
+
+	コンテンツ　中身
+
+====================================================================*/
+
+h2.group_site_title{
+	border-top:#eee 1px solid;
+	border-bottom:#eee 1px solid;
+	padding:10px 25px;
+	font-weight:bold;
+	font-size:16px;
+	color:#666;
+}
+
+
+h3.group_site_H3 {
+	margin: 35px 0 20px 0;
+	padding-left: 15px;
+	background: url(../../global/img/mark_1.gif) no-repeat 0 6px;
+	font-size: 15px;
+	color: #AD0003;
+}
+
+
+/*====================================================================
+
+	サイトポリシー
+
+====================================================================*/
+
+dl.sitepolicy_box{
+	margin-bottom:35px;
+}
+
+dl.sitepolicy_box dt{
+	margin-bottom:13px;
+}
+
+dl.sitepolicy_box dd{
+	margin-bottom:10px;
+}
+
+ul.browser_list{
+	margin:0px 0px 15px 0;
+	line-height:1.6;
+}
+
+ul.browser_list a{
+	text-decoration:underline;
+}
+
+ul.browser_list a:hover{
+	color:#aaa;
+}
+
+
+/*====================================================================
+
+	個人情報保護方針
+
+====================================================================*/
+
+ul.maxgroup_list{
+	margin:30px 0;
+	line-height:1.8;
+}
+
+/*====================================================================
+
+	エラーページ
+
+====================================================================*/
+
+img.error_img{
+	margin-top:30px;
+}
+
+/*====================================================================
+
+	サイトマップ
+
+====================================================================*/
+
+img.sitemap_logo{
+	margin:30px 0 20px 0;
+}
+
+
+/*maxfields部分*/
+
+.sidebarLocalNav02 {
+	margin: 0 0 0px 0;
+	padding: 10px 0px;
+}
+.sidebarLocalNav02 > h2,
+h2.sitemap_h2{
+	margin: 5px 0;
+	padding-left: 15px;
+	background: url(../../global/img/mark_1.gif) no-repeat 0 6px;
+	font-size: 14px;
+}
+
+.sidebarLocalNav02 > h2 a.
+h2.sitemap_h2{
+	color:#000;
+}
+
+.sidebarLocalNav02 > h2 a:hover,
+h2.sitemap_h2 a:hover{
+	color:#aaa;
+}
+
+h2.sitemap_h2{
+	margin:10px 0;
+}
+
+.sidebarLocalNav02 > h2 img{
+	margin-bottom:0px;
+}
+
+.sidebarLocalNav02 > h2 img {}
+.sidebarLocalNav02 > h2 span {
+	display: block;
+	*zoom: 1;
+	font-size: 13px;
+	font-weight: bold;
+}
+.sidebarLocalNav02 > ul {
+	font-size: 11px;
+}
+.sidebarLocalNav02 > ul > li {
+	border-bottom: 1px dotted #ccc;
+	font-size:12px;
+}
+.sidebarLocalNav02 > ul > li > a {
+	display: block;
+	*zoom: 1;
+	padding: 10px 10px 10px 20px;
+	background: url(../../global/img/arrow_2.gif) no-repeat 10px 15px;
+}
+.sidebarLocalNav02 > ul > li > ul {
+	padding: 0 0 10px 30px;
+}
+.sidebarLocalNav02 > ul > li > ul > li {}
+.sidebarLocalNav02 > ul > li > ul > li > a {
+	display: block;
+	*zoom: 1;
+	padding: 0 10px 2px 25px;
+	background: url(../../global/img/arrow_7.gif) no-repeat 0px 6px;
+	line-height:1.6;
+}
+
+.sidebarLocalNav02 > ul > li > a:hover,
+.sidebarLocalNav02 > ul > li > ul > li > a:hover{
+	color:#aaa;
+}
+
+

@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css; charset=UTF-8" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<title>管理画面</title>
+<link href="{{ $html->webroot('css/common.css')}}" rel="stylesheet" type="text/css">
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+google.load("jquery","1.3.1");
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+</script>
+<script type="text/javascript" src="{{ $html->webroot('js/lightbox/jquery.lightbox-0.5.js')}}"></script>
+<link href="{{ $html->webroot('js/lightbox/jquery.lightbox-0.5.css')}}" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{{ $html->webroot('js/jquery.page-scroller-307.js')}}"></script>
+<script language="JavaScript" src="{{ $html->webroot('jscripts/common.js')}}"></script>
+</head>
+
+
+<body>
+<div class="wordBreak" style="word-break:break-all;">
+
+<!--header-->
+<div id="header">
+<div id="header-inner">
+
+<!--logo-->
+{{$this->renderElement('logo')}}
+<!--logoここまで-->
+
+</div>
+</div>
+<!--headerここまで-->
+
+<!--pagebody-->
+<div id="pagebody">
+<div id="pagebody-inner">
+
+<!--sidebar-->
+{{$this->renderElement('side_menu')}}
+<!--sidebarここまで-->
+
+
+
+<!--content-->
+<div id="content">
+<h2>{{$category_name}}管理</h2>
+<div id="content-inner">
+
+<div class="cont">
+<p>新規作成、編集ボタンを押して作業を行って下さい。</p>
+</div>
+
+<div class="cont">
+<img src="{{ $html->webroot('images/new_btn.jpg')}}" width="93" height="27" alt="新規作成" id="newBtn" style="cursor: pointer" onclick="documents_add( );" />
+{{if $use_category}}
+<div style="float: right;">{{ $form->create('Cmsdocument',$this->aa('action','/index','id','searchs','name','searchs')) }}<span style="font-size: 10px;"/>右のプルダウンから表示するカテゴリを選択できます：</span>{{$form->select('Cmsdocument.category' , $doccategory_list , $search_category , $this->aa('onchange','$("#searchs").submit();') , false)}}</form></div><p style="clear:right;" />
+{{/if}}
+{{if $group_id==2 || $group_id==99}}<p><a href="{{ $html->webroot('cmsdocuments/valueslist/id:')}}{{$c_id}}" target="_blank">変数一覧</a></p>{{/if}}
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr class="head">
+    <td width="8%">ID</td>
+    <td width="45%">タイトル</td>
+    <td width="21%">更新日時</td>
+    <td width="10%">表示順</td>
+    <td width="16%">編集・削除</td>
+  </tr>
+{{foreach name="dlist" from=$list key="key" item="value"}}
+  <tr>
+    <td align="center" {{if $value.Cmsdocument.color_mode == 1}} bgcolor="#ccffcc"{{elseif $value.Cmsdocument.color_mode == 2}} bgcolor="#ffcccc"{{elseif $value.Cmsdocument.color_mode == 3}} bgcolor="#d3d3d3"{{/if}}>{{$value.Cmsdocument.d_id|yen|escape:'html':'utf-8'}}</td>
+    <td {{if $value.Cmsdocument.color_mode == 1}} bgcolor="#ccffcc"{{elseif $value.Cmsdocument.color_mode == 2}} bgcolor="#ffcccc"{{elseif $value.Cmsdocument.color_mode == 3}} bgcolor="#d3d3d3"{{/if}}>{{$value.Cmsdocument.title|yen|escape:'html':'utf-8'}}</td>
+    <td {{if $value.Cmsdocument.color_mode == 1}} bgcolor="#ccffcc"{{elseif $value.Cmsdocument.color_mode == 2}} bgcolor="#ffcccc"{{elseif $value.Cmsdocument.color_mode == 3}} bgcolor="#d3d3d3"{{/if}}>{{$value.Cmsdocument.edit_date|yen|escape:'html':'utf-8'}}</td>
+    <td align="center" {{if $value.Cmsdocument.color_mode == 1}} bgcolor="#ccffcc"{{elseif $value.Cmsdocument.color_mode == 2}} bgcolor="#ffcccc"{{elseif $value.Cmsdocument.color_mode == 3}} bgcolor="#d3d3d3"{{/if}}>{{if $paginator->counter("%page%")==1 && $smarty.foreach.dlist.first==true}}{{else}}<img src="{{ $html->webroot('images/up_icon.jpg')}}" alt="アップ" width="13" height="13" style="cursor: pointer" onclick="go_sort({{$value.Cmsdocument.d_id}},1);" />&nbsp;{{/if}}{{if $paginator->counter("%page%")==$paginator->counter("%pages%") && $smarty.foreach.dlist.last==true}}{{else}}<img src="{{ $html->webroot('images/down_icon.jpg')}}" width="13" height="13" alt="ダウン" style="cursor: pointer" onclick="go_sort({{$value.Cmsdocument.d_id}},2);"/>{{/if}}</td>
+    <td align="center" {{if $value.Cmsdocument.color_mode == 1}} bgcolor="#ccffcc"{{elseif $value.Cmsdocument.color_mode == 2}} bgcolor="#ffcccc"{{elseif $value.Cmsdocument.color_mode == 3}} bgcolor="#d3d3d3"{{/if}}><img src="{{ $html->webroot('images/edit_icon.jpg')}}" width="40" height="19" alt="編集"  style="cursor: pointer" onclick="documents_edit( {{$value.Cmsdocument.d_id}} )" />&nbsp;<img src="{{ $html->webroot('images/delete_icon.jpg')}}" width="40" height="19" alt="削除"  style="cursor: pointer" onclick="documents_del( {{$value.Cmsdocument.d_id}} )" /></td>
+  </tr>
+{{/foreach}}
+</table>
+</div>
+{{if $paginator->counter("%pages%") > 1 }}
+<ul id="pageNavi">
+{{foreach from=$pagelist key="key" item="value"}}
+<li>{{if $paginator->counter("%page%")!=$value.page}}<a href="{{ $html->webroot('cmsdocuments/index/page:')}}{{$value.page}}">{{$value.page}}</a>{{else}}{{$value.page}}{{/if}}</li>
+{{/foreach}}
+</ul>
+{{/if}}
+</div>
+</div>
+{{ $form->create('Cmsdocument',$this->aa('action','/add','name','add')) }}
+</form>
+{{ $form->create('Cmsdocument',$this->aa('action','/edit','name','edit')) }}
+{{ $form->hidden('d_id',$this->aa('value',''))}}
+</form>
+{{ $form->create('Cmsdocument',$this->aa('action','/del','name','del')) }}
+{{ $form->hidden('_token',$this->aa('value',$token))}}
+{{ $form->hidden('del_d_id',$this->aa('value',""))}}
+</form>
+{{ $form->create('Cmscategory',$this->aa('url','/cmsdocuments/','name','searchword')) }}
+{{ $form->hidden('word',$this->aa('value',""))}}
+</form>
+{{ $form->create('Cmsdocument',$this->aa('action','/sort','name','sort')) }}
+{{ $form->hidden('d_id',$this->aa('value',''))}}
+{{ $form->hidden('sort_flag',$this->aa('value',''))}}
+</form>
+<!--contentここまで-->
+
+</div>
+</div>
+<!--pagebodyここまで-->
+
+<!--scroll-->
+<div id="scroll">
+<div id="scroll-inner">
+<a href="#header">ページの先頭へ</a>
+</div>
+</div>
+<!--scrollここまで-->
+
+<!--footer-->
+<div id="footer">
+</div>
+<!--footerここまで-->
+
+{{$this->renderElement('copyright')}}
+
+</div>
+</body>
+</html>

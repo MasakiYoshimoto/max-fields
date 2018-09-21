@@ -1,0 +1,14 @@
+﻿<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr class="head">
+		<td width="8%">&nbsp;</td>
+		<td width="70%">ページ</td>
+		<td width="22%">ページビュー</td>
+	</tr>
+{{foreach name="list" from=$list key="key" item="value"}}
+	<tr>
+		<td align="center">{{$value.rank|escape:'html':'utf-8'}}</td>
+		<td>{{$value.path|escape:'html':'utf-8'}}</td>
+		<td align="center">{{$value.pageviews|escape:'html':'utf-8'}}</td>
+	</tr>
+{{/foreach}}
+</table>

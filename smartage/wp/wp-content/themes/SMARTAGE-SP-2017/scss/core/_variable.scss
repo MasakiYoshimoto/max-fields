@@ -1,0 +1,66 @@
+@charset "utf-8";
+// ====================================
+// 共通で使う変数を設定
+// ====================================
+//================================
+// ■変数設定
+//================================
+$gothic:  NotoSansCJKjp, "Yu Gothic", "游ゴシック", "YuGothic", "游ゴシック体", 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', 'Meiryo', 'メイリオ', 'sans-serif';
+$sans_serif:  NotoSansCJKjp, "Yu Gothic", "游ゴシック", "YuGothic", "游ゴシック体", 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', 'Meiryo', 'メイリオ', 'sans-serif';
+$yugothic: NotoSansCJKjp, "Yu Gothic", "游ゴシック", "YuGothic", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ ゴシック", 'sans-serif';
+$mincho: 'Yu Mincho', 'YuMincho', 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HGS明朝E',  'HG明朝E', serif;
+$base-fs: 9; //基礎フォントサイズ
+$pad: 3.125%; //基礎余白
+$pad1: $pad;
+$pad2: $pad * 2;
+
+$siteColor: #71b329;
+$siteColorGradation: #7bc130;
+$siteColorShadow: $siteColor - #222;
+$acColor: #f97b1f;
+
+//================================
+// ■ブレークポイント
+//================================
+$site-width: 1200px; //サイト幅
+$media-full: 'screen and (min-width:#{$site-width})'; //想定最大幅
+$media-notfull: 'screen and (max-width:#{$site-width - 1})'; //最大未満
+
+$special-width: 1070px; //特殊ブレークポイント
+$media-special: 'screen and (min-width:#{$special-width})'; //特殊ブレークポイント
+
+$pc-width: 1024px; //PC解像度
+$media-pc: 'screen and (min-width:#{$pc-width})'; //PC相当以上
+
+$sp-width: 768px; //SP解像度
+$media-sp: 'screen and (max-width:#{$sp-width})'; //SP相当
+$media-spland: 'screen and (max-width:#{$sp-width}) and (orientation:landscape)'; //SPランドスケープ
+
+$tab-width: $sp-width + 1; //TAB解像度
+$media-notsp: 'screen and (min-width:#{$tab-width})'; //SP以外
+$media-tab: 'screen and (min-width:#{$tab-width}) and (max-width:#{$pc-width - 1})'; //タブレット相当
+
+@media #{$media-full} {
+	//想定最大幅
+}
+@media #{$media-notfull} {
+	//最大未満
+}
+@media #{$media-special} {
+	//特殊ブレークポイント
+}
+@media #{$media-pc} {
+	//PC相当
+}
+@media #{$media-tab} {
+	//タブレット相当
+}
+@media #{$media-notsp} {
+	//SP以外
+}
+@media #{$media-sp} {
+	//SP相当
+}
+@media #{$media-spland} {
+	//SPランドスケープ
+}

@@ -1,0 +1,1374 @@
+@charset "utf-8";
+/*
+ * gmi.css グローバルマックスインブルーメンツ
+ *
+ */
+
+/*====================================================================
+
+	大見出し
+
+====================================================================*/
+
+/*----------------------------------------------------
+	中見出し
+/*--------------------------------------------------*/
+
+/* 小見出し */
+
+
+
+/*googleMapリンクボタン*/
+
+.mapLink{
+	display:block;
+	margin-top:5px;
+}
+
+.mapLink a{
+	background-color:#AD0003;
+	color:#fff;
+	padding:3px 10px;
+}
+
+.mapLink a:hover{
+	background-color:#aaa;
+}
+
+/*====================================================================
+
+	共通ボトムナビ
+
+====================================================================*/
+
+#boxNav {
+	overflow: hidden;
+	*zoom: 1;
+	margin: 0 auto 72px;
+	width: 940px;
+}
+#boxNav dl {
+	float: left;
+	width: 282px;
+	padding: 10px 0;
+	border: 4px solid #EEE;
+}
+#boxNav dl + dl {
+	margin-left: 35px;
+}
+
+#boxNav dt {
+	margin: 0 auto 15px;
+	padding: 30px 0 20px;
+	width: 200px;
+	border-bottom: 4px solid #AD0003;
+	text-align: center;
+}
+
+#boxNav dd {
+	margin: 10px auto;
+	width: 250px;
+}
+
+#boxNav dd.catch{
+	margin:25px 20px 15px 20px;
+}
+
+#boxNav dd.description{
+
+
+	text-justify:auto;
+}
+
+#boxNav dd.link {
+	line-height: 1;
+	font-weight:bold;
+}
+#boxNav dd.link a {
+	display: block;
+	padding: 6px 6px 6px 24px;
+	background: #f1f1f1 url(../../global/img/arrow_3.gif) no-repeat 14px 50%;
+}
+
+#boxNav dd.link a:hover {
+	background-color:#ccc;
+}
+
+
+/*====================================================================
+
+	メインコンテンツ内
+
+====================================================================*/
+
+
+.contentBox {
+	margin: 0 0 20px;
+	border: 1px solid #eee;
+	padding: 20px 30px 60px;
+	*zoom: 1;
+}
+.contentBox:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+
+.mainHeader {
+	margin: 0 0 30px;
+	border-bottom: 1px solid #AD0003;
+	padding: 40px 10px 30px;
+}
+
+.mainHeader h2 {
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+}
+.mainHeader h2 span {
+	display: block;
+	*zoom: 1;
+	margin: 10px 0 0;
+}
+
+.mainHeader h3 {
+	margin: 30px 0 25px 0px;
+	font-size: 19px;
+	font-weight: bold;
+}
+
+.mainHeader p {
+	font-size: 13px;
+	line-height:1.6;
+	font-weight: normal;
+}
+
+.mainHeader p.gmi_lead{
+	font-size: 14px;
+	font-weight: bold;
+	line-height:2;	
+} 
+
+
+.mainH3 {
+	margin: 30px 0 0 0px;
+	padding: 15px 0 0;
+	font-size: 20px;
+	color: #AD0003;
+	line-height:1.3;
+}
+.mainH3 img {
+	vertical-align: middle;
+}
+.mainH3 span {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	vertical-align: middle;
+	margin-left:15px;
+}
+
+.mainH3 span.mainH3_black{
+	color:#000;
+	margin-left:10px;
+	font-size:18px;
+} 
+
+.mainH4 {
+	margin: 30px 0 20px 0px;
+}
+.mainH4 span {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	padding: 2px 20px;
+	*padding-top: 0.4em;
+	background: #000;
+	font-size: 15px;
+	color: #fff;
+	font-weight:normal;
+}
+
+.mainH5 {
+	margin: 25px 0 0 0px;
+	padding-left: 15px;
+	background: url(../../global/img/mark_1.gif) no-repeat 0 6px;
+	font-size: 15px;
+	color: #AD0003;
+}
+
+.mainP {
+	margin: 30px 0 40px 0px;
+}
+
+.mainP02 {
+	margin: 10px 0 30px 0px;
+}
+
+/*
+.mainH5 + .mainP {
+	margin-top:0px;
+}
+*/
+
+.mainLead {
+	margin: 25px 0 0 0px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.mainPageTop {
+	margin: 30px 0 0 0px;
+	text-align: right;
+}
+.mainPageTop a {
+	display: inline-block;
+	*display: inline;
+	height: 16px;
+	padding-right: 20px;
+	background: url(../../global/img/mark_totop.gif) no-repeat right 0;
+	line-height: 16px;
+	font-size: 12px;
+	text-decoration: underline;
+	color:#666;
+}
+
+.mainPageTop a:hover{
+	color:#000;
+	text-decoration:none;
+}
+
+.mainHr {
+	margin: 30px 0;
+	border: none;
+	border-top: 1px solid #AD0003;
+	height: 0;
+}
+
+.mainOl {
+	margin: 30px 0 20px 0px;
+	padding-left: 1.5em;
+}
+.mainOl li {
+	list-style: decimal;
+	margin: 3px 0;
+}
+
+.mainDl {
+	margin: 10px 0 50px 0px;
+}
+.mainDl dt {
+	margin: 20px 0 0;
+	padding-left: 10px;
+	background: url(../../global/img/mark_2.gif) no-repeat 0 7px;
+	font-weight: bold;
+}
+.mainDl dd {
+	margin: 5px 0 0;
+}
+
+
+
+/*====================================================================
+
+	ホーム
+
+====================================================================*/
+
+#homeVisual {
+	margin: 35px 0;
+	border: 1px solid #eee;
+	padding: 5px 0;
+	text-align: center;
+}
+
+#boxNav dd.catch {
+	min-height: 3em;
+	font-weight: bold;
+}
+
+#boxNav dd.description {
+	min-height: 16.5em;
+}
+
+#homeInfo {
+	margin: 35px auto;
+	width: 870px;
+}
+#homeInfo h2 {
+	position: relative;
+	border-bottom: 4px solid #AD0003;
+}
+#homeInfo h2 img {
+	margin: 0 0 15px 10px;
+}
+#homeInfo h2 a {
+	display: block;
+	position: absolute;
+	right: 10px;
+	bottom: 15px;
+	padding-left: 15px;
+	height: 12px;
+	background: url(../../global/img/arrow_5.png) no-repeat 0 0;
+	line-height: 1;
+	font-size: 12px;
+	font-weight:normal;
+}
+
+#homeInfo h2 a:hover{
+	text-decoration:underline;
+}
+
+
+#homeInfo ul {
+	margin-top:5px;
+
+}
+#homeInfo ul li {
+	border-bottom: 1px solid #eee;
+}
+#homeInfo ul li a {
+	display: block;
+	*zoom: 1;
+	overflow: hidden;
+	padding: 15px;
+}
+#homeInfo ul li a span.date  {
+	display: block;
+	*zoom: 1;
+	overflow: hidden;
+	float: left;
+	width: 13ex;
+}
+#homeInfo ul li a span.title {
+	display: block;
+	*zoom: 1;
+	overflow: hidden;
+}
+
+#homeInfo ul li a:hover span.title{
+	color:#aaa;
+}
+
+#homeContact_box{
+	margin:40px auto 60px;
+	width: 820px;
+	*zoom: 1;
+	overflow: hidden;
+}
+
+.homeContact,
+.homeContact02{
+	width: 400px;
+	float:left;
+}
+.homeContact a,
+.homeContact02 a {
+	display: block;
+	*zoom: 1;
+	border: 1px solid #eee;
+	padding: 4px;
+}
+
+.homeContact{
+	margin-right:20px;
+}
+
+
+
+/*====================================================================
+
+	お知らせ
+
+====================================================================*/
+
+.infoList {}
+
+.infoList ul {}
+.infoList ul li {
+	border-bottom: 1px solid #eee;
+}
+.infoList ul li a {
+	display: block;
+	*zoom: 1;
+	overflow: hidden;
+	padding: 15px;
+}
+.infoList ul li a span.date  {
+	display: block;
+	*zoom: 1;
+	overflow: hidden;
+	float: left;
+	width: 13ex;
+	color: #AD0003;
+}
+.infoList ul li a span.title {
+	display: block;
+	*zoom: 1;
+	overflow: hidden;
+}
+
+.infoList ul li a span.title:hover{
+	color:#aaa;
+}
+
+
+.infoPaging {
+	margin: 35px 0 0;
+	text-align: center;
+}
+.infoPaging a {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	margin: 0 2px;
+	border: 1px solid #aaa;
+	width: 18px;
+	height: 18px;
+	line-height: 18px;
+	text-align: center;
+	font-size: 11px;
+	color: #666;
+	text-decoration: none;
+}
+
+
+.infoPaging a:hover{
+	background-color: #aaa;
+	color: #fff;
+}
+
+.infoPaging a.current {
+	background-color: #666;
+	color: #fff;
+}
+
+.infoArticleHeader {
+	position: relative;
+}
+.infoArticleHeader span {
+	color: #AD0003;
+}
+.infoArticleHeader a {
+	display: block;
+	position: absolute;
+	right: 0px;
+	top: 0;
+	padding-left: 15px;
+	height: 12px;
+	background: url(../../global/img/arrow_5.png) no-repeat 0 0;
+	line-height: 1;
+	font-size: 12px;
+}
+
+.infoArticleHeader a:hover{
+	text-decoration:underline;
+}
+
+.infoArticleHeader h3 {
+	margin: 15px 0 0;
+	border: 3px solid #eee;
+	padding: 10px 20px;
+}
+
+.infoArticleBody {
+	margin: 30px 10px 0;
+	overflow: hidden;
+	*zoom: 1;
+}
+
+.infoArticleImage {
+	margin: 30px 0 0;
+}
+.infoArticleImage ul {
+	overflow: hidden;
+	*zoom: 1;
+}
+.infoArticleImage li {
+	float: left;
+}
+.infoArticleImage li + li {
+	margin-left: 14px;
+}
+.infoArticleImage a {
+}
+
+
+.infoArticleFile {
+	margin: 60px 0 0;
+}
+.infoArticleFile h4 {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	border: 1px solid #aaa;
+	padding: 3px 13px 7px 13px;
+}
+.infoArticleFile h4 img {
+	vertical-align: bottom;
+}
+.infoArticleFile ul {
+	margin: 15px 0 0 2em;
+}
+.infoArticleFile ul li {
+	list-style: disc;
+	line-height:1.8;
+}
+.infoArticleFile ul li a {
+	text-decoration:underline;
+}
+
+.infoArticleFile ul li a:hover{
+	text-decoration:none;
+	color:#aaa;
+}
+
+.infoBackIndex {
+	margin: 50px 0 0;
+	border-top: 1px solid #eee;
+	padding: 30px 0 0;
+	text-align: right;
+}
+.infoBackIndex a {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	padding-left: 15px;
+	height: 12px;
+	background: url(../../global/img/arrow_5.png) no-repeat 0 0;
+	line-height: 1;
+	font-size: 12px;
+}
+
+.infoBackIndex a:hover{
+	text-decoration:underline;
+}
+
+
+/*====================================================================
+
+	GMIについて
+
+====================================================================*/
+
+.aboutOutline {
+	margin: 30px 0 0 0px;
+}
+.aboutOutline table {
+	width: 100%;
+	border-collapse: collapse;
+}
+.aboutOutline th,
+.aboutOutline td {
+	vertical-align: middle;
+	border: 1px solid #999;
+	padding: 10px 16px;
+}
+.aboutOutline th {
+	white-space: nowrap;
+	background: #F1F1F1;
+}
+
+.aboutMap {
+	margin: 30px 0 0 0px;
+}
+
+
+/*====================================================================
+
+	企業経営者のみなさま
+
+====================================================================*/
+
+.employerSupport {
+	overflow: hidden;
+	*zoom: 1;
+	margin: 5px 0 0 0px;
+}
+.employerSupport ul {
+	float: left;
+	width: 48%;
+}
+.employerSupport ul + ul {
+	margin-left: 4%;
+}
+.employerSupport ul li {
+	margin: 3px 0;
+	list-style: disc inside;
+	font-size: 12px;
+}
+
+
+
+
+ul.contact_process{
+	overflow: hidden;
+	*zoom: 1;
+	margin:20px 0;
+}
+
+ul.contact_process li{
+	float:left;
+	margin:1px 3px;
+}
+
+
+
+
+
+/*====================================================================
+
+	働く皆様
+
+====================================================================*/
+
+.employeeRecruit {
+	margin: 30px 0 0 0px;
+}
+.employeeRecruit dt {
+	margin: 20px 0 0 0;
+	font-weight:bold;
+}
+.employeeRecruit dd {
+	margin: 5px 0 30px 15px;
+}
+
+
+p.p_img{
+	margin:20px 0;
+}	
+
+/*====================================================================
+
+	お問い合わせ
+
+====================================================================*/
+
+.contactLead {
+	font-size: 17px;
+	font-weight: bold;
+	margin:40px 0;
+}
+
+.contactStep {
+	margin: 20px 0 0;
+}
+
+.contactNotes {
+	margin: 40px 0;
+	padding-left: 20px;
+	background: url(../../global/img/mark_1.gif) no-repeat 5px 7px;
+	font-size: 16px;
+	color: #AD0003;
+	font-weight:bold;
+	
+}
+
+.contactErrors {
+	margin: 30px 0;
+	padding: 8px 20px;
+	border: 2px solid #AD0003;
+	color: #AD0003;
+}
+.contactErrors li {
+  list-style: disc;
+  margin: 3px 0 3px 1.5em;
+}
+
+.formTable {
+	margin: 20px 0 0;
+}
+.formTable table {
+	width: 100%;
+	border-top: 2px solid #eee;
+	border-bottom: 2px solid #eee;
+}
+.formTable th,
+.formTable td {
+	vertical-align: middle;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	padding: 9px 15px;
+	font-size: 13px;
+}
+.formTable th {
+	width: 18em;
+	border-right: 1px solid #eee;
+	font-weight: bold;
+}
+.formTable th > div {
+	position: relative;
+}
+.formTable td {}
+
+.formRequired {
+	position: absolute;
+	right: 0;
+	padding: 0 .3em;
+	background-color: #AD0003;
+	color: #fff;
+	font-size: 11px;
+	font-weight: normal;
+}
+
+.formInput {
+	width: 200px;
+}
+.formInputTel {
+	width: 90px;
+}
+.formInputZip {
+	width: 60px;
+}
+.formInputAddr {
+	width: 300px;
+}
+.formTextarea {
+	width: 360px;
+	height: 12em;
+	resize: vertical;
+}
+.formTable .ex {
+	font-size: 11px;
+}
+
+.formBtnWrap {
+	margin: 30px 0 0;
+	text-align: center;
+}
+.formBtnWrap form {
+	display: inline;
+}
+
+.formBtn {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	margin: 0 10px;
+	border: none;
+	padding: 7px 0;
+	width: 170px;
+	background-color: #AD0003;
+	text-align: center;
+	color: #fff;
+	font-size: 17px;
+	cursor: pointer;
+}
+
+.formBtn:hover{
+	background-color:#666;
+}
+
+.contactThanks {
+	margin: 40px 0 0 0px;
+}
+.contactThanks .formBtn {
+	margin: 25px 0 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*====================================================================
+
+	求人案件
+
+====================================================================*/
+#jobinfo {
+	overflow:hidden;
+}
+#jobinfo ul li {
+    border-left: 1px dotted #ccc;
+    float: left;
+    margin: 0 0 20px;
+    width: 190px;
+    padding:6px;
+}
+#jobinfo li h3 {
+	color: #ad0003;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px 0;
+    height:120px;
+}
+#jobinfo li p {
+	margin:10px 0;
+}
+#jobinfo li p.detail_s {
+	height:120px
+}
+.readmore {
+	background-color:#AC0002;
+	width:190px;
+	text-align:center;
+}	
+.readmore a {
+	color: #fff;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    position:relative;
+    display:block;
+    padding:2px 0;
+}
+.readmore a:before{
+	display: block;
+	content: "";
+	position: absolute;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	top: 50%;
+	right: 13px;
+	width: 10px;
+	height: 10px;
+	margin-top: -5px;
+	background: #fff;
+}
+.readmore a:after {
+	display: block;
+	content: "";
+	position: absolute;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	top: 50%;
+	right: 15px;
+	width: 10px;
+	height: 10px;
+	margin-top: -5px;
+	background: #AC0002;
+}
+#jobinfo .thumbnail img {
+	width:190px;
+	height:127px;
+}
+#jobdetail .thumbnail {
+	width:100%;
+	overflow:hidden;
+	}
+#jobdetail .thumbnail p {
+	text-align:center;
+	}
+#jobdetail .thumbnail img {
+	width:370px;
+	height:auto;
+}
+	
+/*====================================================================
+
+	登録申し込み
+
+====================================================================*/
+
+.contactLead {
+	font-size: 17px;
+	font-weight: bold;
+	margin:40px 0;
+}
+
+.contactStep {
+	margin: 20px 0 0;
+}
+
+.contactNotes {
+	margin: 40px 0;
+	padding-left: 20px;
+	background: url(../../global/img/mark_1.gif) no-repeat 5px 7px;
+	font-size: 16px;
+	color: #AD0003;
+	font-weight:bold;
+	
+}
+
+.contactErrors {
+	margin: 30px 0;
+	padding: 8px 20px;
+	border: 2px solid #AD0003;
+	color: #AD0003;
+}
+.contactErrors li {
+  list-style: disc;
+  margin: 3px 0 3px 1.5em;
+}
+
+.formreg {
+	margin: 20px 0 0;
+}
+.formreg  {
+	width: 100%;
+	border-top: 2px solid #eee;
+	border-bottom: 2px solid #eee;
+}
+.formreg dt,
+.formreg dd {
+	vertical-align: middle;
+	padding: 9px 15px;
+	font-size: 12px;
+}
+.formreg dd {
+	border-top: 1px solid #eee;
+    border-left: 1px solid #eee;
+    margin-left: 17em;
+}
+.formreg dt {
+	border-top: 1px solid #eee;
+	width: 15em;
+	font-weight: bold;
+	position: relative;
+	float:left;
+}
+.formreg dt > div {
+	position: relative;
+}
+
+.formRequired2 {
+	position: absolute;
+	right: 20px;
+	padding: 0 .3em;
+	background-color: #AD0003;
+	color: #fff;
+	font-size: 11px;
+	font-weight: normal;
+}
+
+.formInput {
+	width: 200px;
+}
+.formInputTel {
+	width: 90px;
+}
+.formInputZip {
+	width: 60px;
+}
+.formInputAddr {
+	width: 300px;
+}
+.formTextarea {
+	width: 360px;
+	height: 12em;
+	resize: vertical;
+}
+.formreg .ex {
+	font-size: 11px;
+}
+
+.formBtnWrap {
+	margin: 30px 0 0;
+	text-align: center;
+}
+.formBtnWrap form {
+	display: inline;
+}
+
+.formBtn2 {
+	background-image:url(../regist/img/ico_conf_arrow.png);
+	background-position: 265px 50%;
+	background-repeat:no-repeat;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	margin: 0 10px;
+	border: none;
+	padding: 12px 0;
+	width: 300px;
+	background-color: #AD0003;
+	text-align: center;
+	color: #fff;
+	font-size: 14px;
+	font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ","ＭＳ Ｐゴシック",sans-serif;
+	cursor: pointer;
+}
+	
+.formBtn2:hover{
+	background-color:#666;
+}
+
+.contactThanks {
+	margin: 40px 0 0 0px;
+}
+.contactThanks .formBtn {
+	margin: 25px 0 0;
+}
+p.switchHat {
+    background-color: #eee;
+    display: block;
+    margin-left: 0 !important;
+    margin: 3px 0;
+    padding: 5px 0 2px 5px;
+}
+p.switchHat::before {
+    content: "▼ ";
+}
+span.eng {
+	color: #000 !important;
+	display: block;
+	margin-top: 5px;
+}
+
+/*====================================================================
+
+	検索ボックス
+
+====================================================================*/
+#secondary {
+	overflow:hidden;
+}
+.searchbox_inr {
+	width:100%;
+	overflow:hidden;
+	height:auto;
+}
+.searchbox01 {
+	margin-bottom: 40px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+.searchbox01 h3 span {
+    background-color: #333;
+    background-image: none;
+    color: #fff;
+    display: inline-block;
+    font-size: 11px;
+    margin: 10px 0;
+    padding: 5px 15px;
+}
+.searchbox01 ul {
+    margin: 0 0 10px 10px;
+    padding: 0;
+    width:280px;
+    float:left;
+}
+.searchbox01 p {
+    margin: 0;
+    padding: 0;
+}
+.searchbox01 ul li {
+    float: left;
+    margin: 5px 0 0 10px;
+    padding: 0 0 0 10px;
+    text-indent: -1.7em;
+    width: 260px;
+}
+
+.searchbox01 ul li {
+	width: 250px;
+}
+.searchbox_top{
+    width: 280px;
+    float: left;
+}
+.searchbox02 {
+    border-left: 1px dotted #ccc;
+    padding-left: 20px;
+    right: 0;
+    top: 0;
+    width: 280px;
+    float:right;
+}
+
+.searchbox02 h3 span {
+    background-color: #333;
+    background-image: none;
+    color: #fff;
+    display: inline-block;
+    font-size: 11px;
+    margin: 10px 0;
+    padding: 5px 15px;
+}
+.searchbox02 ul {
+    margin-bottom: 15px;
+    margin-left: 10px;
+    padding: 0 0 0 10px;
+}
+.searchbox02 ul li {
+    margin-left: 0;
+}
+.search {
+    margin: 0 auto;
+    padding-top: 10px;
+    text-align: center;
+    width: 190px;
+}
+.search ul {
+	width:100% !important;
+	padding:0;
+	margin:0;
+	}
+.search ul li {
+    padding: 0;
+    text-align: center;
+    width: 190px !important;
+}
+.search img {
+    margin-top: 10px;
+}
+.search input#s_words {
+    margin: 15px 0;
+    padding: 5px;
+    width: 210px;
+}
+.search ul li a {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    padding: 2px 0;
+    position: relative;
+}
+.search ul li a::before {
+    background: #ac0002 none repeat scroll 0 0;
+    content: "";
+    display: block;
+    height: 10px;
+    margin-top: -5px;
+    position: absolute;
+    right: 23px;
+    top: 50%;
+    transform: rotate(45deg);
+    width: 10px;
+}
+.search ul li a::after {
+    background: #FFF none repeat scroll 0 0;
+    content: "";
+    display: block;
+    height: 10px;
+    margin-top: -5px;
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: rotate(45deg);
+    width: 10px;
+}
+#jobdetail {
+	margin-bottom: 30px;
+}
+#jobdetail .jobtitle {
+	color: #ad0003;
+	font-size: 16px;
+	font-weight: bold;
+	margin: 5px 0;
+}
+.jobtitle a{
+	color:#AC0002;
+}
+#jobdetail dl {
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+}
+#jobdetail dt {
+    border-top: 1px solid #eee;
+    clear: both;
+    float: left;
+    width: 150px;
+    padding: 5px 10px;
+}
+#jobdetail dd {
+    border-top: 1px solid #eee;
+    border-left: 1px solid #eee;
+    margin-left: 170px;
+    min-height: 20px;
+    padding: 5px 20px;
+}
+.regist_bnr {
+    text-align: center;
+}
+.regist_bnr p {
+    margin: 10px;
+}
+.search_cdn01 {
+	color:#AC0002;
+}
+.search_cdn02 {
+	color:#FF6699;
+}
+.search_cdn03 {
+	color:#0065C1;
+}
+.search_cdn04 {
+	color:#006600;
+}
+.search_cdn05 {
+	color:#FF9900;
+}
+.search_cdn06 {
+	color:#999999;
+}
+.search_cdn01_ttl,
+.search_cdn02_ttl,
+.search_cdn03_ttl,
+.search_cdn04_ttl,
+.search_cdn05_ttl,
+.search_cdn06_ttl {
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;
+    margin: 0 0 0px;
+    padding: 2px 10px;
+}
+.search_cdn01_ttl {
+	background-color:#AC0002;
+}
+.search_cdn02_ttl {
+	background-color:#FF6699;
+}
+.search_cdn03_ttl {
+	background-color:#0065C1;
+}
+.search_cdn04_ttl {
+	background-color:#006600;
+}
+.search_cdn05_ttl {
+	background-color:#FF9900;
+}
+.search_cdn06_ttl {
+	background-color:#999999;
+}
+
+/*====================================================================
+
+	ページネーション
+
+====================================================================*/
+#pagenavi ul{
+	margin:0;
+	display:inlineblock;
+	}
+#pagenavi li{
+	float:left;
+	text-align:center;
+	list-style: none outside none;
+	}
+#pagenavi li.current a,
+#pagenavi li.current02 a,
+#pagenavi li.arrow{
+	display: block;
+    width: 24px;
+    height: 24px;
+    padding-top: 5px;
+    margin-right: 5px;
+    text-decoration: none;
+}
+#pagenavi li.current a{
+    background-color: #AC0002;
+    color:#fff;
+	}
+#pagenavi li.current02 a,
+#pagenavi li.arrow{
+    color:#AC0002;
+	}	
+
+/*====================================================================
+
+	スマートフォン用
+
+====================================================================*/
+
+#topicpath_sp {
+	display:none;
+}
+#siteFooterNav_sp {
+	display:none;
+}
+
+
+
+/*====================================================================
+
+	トップページ求人検索
+
+====================================================================*/
+
+
+#jobInfo {
+	overflow:hidden;
+	float: left;
+	padding: 25px 0px;
+	width: 100%;
+	background: #fff;
+}
+
+
+#jobInfo h2 {
+	position: relative;
+	margin: 0 25px;
+	border-bottom: 4px solid #AD0003;
+	font-size:16px;
+}
+#jobInfo h2 img {
+	margin: 0 20px 20px 10px;
+}
+
+#jobInfo h2 a {
+	display: block;
+	position: absolute;
+	right: 0px;
+	bottom: 20px;
+	padding-left: 15px;
+	height: 12px;
+	background: url(../../global/img/arrow_5.png) no-repeat 0 0;
+	line-height: 1;
+	font-size: 12px;
+	font-weight:normal;
+}
+
+
+#jobInfo h2 a:hover {
+	text-decoration:underline;
+}
+
+
+
+#jobInfo ul {
+    margin: 25px 25px 0;
+    overflow: hidden;
+}
+#jobInfo li {
+	border-right: 1px dotted #ccc;
+	float: left;
+	width: 30.5%;
+	padding: 0 10px;
+}
+#jobInfo li:first-child {
+	border-left: 1px dotted #ccc;
+}
+#jobInfo .jobtitle {
+	color: #ad0003;
+	font-size: 16px;
+	font-weight: bold;
+	margin: 5px 0;
+	height:80px;
+	overflow:hidden;
+}
+#jobInfo .jobtxt {
+	margin: 10px 0;
+	height:110px;
+}
+#jobInfo .joblink a {
+	background: #ad0003 url("../../global/img/arrow_8.gif") no-repeat scroll 90% center;
+	color: #fff;
+	display: block;
+	font-size: 11px;
+	padding: 5px;
+	text-align: center;
+}
+
+#jobInfo li p {
+	width:95%;
+	margin:0px auto;
+}
+
+#jobInfo li p img {
+	width:100%;
+}
+

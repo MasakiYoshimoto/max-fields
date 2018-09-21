@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css; charset=UTF-8" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<title>管理画面</title>
+<link href="{{ $html->webroot('css/common.css')}}" rel="stylesheet" type="text/css">
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+google.load("jquery","1.3.1");
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+</script>
+
+</head>
+<body>
+<div class="wordBreak" style="word-break:break-all;">
+
+<!--pagebody-->
+<div id="pagebody">
+<div id="pagebody-inner">
+
+<!--content-->
+<div id="content">
+<h2>{{$category_name}}　変数一覧</h2>
+<div id="content-inner">
+
+<div class="cont">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td width="28%" class="clr">ID</td>
+		<td width="72%">ID</td>
+	</tr>
+	<tr>
+		<td class="clr">タイトル</td>
+		<td>TITLE</td>
+	</tr>
+	<tr>
+		<td class="clr">説明</td>
+		<td>EXPLANATION</td>
+	</tr>
+	<tr>
+		<td class="clr">公開日時</td>
+		<td>START_DATE</td>
+	</tr>
+	<tr>
+		<td class="clr">公開終了日</td>
+		<td>END_DATE</td>
+	</tr>
+	<tr>
+		<td class="clr">公開日時</td>
+		<td>RELEASE_DATE</td>
+	</tr>
+	<tr>
+		<td class="clr">作成日時</td>
+		<td>CREATE_DATE</td>
+	</tr>
+	<tr>
+		<td class="clr">編集日時</td>
+		<td>EDIT_DATE</td>
+	</tr>
+{{foreach name="list" from=$list key="key" item="value"}}
+	<tr>
+		<td class="clr">{{$value.Cmsitem.name|yen|escape:'html':'utf-8'}}</td>
+		<td >{{$value.Cmsitem.variable_name|yen|escape:'html':'utf-8'}}</td>
+	</tr>
+{{/foreach}}
+</table>
+</form>
+</div>
+
+</div>
+</div>
+<!--contentここまで-->
+
+</div>
+</div>
+<!--pagebodyここまで-->
+
+</body>
+</html>

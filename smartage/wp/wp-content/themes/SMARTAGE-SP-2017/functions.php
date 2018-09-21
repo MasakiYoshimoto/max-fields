@@ -1,0 +1,1 @@
+<?php require_once(get_theme_root() . '/SMARTAGE-PC-2017/functions.php');

@@ -1,0 +1,170 @@
+.smartAgeSubTitle{
+	font-size:16px;
+	padding-top:25px;
+}
+
+.smartAgePriceTable{
+	margin:30px 0;
+	border:#000 2px solid;
+	width:100%;
+}
+
+.smartAgePriceTable th{
+	border-bottom:#aaa 1px solid;
+	vertical-align:middle;
+	padding:10px 30px;
+	background-color:#666;
+	color:#fff;
+	font-size:15px;
+	font-weight:bold;
+}
+
+.smartAgePriceTable td{
+	border-bottom:#aaa 1px solid;
+	border-right:#aaa 1px solid;
+	padding:10px 30px;
+	vertical-align:middle;
+	font-size:15px;
+	font-weight:bold;
+}
+
+
+.smatAgeWorkTable{
+	margin:30px 0;
+	border:#000 2px solid;
+	width:100%;
+}
+
+.smatAgeWorkTable th{
+	border-bottom:#aaa 1px solid;
+	vertical-align:middle;
+	padding:10px 30px;
+	background-color:#eee;
+	font-weight:bold;
+}
+
+.smatAgeWorkTable td{
+	border-bottom:#aaa 1px solid;
+	border-right:#aaa 1px solid;
+	padding:10px 30px;
+	vertical-align:middle;
+	font-weight:bold;
+}
+
+
+
+
+
+.smartAgeFlow {
+	margin: 30px 0 60px 0px;
+}
+.smartAgeFlow li {
+	font-size:14px;
+	font-weight:bold;
+}
+.smartAgeFlow li + li {
+	padding: 35px 0 0;
+	background: url(img/flow_arrow.gif) no-repeat 100px 10px;
+}
+.smartAgeFlow li span {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	vertical-align: middle;
+	margin:5px 10px 5px 0px;;
+	padding:3px 60px;
+	text-align: center;
+	color: #AD0003;
+	border: 1px solid #AD0003;
+	font-weight:bold;
+}
+.smartAgeFlow li em {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	vertical-align: middle;
+	font-size: 16px;
+	color: #AD0003;
+}
+.smartAgeFlow li div {
+	margin: 10px 0 0;
+}
+
+
+
+
+.smartAgeQA{
+	margin-top:30px;
+	border-bottom:#aaa 1px dotted;
+	padding-bottom:20px;
+}
+
+.smartAgeQA dt{
+	font-weight:bold;
+	margin-bottom:10px;
+}
+
+.smartAgeQA dt span{
+	font-size:24px;
+	padding-right:15px;
+}
+
+.smartAgeQA dd span{
+	font-size:24px;
+	color:#AD0003;
+	padding-right:15px;
+	font-weight:bold;
+}
+
+
+
+
+.smartAgeContact{
+	margin:30px 0;
+}
+
+.smartAgeContact a{
+	background-color: #AD0003;
+	color:#fff;
+	display:block;
+	width:100%;
+	font-size:18px;
+	text-align:center;
+	padding:30px 0;
+}
+
+
+.smartAgeContact span{
+	background:url(img/iconMail.png) 0px 0px no-repeat;
+	background-size:contain;
+	padding-left:45px;
+}
+
+.smartAgeContact a:hover{
+	background-color: #aaa;
+}
+
+
+/*--------------------------------------------
+	色変更
+--------------------------------------------*/
+
+/*企業向け　緑*/
+
+.smartAgeArea001 .mainHeader{
+	border-bottom:#72b12d 1px solid;
+}
+
+
+.smartAgeArea001 .mainH3{
+	color:#72b12d;
+}
+
+.smartAgeArea001 .smartAgeFlow li span {
+		border:#72b12d 1px solid;
+		color:#72b12d;
+}
+
+.smartAgeArea001 .smartAgeContact a{
+	background-color:#72b12d;
+}

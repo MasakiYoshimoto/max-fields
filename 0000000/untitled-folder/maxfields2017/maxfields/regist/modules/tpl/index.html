@@ -1,0 +1,140 @@
+{{php}}
+define('PAGE_TITLE', '登録申込 | 株式会社マックスフィールズ');
+define('PAGE_DESCRIPTION', '派遣アウトソーシング、コンサルティングはマックスフィールズグループ。貴社の競争優位を、再生、成長、新事業進出でグループ一貫でサポート。');
+define('BODY_CLASS', 'regist');
+
+include('../include/header2.php');
+{{/php}}
+
+<script>
+$(function(){
+	$("#inputZip").zip2addr("#inputAddr");
+});
+</script>
+
+<!-- コンテント -->
+<div id="topicpath">
+	<ol>
+		<li><a href="../">ホーム</a></li>
+		<li>登録申込</li>
+	</ol>
+</div>
+<!-- コンテント(SP用) -->
+<div id="topicpath_sp">
+	<ol>
+		<li><a href="../">ホーム</a></li>
+		<li>登録申込</li>
+	</ol>
+</div>
+<!-- コンテント -->
+<div id="contentWrap">
+
+	<div id="contentMain">
+
+		<div class="contentBox">
+
+			<div class="mainHeader">
+				<h2>
+					<img src="img/title.gif" alt="Registration">
+					<span>登録申込</span>
+				</h2>
+			</div>
+
+			<p class="contactLead">下記フォームにてご登録ください。<br />内容を確認後、弊社担当よりご連絡いたします。</p>
+
+			<p class="contactStep"><img src="img/step1.gif" alt="STEP1 入力画面" height="38" width="620"></p>
+
+			<p class="contactNotes">お客様情報をご入力ください。</p>
+
+            {{if $error}}
+			<ul class="contactErrors">
+                {{foreach from=$error name='error' item='value'}}
+				<li>{{$value}}</li>
+                {{/foreach}}
+			</ul>
+            {{/if}}
+            <form name="form1" method="post" action="./">
+                <input type="hidden" name="m" value="2" />
+                {{if $job_data}}
+                <input type="hidden" name="d" value="{{$job_data.id}}" />
+                {{/if}}
+
+				<div class="formreg">
+					<dl>
+						<dt>氏名（漢字）<span class="formRequired2">必須</span></dt>
+						<dd>
+							<input type="text" class="formInput" name="name" value="{{$input.name}}">
+							<div class="formEx">例）マックス太郎</div>
+						</dd>
+						<dt>氏名（フリガナ）<span class="formRequired2">必須</span></dt>
+						<dd>
+							<input type="text" class="formInput" name="kana" value="{{$input.kana}}">
+							<div class="formEx">例）マックスタロウ</div>
+						</dd>
+						<dt>年齢<span class="formRequired2">必須</span></dt>
+						<dd>
+							<input type="text" class="formInput" name="age" value="{{$input.age}}">
+							<div class="formEx">例）28歳</div>
+						</dd>
+						<dt>性別<span class="formRequired2">必須</span></dt>
+						<dd>
+							<select name="sex" id="genter">
+							<option value="">性別を選択</option>
+							<option value="男性" {{if $input.sex_1}}selected{{/if}}>男性</option>
+							<option value="女性" {{if $input.sex_2}}selected{{/if}}>女性</option>
+							</select>
+						</dd>
+						<dt>連絡先<span class="formRequired2">必須</span></dt>
+						<dd>
+							<input type="tel" class="formInputTel" name="tel" value="{{$input.tel}}">
+							<div class="formEx">例）054-251-3545</div>
+						</dd>
+						<dt class="any">お住まい</dt>
+						<dd>
+							郵便番号　<input type="tel" class="formInputZip" name="zip" id="inputZip" value="{{$input.zip}}">
+							<div class="formEx">例）420-0851<br>※郵便番号を入力すると住所が自動で入力されます</div>
+							<input type="text" class="formInputAddr" name="address" id="inputAddr" value="{{$input.address}}">
+							<div class="formEx">例）静岡県静岡市葵区黒金町11-7</div>
+						</dd>
+						<dt class="any">就業開始可能日</dt>
+						<dd>
+							<input type="text" class="formInput" name="start_date" value="{{$input.start_date}}">
+							<div class="formEx">例）１ヵ月後</div>
+						</dd>
+						<dt class="any">通勤手段</dt>
+						<dd>
+							<input type="text" class="formInput" name="commute" value="{{$input.commute}}">
+							<div class="formEx">例）徒歩、バス</div>
+						</dd>
+						<dt class="any">現況</dt>
+						<dd>
+							<input type="radio" name="status_work" value="休職中" {{if $input.status_work_1}}checked{{/if}}>休職中
+							<input type="radio" name="status_work" value="就業中" {{if $input.status_work_2}}checked{{/if}}>就業中
+							<input type="radio" name="status_work" value="その他" {{if $input.status_work_3}}checked{{/if}}>その他
+						<dt>メールアドレス<span class="formRequired2">必須</span></dt>
+						<dd>
+							<input type="email" class="formInput" name="email" value="{{$input.email}}">
+							<div class="formEx">例）max@evolve-max.com</div>
+						</dd>
+						<dt>メールアドレス（確認用）<span class="formRequired2">必須</span></dt>
+						<dd>
+							<input type="email" class="formInput" name="email2" value="{{$input.email2}}">
+							<div class="formEx">例）max@evolve-max.com</div>
+						</dd>
+					</dl>
+				</div><!--/.formTable-->
+				<div class="formBtnWrap">
+					<input type="submit" class="formBtn2" value="確　認">
+				</div><!--/.formBtn-->
+			</form>
+
+		</div><!--/.contentBox-->
+
+	</div><!--/#contentMain-->
+
+	<!-- サイドバーエリア -->
+	{{php}}include('../include/sidebar.php');{{/php}}
+
+</div><!--/#contentWrap-->
+
+{{php}}include('../include/footer.php');{{/php}}

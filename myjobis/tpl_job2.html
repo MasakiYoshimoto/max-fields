@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="あなたのライフスタイルに合わせた短時間求人のマイジョブイズです。お問合せはお気軽に。" />
+<meta name="keywords" content="求人,求職,アルバイト,パート,短期,短時間,ライフスタイル,女性,リクルート,採用,スキル,キャリア" />
+<title>短期・短時間の求人｜マイジョブイズ My job is｜求人一覧</title>
+<script type="text/javascript" src="./js/jquery.js"></script>
+<script type="text/javascript" src="./js/agent.js"></script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+   ga('create', 'UA-41326631-2', 'auto');
+   ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+<div id="header">
+	<div id="headerTop" class="clearfix">
+		<div id="headerLeft">
+			<p>あなたのライフスタイルにあわせた短時間求人</p>
+			<div id="logo"><a href="./index.html"><img src="./img/common_img_logo.gif" alt="MyJobIs" title="MyJobIsホーム" width="234" height="52" /></a></div>
+		</div>
+	    <div id="globalNav">
+	    	<ul>
+	        	<li class="gnav01"><a href="./about.html" title="About">About</a></li>
+	            <li class="gnav02"><a href="./client.html" title="Client">Client</a></li>
+	            <li class="gnav03"><a href="./worker.html" title="Worker">Worker</a></li>
+	            <li class="gnav04"><a href="./job.html" title="Job">Job</a></li>
+	            <li class="gnav05"><a href="./entry/" title="Entry">Entry</a></li>
+	            <li class="gnav06"><a href="./contact/" title="Contact">Contact</a></li>
+	        </ul>
+	    </div><!-- #globalNav -->
+	</div><!-- #headerTop -->
+</div><!-- #header（ヘッダーここまで） -->
+
+<div id="eyecatchWrapper">
+	<div id="eyecatch">
+		<h1><img src="img/job_h1.jpg" alt="Job/求人一覧" title="Job/求人一覧" width="1000" height="132" /></h1>
+		<ol id="topicpath">
+			<li>HOME</li>
+			<li class="end"><a href="./job.html">求人一覧</a></li>
+		</ol>
+	</div>
+</div><!-- #eyecatchWrapper -->
+
+
+<div id="container" class="clearfix">
+    {{job_list job=$smarty.get.job area=$smarty.get.area search_null=true max=16}}
+	<div id="main" class="tableRow"><div class="spcellwrap"><!-- Start-Page_Content -->
+        <h2><img src="img/job_h2_02.gif" width="152" height="21" alt="検索結果" /></h2>
+        
+        {{if $job.count !=0}}
+        <div class="pagenation clearfix">
+	        <div class="left"><p>全<span class="resultnum">{{$job.count}}</span>件中 {{$job.start}}～{{$job.end}}件を表示</p></div>
+	        <div class="right">
+		        <ul>
+                    {{if $job.page != 1}}
+                    <li class="previous"><a href="./job2.html?p={{$job.page-1}}{{$job.search_query}}">前へ</a></li>
+                    {{/if}}
+                    {{foreach name="job_page_list" from=$job.page_list key="key" item="value"}}
+                    {{if $job.page == $value}}
+					    <li class="current">{{$value}}</li>
+                    {{else}}
+                        <li><a href="./job2.html?p={{$value}}{{$job.search_query}}">{{$value}}</a></li>
+                    {{/if}}
+                    {{/foreach}}
+                    {{if $job.page != $job.maxpage}}
+		            <li class="next"><a href="./job2.html?p={{$job.page+1}}{{$job.search_query}}">次へ</a></li>
+                    {{/if}}
+		        </ul>
+	        </div>
+	    </div><!-- .pagenation -->
+	    
+        <div id="job_result">
+            {{foreach name="job_list" from=$job.list key="key" item="value"}}
+        	<div class="box">
+                {{if $value.location == 100}}
+                    {{assign var="area_no" value="1"}}
+                {{elseif  $value.location == 101}}
+                    {{assign var="area_no" value="2"}}
+                {{elseif  $value.location == 102}}
+                    {{assign var="area_no" value="3"}}
+                {{elseif  $value.location == 103}}
+                    {{assign var="area_no" value="4"}}
+                {{elseif  $value.location == 104}}
+                    {{assign var="area_no" value="5"}}
+                {{elseif  $value.location == 105}}
+                    {{assign var="area_no" value="6"}}
+                {{elseif  $value.location == 106}}
+                    {{assign var="area_no" value="7"}}
+                {{elseif  $value.location == 107}}
+                    {{assign var="area_no" value="8"}}
+                {{elseif  $value.location == 108}}
+                    {{assign var="area_no" value="9"}}
+                {{elseif  $value.location == 109}}
+                    {{assign var="area_no" value="10"}}
+                {{elseif  $value.location == 110}}
+                    {{assign var="area_no" value="11"}}
+                {{elseif  $value.location == 111}}
+                    {{assign var="area_no" value="12"}}
+                {{elseif  $value.location == 112}}
+                    {{assign var="area_no" value="13"}}
+                {{/if}}
+        		<img class="area" src="img/job_area{{$area_no}}.gif" width="140" height="20" alt="{{$area_list[$value.location]}}" />
+        		<h4>{{$value.catchcopy}}</h4>
+        		<p>{{$value.work|strip:''|mb_truncate:70}}</p>
+        		<a href="job_detail.html?d={{$value.id}}" class="btn" title="詳しく見る"><img class="allow" src="img/common_arrow_whi.png" width="11" height="11" alt="詳しく見る" />詳しく見る</a>
+        	</div>
+            {{/foreach}}
+        </div>
+        {{else}}
+        <div id="job_result">
+            該当する求人案件がありませんでした。
+        </div>
+        {{/if}}
+        
+	</div></div><!-- #main End-Page_Content -->
+	
+	<div id="side" class="tableTop"><div class="spcellwrap">
+        {{include file="$wwwroot_path/myjobis/include/search_box.html"}}
+		<div class="pc">
+		   	<h2><img src="./img/common_sidebn0.gif" alt="無料" width="304" height="33" /></h2>
+		    <div id="sideNav01">
+		    	<ul>
+		        	<li class="nav01"><a href="./entry/" title="登録申込">登録申込</a></li>
+		            <li class="nav02"><a href="./contact/" title="お問合せ">お問合せ</a></li>
+		        </ul>
+		    </div><!-- #sideNav01 -->
+		    <div id="sideNav02">
+		    	<ul>
+		        	<li class="nav01"><a href="./about.html" title="MyJobIsとは">MyJobIsとは</a></li>
+		            <li class="nav02"><a href="./client.html" title="企業の皆様へ">企業の皆様へ</a></li>
+		            <li class="nav03"><a href="./worker.html" title="働く皆様へ">働く皆様へ</a></li>
+		            <li class="nav04"><a href="./job.html" title="求人一覧">求人一覧</a></li>
+		        </ul>
+		    </div><!-- #globalNav02 -->
+		</div>
+    </div></div><!-- #side -->
+</div><!-- #container -->
+{{if $job.count !=0}}
+<div class="pagenation sp">
+    <ul>
+        {{if $job.page != 1}}
+        <li class="previous"><a href="./job2.html?p={{$job.page-1}}{{$job.search_query}}">前へ</a></li>
+        {{/if}}
+        {{foreach name="job_page_list" from=$job.page_list key="key" item="value"}}
+        {{if $job.page == $value}}
+		<li class="current">{{$value}}</li>
+        {{else}}
+        <li><a href="./job2.html?p={{$value}}{{$job.search_query}}">{{$value}}</a></li>
+        {{/if}}
+        {{/foreach}}
+        {{if $job.page != $job.maxpage}}
+        <li class="next"><a href="./job2.html?p={{$job.page+1}}{{$job.search_query}}">次へ</a></li>
+        {{/if}}
+    </ul>
+</div>
+{{/if}}
+<div id="foot_btncontainer" class="spcellwrap">
+	<div class="banabox pc">
+		<ul class="clearfix">
+			<li><a href="./about.html"><img src="./img/common_footbn1-1.gif" alt="MyJobIsとは" title="MyJobIsとは" width="304" height="103" /></a></li>
+			<li><a href="./client.html"><img src="./img/common_footbn1-2.gif" alt="企業のみなさまへ" title="企業のみなさまへ" width="304" height="103" /></a></li>
+			<li class="end"><a href="./worker.html" class="end"><img src="./img/common_footbn1-3.gif" alt="働く皆様へ" title="働く皆様へ" width="304" height="103"  /></a></li>
+		</ul>
+	</div>
+    <div class="sp">
+    	<ul>
+            <li class="nav01"><a href="./entry/" title="登録申込"><img src="./img/sp_common_sidebn1.gif" alt="登録申込" title="登録申込" width="297" height="67"  /></a></li>
+            <li class="nav02"><a href="./contact/" title="お問合せ"><img src="./img/sp_common_sidebn2.gif" alt="お問合せ" title="お問合せ" width="297" height="67"  /></a></li>
+        </ul>
+    </div><!-- .sp -->
+</div><!-- #foot_btncontainer -->
+
+<div id="pagetop"><a href="#HEADER"><img src="./img/common_btn_top.png" alt="TOP" width="49" height="49" /></a></div>
+<div id="footerWrapper">
+	<div id="footer" class="cleafix">
+		<div class="tool01 tableRow"><div class="spcellwrap"><a href="./index.html"><img src="./img/common_img_footlogo.gif" alt="MyJobIs" title="MyJobIsホーム" width="202" height="45" /></a></div></div>
+	    <div class="tableTop"><ul class="tool02 clearfix">
+	        <li><a href="./about.html">My Job Isとは</a></li>
+	        <li><a href="./client.html">企業の皆様へ</a></li>
+	        <li><a href="./worker.html">働く皆様へ</a></li>
+	        <li><a href="./job.html">求人一覧</a></li>
+	        <li><a href="./entry/">登録申込</a></li>
+	        <li><a href="./contact/">お問合せ</a></li>
+	        <li class="end"><a href="./sitepolicy.html">サイトポリシー</a></li>
+	    </ul></div>
+	</div><!-- #footer -->
+</div><!-- #footerWrapper -->
+<div id="copyright">Copyright © 2015 My Job is Co,Ltd. All rights Reserved.</div><!-- #Copyright -->
+</body>
+</html>

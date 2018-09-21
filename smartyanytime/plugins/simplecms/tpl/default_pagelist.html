@@ -1,0 +1,5 @@
+<ul {{if $default_pagelist_setting.ul_id}}id="{{$default_pagelist_setting.ul_id}}"{{/if}}>
+{{foreach name="defaultpagelist" from=$output_pagelist key="key" item="value"}}
+<li><a href="{{$default_pagelist_setting.link}}?p={{$value}}">{{if $output_page==$value}}<b>{{$value}}</b>{{else}}{{$value}}{{/if}}</a></li>
+{{/foreach}}
+</ul>

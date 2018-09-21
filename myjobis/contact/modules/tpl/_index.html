@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>トキノスタンス｜お問合せ｜静岡・東京　有料職業紹介</title>
+<meta name="keywords" content="トキノスタンス,トキスタ,職業紹介,転職,求人,採用,静岡,東京">
+<meta name="description" content="静岡・東京の有料職業紹介。転職・採用の課題解決にトキスタの手厚いコミュニケーションでお役に立ちます。">
+<!--[if IE]> 
+<meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+<![endif]-->
+{{include file="$wwwroot_path/include/head.html"}}
+<link rel="stylesheet" type="text/css" href="../css/contact.css">
+<!-- 削除する -->
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+</head>
+<body>
+
+<!--page-->
+<div id="page">
+
+<!--main-->
+<div id="main">
+
+<!--header-->
+{{include file="$wwwroot_path/include/header.html"}}
+<!--header end-->
+
+<!--content-->
+<div id="content">
+
+<h1><img src="../../../images/contact_h1.gif" width="351" height="40" alt="お問合せ" /></h1>
+<h2>お問合せ</h2>
+<p>下記フォームにてお問合せください。内容を確認次第、弊社担当よりご連絡いたします。</p>
+
+<script type="text/javascript" src="https://ajaxzip3.googlecode.com/svn/trunk/ajaxzip3/ajaxzip3-https.js" charset="UTF-8"></script>
+<form name="form1" method="post" action="./">
+<input type="hidden" name="m" value="2" />
+<div id="secContactusTable">
+<div id="blockContactError">
+<table class="generalTable" id="contactusTable">
+<tr>
+<th scope="row">会社名（漢字）</th>
+<td><input name="company" type="text" size="20" value="{{$input.company}}" class="formItem01{{if $error.company}} error{{/if}}">
+    {{if $error.company}}<div class="error"><img src="../images/ico_error.gif" width="16" height="15" alt=""/><span>{{$error.company}}</span></div>{{/if}}
+</td>
+</tr>
+<tr>
+<th scope="row"><span class="must"><img src="../images/ico_must.gif" width="36" height="17" alt=""/></span>氏名（漢字）</th>
+<td><input name="name" type="text" size="20" value="{{$input.name}}" class="formItem01{{if $error.name}} error{{/if}}">
+{{if $error.name}}<div class="error"><img src="../images/ico_error.gif" width="16" height="15" alt=""/><span>{{$error.name}}</span></div>{{/if}}
+</td>
+</tr>
+<tr>
+<th scope="row"><span class="must"><img src="../images/ico_must.gif" width="36" height="17" alt=""/></span>氏名（フリガナ）</th>
+<td><input name="name_kana" type="text" size="20" value="{{$input.name_kana}}" class="formItem01{{if $error.name_kana}} error{{/if}}">
+{{if $error.name_kana}}<div class="error"><img src="../images/ico_error.gif" width="16" height="15" alt=""/><span>{{$error.name_kana}}</span></div>{{/if}}
+</td>
+</tr>
+<tr>
+<th scope="row"><span class="must"><img src="../images/ico_must.gif" width="36" height="17" alt=""/></span>電話番号</th>
+<td><input name="tel" type="text" id="phone" size="20" value="{{$input.tel}}" class="formItem01{{if $error.tel}} error{{/if}}">
+{{if $error.tel}}<div class="error"><img src="../images/ico_error.gif" width="16" height="15" alt=""/><span>{{$error.tel}}</span></div>{{/if}}
+</td>
+</tr>
+<tr>
+<th scope="row"><span class="must"><img src="../images/ico_must.gif" width="36" height="17" alt=""/></span>ご住所</th>
+<td><ul class="fItemList">
+<li>郵便番号　　　
+  <input name="zip" type="text" id="address01" value="{{$input.zip}}" class="formItem01{{if $error.zip}} error{{/if}}" onKeyUp="AjaxZip3.zip2addr(this,'','pref','address');">
+    {{if $error.zip}}<div class="error"><img src="../images/ico_error.gif" width="16" height="15" alt=""/><span>{{$error.zip}}</span></div>{{/if}}
+<li>
+都道府県　　　
+  <select name="pref" id="pref">
+      <option value="">都道府県を選択</option>
+      <option value="北海道" {{if $input.pref_1}}selected{{/if}}>北海道</option>
+      <option value="青森県"  {{if $input.pref_2}}selected{{/if}}>青森県</option>
+      <option value="秋田県"  {{if $input.pref_3}}selected{{/if}}>秋田県</option>
+      <option value="岩手県"  {{if $input.pref_4}}selected{{/if}}>岩手県</option>
+      <option value="山形県"  {{if $input.pref_5}}selected{{/if}}>山形県</option>
+      <option value="宮城県"  {{if $input.pref_6}}selected{{/if}}>宮城県</option>
+      <option value="福島県"  {{if $input.pref_7}}selected{{/if}}>福島県</option>
+      <option value="茨城県"  {{if $input.pref_8}}selected{{/if}}>茨城県</option>
+      <option value="栃木県"  {{if $input.pref_9}}selected{{/if}}>栃木県</option>
+      <option value="群馬県"  {{if $input.pref_10}}selected{{/if}}>群馬県</option>
+      <option value="埼玉県"  {{if $input.pref_11}}selected{{/if}}>埼玉県</option>
+      <option value="東京都"  {{if $input.pref_12}}selected{{/if}}>東京都</option>
+      <option value="千葉県"  {{if $input.pref_13}}selected{{/if}}>千葉県</option>
+      <option value="神奈川県" {{if $input.pref_14}}selected{{/if}}>神奈川県</option>
+      <option value="新潟県"  {{if $input.pref_15}}selected{{/if}}>新潟県</option>
+      <option value="長野県"  {{if $input.pref_16}}selected{{/if}}>長野県</option>
+      <option value="山梨県"  {{if $input.pref_17}}selected{{/if}}>山梨県</option>
+      <option value="静岡県"  {{if $input.pref_18}}selected{{/if}}>静岡県</option>
+      <option value="富山県"  {{if $input.pref_19}}selected{{/if}}>富山県</option>
+      <option value="岐阜県"  {{if $input.pref_20}}selected{{/if}}>岐阜県</option>
+      <option value="愛知県"  {{if $input.pref_21}}selected{{/if}}>愛知県</option>
+      <option value="石川県"  {{if $input.pref_22}}selected{{/if}}>石川県</option>
+      <option value="福井県"  {{if $input.pref_23}}selected{{/if}}>福井県</option>
+      <option value="滋賀県"  {{if $input.pref_24}}selected{{/if}}>滋賀県</option>
+      <option value="三重県"  {{if $input.pref_25}}selected{{/if}}>三重県</option>
+      <option value="奈良県"  {{if $input.pref_26}}selected{{/if}}>奈良県</option>
+      <option value="京都府"  {{if $input.pref_27}}selected{{/if}}>京都府</option>
+      <option value="大阪府"  {{if $input.pref_28}}selected{{/if}}>大阪府</option>
+      <option value="和歌山県"  {{if $input.pref_29}}selected{{/if}}>和歌山県</option>
+      <option value="兵庫県"  {{if $input.pref_30}}selected{{/if}}>兵庫県</option>
+      <option value="鳥取県"  {{if $input.pref_31}}selected{{/if}}>鳥取県</option>
+      <option value="岡山県"  {{if $input.pref_32}}selected{{/if}}>岡山県</option>
+      <option value="島根県"  {{if $input.pref_33}}selected{{/if}}>島根県</option>
+      <option value="広島県"  {{if $input.pref_34}}selected{{/if}}>広島県</option>
+      <option value="山口県"  {{if $input.pref_35}}selected{{/if}}>山口県</option>
+      <option value="香川県"  {{if $input.pref_36}}selected{{/if}}>香川県</option>
+      <option value="徳島県"  {{if $input.pref_37}}selected{{/if}}>徳島県</option>
+      <option value="愛媛県"  {{if $input.pref_38}}selected{{/if}}>愛媛県</option>
+      <option value="高知県"  {{if $input.pref_39}}selected{{/if}}>高知県</option>
+      <option value="福岡県"  {{if $input.pref_40}}selected{{/if}}>福岡県</option>
+      <option value="佐賀県"  {{if $input.pref_41}}selected{{/if}}>佐賀県</option>
+      <option value="長崎県"  {{if $input.pref_42}}selected{{/if}}>長崎県</option>
+      <option value="大分県"  {{if $input.pref_43}}selected{{/if}}>大分県</option>
+      <option value="宮崎県"  {{if $input.pref_44}}selected{{/if}}>宮崎県</option>
+      <option value="熊本県"  {{if $input.pref_45}}selected{{/if}}>熊本県</option>
+      <option value="鹿児島県"  {{if $input.pref_46}}selected{{/if}}>鹿児島県</option>
+      <option value="沖縄県"  {{if $input.pref_47}}selected{{/if}}>沖縄県</option>
+</select>{{if $error.pref}}<div class="error"><img src="../images/ico_error.gif" width="16" height="15" alt=""/><span>{{$error.pref}}</span></div>{{/if}}
+</li>
+<li>市区郡以降　
+  <input name="address" type="text" id="address02" value="{{$input.address}}" class="formItem01{{if $error.address}} error{{/if}}">
+    {{if $error.address}}<div class="error"><img src="../images/ico_error.gif" width="16" height="15" alt=""/><span>{{$error.address}}</span></div>{{/if}}
+</li>
+</ul></td>
+</tr>
+
+<tr>
+<th scope="row"><span class="must"><img src="../images/ico_must.gif" width="36" height="17" alt=""/></span>メールアドレス</th>
+<td><input name="email" type="text" id="_email" value="{{$input.email}}" class="formItem01{{if $error.email}} error{{/if}}">
+    {{if $error.email}}<div class="error"><img src="../images/ico_error.gif" width="16" height="15" alt=""/><span>{{$error.email}}</span></div>{{/if}}
+</tr>
+<tr>
+<th scope="row"><span class="must"><img src="../images/ico_must.gif" width="36" height="17" alt=""/></span>メールアドレス（確認用）</th>
+<td><input name="email2" type="text" id="_email" value="{{$input.email2}}" class="formItem01{{if $error.email2}} error{{/if}}">
+    {{if $error.email2}}<div class="error"><img src="../images/ico_error.gif" width="16" height="15" /><span>{{$error.email2}}</span></div>{{/if}}
+</td>
+</tr>
+<tr>
+  <th scope="row"><span class="must"><img src="../images/ico_must.gif" width="36" height="17" alt=""/></span>お問合せ内容</th>
+  <td><textarea name="contents" cols="30" rows="12" class="formItem02{{if $error.contents}} error{{/if}}">{{$input.contents}}</textarea>
+      {{if $error.contents}}<div class="error"><img src="../images/ico_error.gif" width="16" height="15" alt=""/><span>{{$error.contents}}</span></div>{{/if}}
+  </td>
+</tr>
+</table>
+</div><!-- secContactusTable -->
+</div>
+
+<div class="center"><input type="hidden" name="check_data" value="confirm"></div>
+
+<div class="submit">
+<p><button type="submit"><img src="../images/b_check.gif" class="xOver" alt="入力内容を確認する" /></button></p></div>
+</form>
+
+</div>
+<!--content end-->
+
+<!--main_bnr-->
+{{include file="$wwwroot_path/include/main_banner.html"}}
+<!--main_bnr end-->
+
+</div>
+<!--main end-->
+
+<!--sidebar-->
+{{include file="$wwwroot_path/include/side.html"}}
+<!--side end-->
+
+<!--footer-->
+{{include file="$wwwroot_path/include/footer.html"}}
+<!--footer end-->
+
+<div class="copy">
+Copyright&nbsp;&copy;&nbsp;2014&nbsp;tokino&nbsp;stance&nbsp;Co.Ltd.
+</div>
+
+</div>
+<!--page end-->
+
+</body>
+</html>

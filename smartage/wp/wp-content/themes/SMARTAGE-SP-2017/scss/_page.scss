@@ -1,0 +1,495 @@
+@charset "UTF-8";
+@import "_core";
+// ============================
+// 下層共通要素
+// ============================
+.l-page{
+	.mv{
+		@include ptb_vw(40);
+		.in{
+			h2{
+				@include fs_vw(20);
+				font-weight: bold;
+				@include ls_vw(2.6);
+				text-align: center;
+				color: #fff;
+			}
+		}
+	}
+	.mv.ef-frame{
+		padding: 0;
+		width: 100%;
+		overflow: hidden;
+		vertical-align: bottom;
+		.bg{
+			width: 100%;
+		}
+		.text{
+			.in{
+				font-size: 4.9vw;
+				font-weight: bold;
+				@include ls_vw(2.6);
+				text-align: center;
+				line-height: 1.5;
+				color: #333;
+			}
+		}
+	}
+	.page-body{
+		padding: 2.5rem 0 4rem;
+		background: url(img/company_bg_01.jpg) no-repeat center bottom/100% auto;
+	}
+	.sec{
+		p:not([class]){
+			line-height: 2;
+		}
+		p:not([class]):not(:first-child){
+			padding-top: 1em;
+		}
+	}
+	.sec ~ .sec{
+		padding-top: 5rem;
+	}
+
+}
+
+/*
+ ██████  ███████        ██████  ██████  ███    ██ ████████  █████   ██████ ████████
+██  ████      ██       ██      ██    ██ ████   ██    ██    ██   ██ ██         ██
+██ ██ ██     ██  █████ ██      ██    ██ ██ ██  ██    ██    ███████ ██         ██
+████  ██    ██         ██      ██    ██ ██  ██ ██    ██    ██   ██ ██         ██
+ ██████     ██          ██████  ██████  ██   ████    ██    ██   ██  ██████    ██
+*/
+.l-contact,
+.l-entry,
+.l-confirm,
+.l-complete{
+	.mv{
+		background: url(img/contact_mv.jpg) no-repeat center/cover;
+	}
+	section {
+		background: url(img/contact_bg_01.jpg) no-repeat center bottom/100% auto;
+		.in {
+			@include pt_vw(33);
+			@include pb_vw(30);
+			h3 {
+				@include fs_vw(15);
+				font-weight: bold;
+				@include ls_vw(.75);
+				text-align: center;
+				color: #000;
+				@include mb_vw(38);
+				position: relative;
+				&::after{
+					content: '';
+					position: absolute;
+					left: 50%;
+					@include b_vw(-11);
+					@include w_vw(42.5);
+					@include h_vw(3);
+					-moz-transform: translateX(-50%);
+					-webkit-transform: translateX(-50%);
+					-ms-transform: translateX(-50%);
+					transform: translateX(-50%);
+					background-color: #71b22c;
+				}
+			}
+			.input-txt,
+			.conf-txt{
+				@include ls_vw(.45);
+				text-align: center;
+				line-height: 1.67;
+				color: #111;
+				@include mb_vw(24);
+			}
+			.comp-txt{
+				@include ls_vw(.45);
+				text-align: center;
+				line-height: 1.67;
+				color: #111;
+				@include mb_vw(15);
+				@include mt_vw(15);
+			}
+		}
+	}
+}
+
+.mw_wp_form {
+	@include pt_vw(65.5);
+	@include mt_vw(-65.5);
+	.btnarea {
+		margin: 0 auto;
+		@include mb_vw(20);
+		text-align: center;
+	}
+	input[type='submit'] {
+		/* ボタン全般の設定 */
+		border: 0;
+		display: block;
+		width: 100%;
+		color: #fff;
+		@include ptb_vw(11);
+		font-weight: bold;
+		text-align: center;
+		background-image: linear-gradient(to right, #71b22c,#7bc130);
+		box-shadow: inset 0 -2px 0 0 #589e12;
+		border-radius: 4px;
+		@media #{$media-notsp} {
+			//非SP
+			@include transition(.3s); //プロパティの変化時間設定
+			&:hover {
+			}
+		}
+	}
+	input[name='submitConfirm'] {
+		/* 確認ボタン */
+		//		@include img-box('assets/img/page/contact/contact_conf.png');	//ボタンを画像化
+	}
+	input[name='submitBack'] {
+		/* 戻るボタン */
+		//		@include img-box('assets/img/page/contact/contact_back.png');	//ボタンを画像化
+	}
+	input[name^='mwform_submitButton'] {
+		/* 送信ボタン */
+		//		@include img-box('assets/img/page/contact/contact_send.png');	//ボタンを画像化
+	}
+	input[type='text'],
+	input[type='email'],
+	textarea {
+		width: 100%;
+		border: solid 1px #ddd;
+	}
+	textarea {
+		@include mh_vw(125);
+		resize: vertical;
+	}
+	.must,
+	.any{
+		// 必須入力・任意入力共通
+		float: right;
+		@include p_vw(4);
+		color: #fefefe;
+		text-align: center;
+	}
+	.must {
+		/*　必須入力　*/
+		background: #fd9e23;
+	}
+	.any {
+		/*　任意入力　*/
+		background-color: #333;
+	}
+	.error {
+		/* エラーメッセージ */
+		line-height: 1.8;
+	}
+	&:not(.mw_wp_form_input){
+		.input-content {
+			/* 入力画面にのみ表示される要素 */
+			display: none!important;
+		}
+	}
+	&:not(.mw_wp_form_confirm){
+		.conf-content {
+			/* 確認画面にのみ表示される要素 */
+			display: none!important;
+		}
+	}
+	&:not(.mw_wp_form_complete){
+		.comp-content {
+			/* 確認画面にのみ表示される要素 */
+			display: none!important;
+		}
+	}
+	table {
+		@include ls_vw(.45);
+		color: #111;
+		width: 100%;
+		@include mb_vw(25);
+		border-top: solid 1px #ddd;
+		border-left: solid 1px #ddd;
+		tbody {
+			width: 100%;
+			tr {
+				width: 100%;
+				th {
+					background-color: #ededed;
+					@include prl_vw(8);
+					@include ptb_vw(10);
+					width: 38%;
+					border-right: solid 1px #ddd;
+					border-bottom: solid 1px #ddd;
+					vertical-align: top;
+					.th{
+						@include mt_vw(4);
+						display: inline-block;
+						@include ls_vw(-.5);
+					}
+				}
+				td {
+					@include prl_vw(8);
+					@include ptb_vw(10);
+					background-color: #fff;
+					border-right: solid 1px #ddd;
+					border-bottom: solid 1px #ddd;
+					input[type=radio] {
+						display: none;
+					}
+					input[type=radio] + .mwform-radio-field-text::before{
+						position: relative;
+						@include t_vw(2.5);
+						// content: "\f096";
+						content: "\f372";
+						// font-family: fontAwesome;
+						font-family: "Ionicons";
+						display: inline-block;
+						@include w_vw(14);
+						color: #aaa;
+						@include fs_vw(14);
+						@include mr_vw(5);
+					}
+					input[type=radio]:checked + .mwform-radio-field-text::before{
+						position: relative;
+						@include t_vw(2.5);
+						// content: "\f046";
+						content: "\f373";
+						// font-family: fontAwesome;
+						font-family: "Ionicons";
+						display: inline-block;
+						@include w_vw(14);
+						color: #333;
+						@include fs_vw(14);
+						@include mr_vw(5);
+					}
+					&.radio{
+						span{
+							@include mt_vw(10);
+							width: 100%;
+							&:first-of-type{
+								margin-top: 0;
+							}
+							&:nth-of-type(2){
+								float: left;
+							}
+						}
+						.horizontal-item + .horizontal-item{
+							margin-left: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+	.submit{
+		.back {
+			@include mb-vw(10);
+			position: relative;
+			i{
+				position: absolute;
+				@include l-vw(5);
+				@include t-vw(10);
+				color: #fff;
+			}
+		}
+		.next{
+			position: relative;
+			i{
+				position: absolute;
+				@include r-vw(5);
+				@include t-vw(10);
+				color: #fff;
+			}
+		}
+	}
+}
+
+
+
+/*
+ ██████  ██████        ██    ██  ██████  ██  ██████ ███████
+██  ████      ██       ██    ██ ██    ██ ██ ██      ██
+██ ██ ██  █████  █████ ██    ██ ██    ██ ██ ██      █████
+████  ██      ██        ██  ██  ██    ██ ██ ██      ██
+ ██████  ██████          ████    ██████  ██  ██████ ███████
+*/
+.l-voice{
+	.sec ~ .sec{
+		padding-top: 2.5rem;
+	}
+	.voice-list{
+		>li{
+			border-radius: 5px;
+			width: 100%;
+			padding: 1rem;
+			background: $siteColor;
+		}
+		>li:nth-child(n+2){
+			margin-top: 2rem;
+		}
+		.head{
+			padding-bottom: 1rem;
+			font-size: 1.4rem;
+			font-weight: 700;
+			color: #FFF;
+			.title{
+				padding-right: 1rem;
+				white-space: nowrap;
+			}
+			.name{
+				line-height: 1.3;
+			}
+		}
+		.box{
+			padding: 1.5rem;
+			line-height: 1.5;
+			background: #FFF;
+		}
+	}
+}
+
+/*
+ ██████  ██   ██    ████████  ██████  ██████  ██  ██████ ███████
+██  ████ ██   ██       ██    ██    ██ ██   ██ ██ ██      ██
+██ ██ ██ ███████ █████ ██    ██    ██ ██████  ██ ██      ███████
+████  ██      ██       ██    ██    ██ ██      ██ ██           ██
+ ██████       ██       ██     ██████  ██      ██  ██████ ███████
+*/
+.l-topics{
+	.topics-list{
+		padding: 1.5rem $pad;
+		border: 1px solid #ddd;
+		font-size: 1.2rem;
+		>li ~ li{
+			padding-top: 2rem;
+		}
+		a{
+			display: block;
+		}
+		.post-frame{
+			-webkit-flex-wrap:wrap;
+			flex-wrap:wrap;	//折り返す
+		}
+		.date{
+			width: 100%;
+			padding-right: 2rem;
+			font-weight: 700;
+		}
+		.title{
+			padding-top: .5em;
+			width: 100%;
+			.in{
+				display: block;
+			}
+		}
+	}
+}
+
+/*
+ ██████  ███████    ████████  ██████  ██████  ██  ██████ ███████       ███████
+██  ████ ██            ██    ██    ██ ██   ██ ██ ██      ██            ██
+██ ██ ██ ███████ █████ ██    ██    ██ ██████  ██ ██      ███████ █████ ███████
+████  ██      ██       ██    ██    ██ ██      ██ ██           ██            ██
+ ██████  ███████       ██     ██████  ██      ██  ██████ ███████       ███████
+*/
+.l-topics-s{
+	.box{
+		padding: 1.5rem $pad;
+		border: 1px solid #ddd;
+		font-size: 1.2rem;
+	}
+	.title{
+		padding-bottom: 1.5rem;
+		font-size: 1.5rem;
+		font-weight: 700;
+		line-height: 1.3;
+	}
+	.date{
+		display: block;
+		padding-bottom: 1.5rem;
+	}
+}
+
+/*
+ ██████   ██████         ██████  ██████  ███    ███ ██████   █████  ███    ██ ██    ██
+██  ████ ██             ██      ██    ██ ████  ████ ██   ██ ██   ██ ████   ██  ██  ██
+██ ██ ██ ███████  █████ ██      ██    ██ ██ ████ ██ ██████  ███████ ██ ██  ██   ████
+████  ██ ██    ██       ██      ██    ██ ██  ██  ██ ██      ██   ██ ██  ██ ██    ██
+ ██████   ██████         ██████  ██████  ██      ██ ██      ██   ██ ██   ████    ██
+*/
+
+.l-company{
+	.mv{
+		background: url(img/company_mv.jpg) no-repeat center/cover;
+	}
+	section {
+		background: url(img/company_bg_01.jpg) no-repeat center bottom/100% auto;
+		.in {
+			@include pt_vw(33);
+			@include pb_vw(30);
+			h3 {
+				@include fs_vw(15);
+				font-weight: bold;
+				@include ls_vw(.75);
+				text-align: center;
+				color: #000;
+				@include mb_vw(38);
+				position: relative;
+				&::after{
+					content: '';
+					position: absolute;
+					left: 50%;
+					@include b_vw(-11);
+					@include w_vw(42.5);
+					@include h_vw(3);
+					-moz-transform: translateX(-50%);
+					-webkit-transform: translateX(-50%);
+					-ms-transform: translateX(-50%);
+					transform: translateX(-50%);
+					background-color: #71b22c;
+				}
+			}
+			>table{
+				>tbody {
+					line-height: 1.56;
+					@include ls_vw(.45);
+					color: #111;
+					>tr {
+						width: 100%;
+						border-top: solid 1px #ddd;
+						border-left: solid 1px #ddd;
+						>th {
+							@include w_vw(60);
+							background-color: #f0ffe0;
+							border-right: solid 1px #ddd;
+							border-bottom: solid 1px #ddd;
+							@include p_vw(8);
+							background: #f6f9f3;
+						}
+						>td {
+							border-right: solid 1px #ddd;
+							border-bottom: solid 1px #ddd;
+							@include ptb_vw(8);
+							@include prl_vw(11);
+							background-color: #fff;
+							>p {
+								@include mb_vw(17);
+								.map {
+									@include ptb_vw(4);
+									@include prl_vw(8);
+									display: inline-block;
+									@include mt_vw(5);
+									background-color: $acColor;
+									text-align: center;
+									color: #fefefe;
+								}
+								&:last-of-type{
+									margin-bottom: 0;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

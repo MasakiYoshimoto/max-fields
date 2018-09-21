@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css; charset=UTF-8" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<title>管理画面</title>
+<link href="{{ $html->webroot('css/common.css')}}" rel="stylesheet" type="text/css">
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+google.load("jquery","1.3.1");
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+</script>
+<script type="text/javascript" src="{{ $html->webroot('js/lightbox/jquery.lightbox-0.5.js')}}"></script>
+<link href="{{ $html->webroot('js/lightbox/jquery.lightbox-0.5.css')}}" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{{ $html->webroot('js/jquery.page-scroller-307.js')}}"></script>
+</head>
+
+
+<body>
+
+
+<div id="mainArea">
+
+<p id="mainTitle">サイト管理画面 / エラー</p>
+
+<p>ログインIDもしくはパスワードが間違っています</p>
+<br />
+<br />
+<a href="{{ $html->webroot('')}}"><img src="{{ $html->webroot('images/login_btn.jpg')}}" width="93" height="27" alt="ログイン" /></a></div>
+
+</body>
+</html>

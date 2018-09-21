@@ -1,0 +1,106 @@
+@charset "UTF-8";
+@import "_core";
+/*==============================
+ステート（状態）スタイル
+isもしくは適用対象を表す接頭辞をつける
+==============================*/
+.is-none{//常に隠す要素
+	display:none!important;
+}
+.js-hide,.is-hide{//JSで出し入れする要素
+	display:none;
+}
+.is-center{
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+}
+.fl-left{
+	float:left;
+}
+.fl-right{
+	float:right;
+}
+.is-point{
+	cursor:pointer;
+}
+.te-center{
+	text-align:center;
+}
+.te-right{
+	text-align:right;
+}
+.te-left{
+	text-align:left;
+}
+@media #{$media-notsp} {	//SP以外の幅
+	.te-center-pc{
+		text-align:center;
+	}
+	.te-right-pc{
+		text-align:right;
+	}
+	.te-left-pc{
+		text-align:left;
+	}
+}	//SP以外の幅
+@media #{$media-sp} {	//SP相当の幅
+	.te-center-sp{
+		text-align:center;
+	}
+	.te-right-sp{
+		text-align:right;
+	}
+	.te-left-sp{
+		text-align:left;
+	}
+}	//SP相当の幅
+.te-small{
+	font-size:.9em;
+	&.s9{
+		font-size:.9em;
+	}
+	&.s8{
+		font-size:.8em;
+	}
+	&.s7{
+		font-size:.7em;
+	}
+	&.s6{
+		font-size:.6em;
+	}
+}
+.te-white{
+	color:#FFF;
+}
+.te-bold,is-bold{
+	font-weight:700;
+	&.w500{
+		font-weight:500;
+	}
+	&.w900{
+		font-weight:900;
+	}
+}
+.te-uline,is-uline{
+	text-decoration: underline;
+}
+.bg-white{
+	background-color:#FFF;
+}
+
+.is-false,a-false{
+	pointer-events:none;
+}
+a{
+	&.a-nolink,.a-nolink &{
+		pointer-events:none;
+		text-decoration:none!important;
+	}
+	&.a-ulink,.a-ulink &{
+		text-decoration:underline;
+		&:hover{
+			text-decoration:none;
+		}
+	}
+}

@@ -1,0 +1,377 @@
+@charset "UTF-8";
+@import "compass";
+@import "_core";
+//================================
+// ■Webフォント
+//================================
+$noto: true;
+$notoserif: false;
+$gald: false;
+$lato: false;
+$hana: false;
+$lora: false;
+$bebas: false;
+
+//================================================================
+// ゴシック体
+//================================================================
+
+/*
+███    ██  ██████  ████████  ██████  ███████  █████  ███    ██ ███████
+████   ██ ██    ██    ██    ██    ██ ██      ██   ██ ████   ██ ██
+██ ██  ██ ██    ██    ██    ██    ██ ███████ ███████ ██ ██  ██ ███████
+██  ██ ██ ██    ██    ██    ██    ██      ██ ██   ██ ██  ██ ██      ██
+██   ████  ██████     ██     ██████  ███████ ██   ██ ██   ████ ███████
+*/
+
+@if $noto {
+	/*==============================
+	NotoSansCJKjp
+	==============================*/
+	// @font-face {
+	// 	font-family: 'NotoSansCJKjp';
+	// 	font-style: normal;
+	// 	font-weight: 100;
+	// 	src: local('NotoSansCJKjp Light'),local('NotoSansCJKjp-L'), url('font/NotoSansCJKjp/NotoSansCJKjp-Thin.woff') format('woff');
+	// }
+	// @font-face {
+	// 	font-family: 'NotoSansCJKjp';
+	// 	font-style: normal;
+	// 	font-weight: 200;
+	// 	src: local('NotoSansCJKjp Light'),local('NotoSansCJKjp-L'), url('font/NotoSansCJKjp/NotoSansCJKjp-Light.woff') format('woff');
+	// }
+	// @font-face {
+	// 	font-family: 'NotoSansCJKjp';
+	// 	font-style: normal;
+	// 	font-weight: 300;
+	// 	src: local('NotoSansCJKjp Light'),local('NotoSansCJKjp-L'), url('font/NotoSansCJKjp/NotoSansCJKjp-DemiLight.woff') format('woff');
+	// }
+	@font-face {
+		font-family: 'NotoSansCJKjp';
+		font-style: normal;
+		font-weight: 400;
+		src: local('NotoSansCJKjp Regular'),local('NotoSansCJKjp-R'), url('font/NotoSansCJKjp/NotoSansCJKjp-Regular.woff') format('woff');
+	}
+	// @font-face {
+	// 	font-family: 'NotoSansCJKjp';
+	// 	font-style: normal;
+	// 	font-weight: 500;
+	// 	src: local('NotoSansCJKjp Regular'),local('NotoSansCJKjp-R'), url('font/NotoSansCJKjp/NotoSansCJKjp-Medium.woff') format('woff');
+	// }
+	@font-face {
+		font-family: 'NotoSansCJKjp';
+		font-style: normal;
+		font-weight: 700;
+		src: local('NotoSansCJKjp Bold'),local('NotoSansCJKjp-B'), url('font/NotoSansCJKjp/NotoSansCJKjp-Bold.woff') format('woff');
+	}
+	// @font-face {
+	// 	font-family: 'NotoSansCJKjp';
+	// 	font-style: normal;
+	// 	font-weight: 900;
+	// 	src: local('NotoSansCJKjp Heavy'),local('NotoSansCJKjp-H'), url('font/NotoSansCJKjp/NotoSansCJKjp-Black.woff') format('woff');
+	// }
+	@include basefont {
+		.noto {
+			font-family: 'NotoSansCJKjp',$yugothic;
+		}
+	}
+}
+/*
+ ██████   █████  ██      ██████  ███████ ██████   ██████  ██   ██    ██ ███    ██ ███    ██
+██       ██   ██ ██      ██   ██ ██      ██   ██ ██       ██    ██  ██  ████   ██ ████   ██
+██   ███ ███████ ██      ██   ██ █████   ██████  ██   ███ ██     ████   ██ ██  ██ ██ ██  ██
+██    ██ ██   ██ ██      ██   ██ ██      ██   ██ ██    ██ ██      ██    ██  ██ ██ ██  ██ ██
+ ██████  ██   ██ ███████ ██████  ███████ ██   ██  ██████  ███████ ██    ██   ████ ██   ████
+*/
+
+@if $gald {
+	/*==============================
+	Galderglynn Titling
+	==============================*/
+	@font-face {
+		font-family: 'Galderglynn Titling';
+		font-style: normal;
+		font-weight: 100;
+		src: local('Galderglyn Titling'),local('Galderglynn-Titling-UL'), url('font/Galderglynn-Titling/Galderglynn-Titling-UltraLight.woff') format('woff'), url('font/Galderglynn-Titling/Galderglynn-Titling-UltraLight.otf') format('opentype');
+	}
+	@font-face {
+		font-family: 'Galderglynn Titling';
+		font-style: normal;
+		font-weight: 200;
+		src: local('Galderglyn Titling ExtraLight'),local('Galderglynn-Titling-L'), url('font/Galderglynn-Titling/Galderglynn-Titling-ExtraLight.woff') format('woff'), url('font/Galderglynn-Titling/Galderglynn-Titling-ExtraLight.otf') format('opentype');
+	}
+	@font-face {
+		font-family: 'Galderglynn Titling';
+		font-style: normal;
+		font-weight: 300;
+		src: local('Galderglyn Titling Light'),local('Galderglynn-Titling-L'), url('font/Galderglynn-Titling/Galderglynn-Titling-Light.woff') format('woff'), url('font/Galderglynn-Titling/Galderglynn-Titling-Light.otf') format('opentype');
+	}
+	@font-face {
+		font-family: 'Galderglynn Titling';
+		font-style: normal;
+		font-weight: 400;
+		src: local('Galderglyn Titling Regular'),local('Galderglynn-Titling-R'), url('font/Galderglynn-Titling/Galderglynn-Titling-Regular.woff') format('woff'), url('font/Galderglynn-Titling/Galderglynn-Titling-Regular.otf') format('opentype');
+	}
+	@font-face {
+		font-family: 'Galderglynn Titling';
+		font-style: normal;
+		font-weight: 500;
+		src: local('Galderglyn Titling Regular'),local('Galderglynn-Titling-R'), url('font/Galderglynn-Titling/Galderglynn-Titling-Regular.woff') format('woff'), url('font/Galderglynn-Titling/Galderglynn-Titling-Regular.otf') format('opentype');
+	}
+	@font-face {
+		font-family: 'Galderglynn Titling';
+		font-style: normal;
+		font-weight: 700;
+		src: local('Galderglyn Titling Regular'),local('Galderglynn-Titling-B'), url('font/Galderglynn-Titling/Galderglynn-Titling-Regular.woff') format('woff'), url('font/Galderglynn-Titling/Galderglynn-Titling-Regular.otf') format('opentype');
+	}
+	@font-face {
+		font-family: 'Galderglynn Titling';
+		font-style: normal;
+		font-weight: 900;
+		src: local('Galderglyn Titling Bold'),local('Galderglynn-Titling-H'), url('font/Galderglynn-Titling/Galderglynn-Titling-Bold.woff') format('woff'), url('font/Galderglynn-Titling/Galderglynn-Titling-Bold.otf') format('opentype');
+	}
+	@include basefont {
+		.gald {
+			font-family: 'Galderglynn Titling',$gothic;
+		}
+	}
+}
+
+/*
+██       █████  ████████  ██████
+██      ██   ██    ██    ██    ██
+██      ███████    ██    ██    ██
+██      ██   ██    ██    ██    ██
+███████ ██   ██    ██     ██████
+*/
+
+@if $lato {
+	/*==============================
+	Lato
+	==============================*/
+	/* latin-ext */
+	@font-face {
+	  font-family: 'Lato';
+	  font-style: normal;
+	  font-weight: 400;
+	  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v13/UyBMtLsHKBKXelqf4x7VRQ.woff2) format('woff2');
+	  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+	}
+	/* latin */
+	@font-face {
+	  font-family: 'Lato';
+	  font-style: normal;
+	  font-weight: 400;
+	  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v13/1YwB1sO8YE1Lyjf12WNiUA.woff2) format('woff2');
+	  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+	}
+	/* latin-ext */
+	@font-face {
+	  font-family: 'Lato';
+	  font-style: normal;
+	  font-weight: 700;
+	  src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v13/ObQr5XYcoH0WBoUxiaYK3_Y6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+	  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+	}
+	/* latin */
+	@font-face {
+	  font-family: 'Lato';
+	  font-style: normal;
+	  font-weight: 700;
+	  src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v13/H2DMvhDLycM56KNuAtbJYA.woff2) format('woff2');
+	  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+	}
+	/* latin-ext */
+	@font-face {
+	  font-family: 'Lato';
+	  font-style: normal;
+	  font-weight: 900;
+	  src: local('Lato Black'), local('Lato-Black'), url(https://fonts.gstatic.com/s/lato/v13/R4a6fty3waPci7C44H8AjvY6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+	  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+	}
+	/* latin */
+	@font-face {
+	  font-family: 'Lato';
+	  font-style: normal;
+	  font-weight: 900;
+	  src: local('Lato Black'), local('Lato-Black'), url(https://fonts.gstatic.com/s/lato/v13/tI4j516nok_GrVf4dhunkg.woff2) format('woff2');
+	  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+	}
+}
+
+/*
+██████  ███████ ██████   █████  ███████
+██   ██ ██      ██   ██ ██   ██ ██
+██████  █████   ██████  ███████ ███████
+██   ██ ██      ██   ██ ██   ██      ██
+██████  ███████ ██████  ██   ██ ███████
+*/
+
+@if $bebas {
+	/*==============================
+	Bebas Neue
+	==============================*/
+	@font-face {
+		font-family: 'BebasNeue';
+		font-weight: normal;
+		font-style: normal;
+		src: url('font/BebasNeue/BebasNeue.woff') format('woff');
+	}
+	@include basefont {
+		.bebas {
+			font-family: 'BebasNeue',$gothic;
+		}
+	}
+}
+
+//================================================================
+// 明朝体
+//================================================================
+
+/*
+███    ██  ██████  ████████  ██████  ███████ ███████ ██████  ██ ███████
+████   ██ ██    ██    ██    ██    ██ ██      ██      ██   ██ ██ ██
+██ ██  ██ ██    ██    ██    ██    ██ ███████ █████   ██████  ██ █████
+██  ██ ██ ██    ██    ██    ██    ██      ██ ██      ██   ██ ██ ██
+██   ████  ██████     ██     ██████  ███████ ███████ ██   ██ ██ ██
+*/
+@if $notoserif {
+	/*==============================
+	NotoSerifCJKjp
+	==============================*/
+	@font-face {
+		font-family: 'NotoSerifCJKjp';
+		font-style: normal;
+		font-weight: 200;
+		src:
+		 url('font/NotoSerifCJKjp/NotoSerifCJKjp-Light-Web.woff2') format('woff2'),
+		 url('font/NotoSerifCJKjp/NotoSerifCJKjp-Light-Web.woff') format('woff'),
+		 url('font/NotoSerifCJKjp/NotoSerifCJKjp-Light-Web.otf') format('opentype');
+	}
+	@font-face {
+		font-family: 'NotoSerifCJKjp';
+		font-style: normal;
+		font-weight: 400;
+		src:
+		 url('font/NotoSerifCJKjp/NotoSerifCJKjp-Regular-Web.woff2') format('woff2'),
+		 url('font/NotoSerifCJKjp/NotoSerifCJKjp-Regular-Web.woff') format('woff'),
+		 url('font/NotoSerifCJKjp/NotoSerifCJKjp-Regular-Web.otf') format('opentype');
+	}
+	@font-face {
+		font-family: 'NotoSerifCJKjp';
+		font-style: normal;
+		font-weight: 500;
+		src:
+		 url('font/NotoSerifCJKjp/NotoSerifCJKjp-Medium-Web.woff2') format('woff2'),
+		 url('font/NotoSerifCJKjp/NotoSerifCJKjp-Medium-Web.woff') format('woff'),
+		 url('font/NotoSerifCJKjp/NotoSerifCJKjp-Medium-Web.otf') format('opentype');
+	}
+	@font-face {
+		font-family: 'NotoSerifCJKjp';
+		font-style: normal;
+		font-weight: 700;
+		src:
+		 url('font/NotoSerifCJKjp/NotoSerifCJKjp-Bold-Web.woff2') format('woff2'),
+		 url('font/NotoSerifCJKjp/NotoSerifCJKjp-Bold-Web.woff') format('woff'),
+		 url('font/NotoSerifCJKjp/NotoSerifCJKjp-Bold-Web.otf') format('opentype');
+	}
+	@font-face {
+		font-family: 'NotoSerifCJKjp';
+		font-style: normal;
+		font-weight: 900;
+		src:
+		 url('font/NotoSerifCJKjp/NotoSerifCJKjp-Black-Web.woff2') format('woff2'),
+		 url('font/NotoSerifCJKjp/NotoSerifCJKjp-Black-Web.woff') format('woff'),
+		 url('font/NotoSerifCJKjp/NotoSerifCJKjp-Black-Web.otf') format('opentype');
+	}
+	@include basefont {
+		.notoserif {
+			font-family: 'NotoSerifCJKjp',$mincho;
+		}
+	}
+}
+
+/*
+██   ██  █████  ███    ██  █████  ███████  ██████  ███    ██  ██████
+██   ██ ██   ██ ████   ██ ██   ██    ███  ██    ██ ████   ██ ██    ██
+███████ ███████ ██ ██  ██ ███████   ███   ██    ██ ██ ██  ██ ██    ██
+██   ██ ██   ██ ██  ██ ██ ██   ██  ███    ██    ██ ██  ██ ██ ██    ██
+██   ██ ██   ██ ██   ████ ██   ██ ███████  ██████  ██   ████  ██████
+*/
+
+@if $hana {
+	/*==============================
+	花園明朝A
+	==============================*/
+	@font-face {
+		font-family: '花園明朝A';
+		font-style: normal;
+		font-weight: 400;
+		src: local('HanaMinA'),local('HanaMinA'), url('font/HanaMinA/HanaMinA-Web.woff') format('woff'), url('font/HanaMinA/HanaMinA-Web.otf') format('opentype');
+	}
+
+	@include basefont {
+		.hana {
+			font-family: '花園明朝A',$mincho;
+		}
+	}
+}
+
+/*
+██       ██████  ██████   █████
+██      ██    ██ ██   ██ ██   ██
+██      ██    ██ ██████  ███████
+██      ██    ██ ██   ██ ██   ██
+███████  ██████  ██   ██ ██   ██
+*/
+
+@if $lora {
+	/*==============================
+	Lora
+	==============================*/
+	/* latin-ext */
+	@font-face {
+		font-family: 'Lora';
+		font-style: normal;
+		font-weight: 400;
+		src: local('Lora Regular'), local('Lora-Regular'), url(https://fonts.gstatic.com/s/lora/v10/Ukd0sOIY4JZgcODPuj2G3Q.woff2) format('woff2');
+		unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
+	}
+	/* cyrillic */
+	@font-face {
+		font-family: 'Lora';
+		font-style: normal;
+		font-weight: 400;
+		src: local('Lora Regular'), local('Lora-Regular'), url(https://fonts.gstatic.com/s/lora/v10/GsNxiN0oIzsS201cnUag6w.woff2) format('woff2');
+		unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+	}
+	/* vietnamese */
+	@font-face {
+		font-family: 'Lora';
+		font-style: normal;
+		font-weight: 400;
+		src: local('Lora Regular'), local('Lora-Regular'), url(https://fonts.gstatic.com/s/lora/v10/ie2Ux11tIT0C_JTksRPlKA.woff2) format('woff2');
+		unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
+	}
+	/* latin-ext */
+	@font-face {
+		font-family: 'Lora';
+		font-style: normal;
+		font-weight: 400;
+		src: local('Lora Regular'), local('Lora-Regular'), url(https://fonts.gstatic.com/s/lora/v10/I0dEfRgGNE90_hXZq7bjyw.woff2) format('woff2');
+		unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+	}
+	/* latin */
+	@font-face {
+		font-family: 'Lora';
+		font-style: normal;
+		font-weight: 400;
+		src: local('Lora Regular'), local('Lora-Regular'), url(https://fonts.gstatic.com/s/lora/v10/4vqKRIwnQQGUQQh-PnvdMA.woff2) format('woff2');
+		unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+	}
+	@include basefont {
+		.lora {
+			font-family: 'Lora',$mincho;
+		}
+	}
+}

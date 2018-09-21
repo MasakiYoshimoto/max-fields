@@ -1,0 +1,363 @@
+@charset "UTF-8";
+@import "_core";
+/*==============================
+Module
+==============================*/
+.mo-tframe{//文字に縁取り
+	text-shadow:0 1px 0 #FFF,1px 0 0 #FFF,0 -1px 0 #FFF,-1px 0 0 #FFF,-1px -1px 0 #FFF,1px -1px 0 #FFF,-1px 1px 0 #FFF,1px 1px 0 #FFF;
+}
+.dummy{
+	text-decoration:line-through!important;
+	color:#f00!important;
+}
+.accordion{
+	@include transform(rotateX(0));
+	.btn{
+		cursor: pointer;
+	}
+	.ac-body{	//アコーディオン開閉部分
+		max-height: 0;
+		@include transform-origin(0,0);	//変化基準座標
+		@include transition(.3s);//プロパティの変化時間設定
+		@include transform(rotateX(90deg));
+		&.active{
+			max-height: 999999px;
+			@include transform(rotateX(0));
+		}
+	}
+}
+
+$tax-label: false; //タクソノミーラベル
+$icon-sprite: false; //アイコンスプライト
+$linkbtn: false; //ボタン
+$accordion-btn: true; //ハンバーガーアニメ
+@if $tax-label {
+	/*==============================
+	タクソノミーラベル
+	==============================*/
+	.l-tax {
+		display: inline-block;
+		padding: 2px 5px;
+		margin: 0 5px 5px 0;
+		@include font-size(11);
+		color: #FFF;
+		background: #3b3b3b;
+		&:hover {
+			@include opacity(.7); //opacity
+			text-decoration: none;
+		}
+		&.tax-colordesign {
+			background: #2e7fb2;
+		}
+		&.tax-personalstylist {
+			background: #d56912;
+		}
+		&.tax-news {
+			background: #d5a16f;
+		}
+		&.tax-eventreport {
+			background: #6fc5d5;
+		}
+	}
+}
+@if $icon-sprite {
+	/*==============================
+	アイコン
+	==============================*/
+	//@import 'assets/img/module/icon/*.png';//ディレクトリ内の画像でスプライト生成
+	//$spr:sprite-map('assets/img/module/icon/*.png');//スプライト情報取得
+	.l-icon {
+		//	@include res-bg('assets/img/icon.png',no-repeat,left,top);
+		&.facebook {
+			//		background-position:sprite-position($spr,facebook);//スプライト座標
+		}
+	}
+}
+@if $linkbtn {
+	/*==============================
+	ボタン
+	==============================*/
+	.l-btn {
+		display: inline-block;
+		position: relative;
+		@include border-radius(0); //border-radius
+		@include font-size(20);
+		font-weight: 700;
+		border: none;
+		width: 100%;
+		text-align: center;
+		text-decoration: none;
+		line-height: 1;
+		z-index: 1;
+		padding: 1em;
+		vertical-align: bottom;
+		overflow: hidden;
+		.fa-angle-right{
+			@include transition(.3s);//プロパティの変化時間設定
+			position: absolute;
+			top:1em;
+			right:.8em;
+		}
+		&:hover{
+			.fa-angle-right{
+				right:.5em;
+			}
+		}
+		&.sharp {
+			@include border-radius(0); //border-radius
+		}
+		&.unsharp {
+			@include border-radius(5px); //border-radius
+		}
+		&.gold {
+			border: solid 2px #b2a285;
+			color: #b2a285;
+			&:before{
+				@include transition(.3s);//プロパティの変化時間設定
+				content: "";
+				display: inline-block;
+				position: absolute;
+				top: 0;
+				left: -100%;
+				z-index: -1;
+				width: 100%;
+				height: 100%;
+				background: #b2a285;
+			}
+
+			&:hover {
+				color: #FFF;
+				&:before{
+					left: 0;
+				}
+			}
+		}
+		&.white {
+			border: solid 1px #FFF;
+			color: #FFF;
+			background-color: #FFF;
+			&:hover {
+				color: #FFF;
+				background-color: #FFF;
+			}
+		}
+		&.w-line {
+			color: #FFF;
+			border: solid 1px #FFF;
+			&:hover {
+				color: #FFF;
+				background-color: #FFF;
+			}
+		}
+		&.b-line {
+			color: #404961;
+			border: solid 1px #404961;
+			&:hover {
+				color: #FFF;
+				background-color: #404961;
+			}
+		}
+		&.arrow {
+			background-image: url('images/icon_btn_arrow.png');
+			background-position: 97% center;
+			background-repeat: no-repeat;
+		}
+		&.blank {
+			background-image: url('images/icon_blank_b.png');
+			background-position: 98% 10%;
+			background-repeat: no-repeat;
+		}
+		&.w220 {
+			width: 100%;
+			max-width: 220px;
+		}
+		&.w250 {
+			width: 100%;
+			max-width: 250px;
+		}
+		&.w300 {
+			width: 100%;
+			max-width: 300px;
+		}
+		&:hover {
+			text-decoration: none;
+		}
+		.sub {
+			@include font-size(13);
+		}
+	}
+}
+/*==============================
+フォーム
+==============================*/
+form {
+	input[type=text]:focus,
+	textarea:focus {
+		@include box-shadow(1px 1px 0 0 #c5c7cb inset); //ボックスシャドウ
+	}
+}
+.searchform {
+	@extend %cf; //クリアフィックス
+	margin: 0 30px 0 0;
+	height: 25px;
+	input[type=text] {
+		display: inline-block;
+		border: solid 1px #333;
+		width: 80%;
+		height: 25px;
+		background: #FFF;
+	}
+	input[type=submit] {
+		display: inline-block;
+		margin-left: 1%;
+	}
+}
+//select{
+//	-moz-appearance:none;
+//	-webkit-appearance:none;
+//	appearance:none;
+//	&::-ms-expand{
+//		display:none;
+//	}
+//	border:1px solid #B49F74;
+//	padding:3px;
+//	background:url(assets/img/module/selectbox.png) no-repeat 98% center,#FFF;
+//}
+@media #{$media-sp} {
+	//SP相当
+	/*==============================
+	レスポンシブ
+	==============================*/
+	.sp-table {
+		/*2カラムテーブルをカラム落ちさせる*/
+		tbody {
+			tr {
+				@include cf(); //クリアフィックス
+				td,
+				th {
+					float: left;
+					width: 100%;
+					&:first-child {}
+					&:last-child {}
+				}
+				tr {
+					&:last-child {}
+				}
+			}
+		}
+	}
+	.table-wrap{
+		overflow-y: scroll;
+	}
+}
+@if $accordion-btn {
+	 @if false{
+		/*
+		<div id="spmenu-btn" class="l-animebtn">
+			<div class="bar">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+		<ul id="spmenu" class="l-nav sp-hide">
+			<li>あああああああああああああああああああああああああああ</li>
+			<li>あああああああああああああああああああああああああああ</li>
+			<li>あああああああああああああああああああああああああああ</li>
+			<li>あああああああああああああああああああああああああああ</li>
+			<li>あああああああああああああああああああああああああああ</li>
+		</ul>
+
+		var name = 'spmenu';//このIDを基準としたアコーディオン
+		$('#' + name + '-btn,#' + name + '-close').click(function(){
+			$('#' + name).slideToggle();
+			$('#' + name + '-btn').toggleClass('open');
+		});
+	*/
+	}
+	/*==============================
+	ハンバーガーボタンアニメ
+	==============================*/
+	.l-animebtn {
+		$btnsize: 100%; //ボタン一辺の長さ
+		$bar: 3px;
+		//バーの太さ
+		$posx: 0;
+		//バーの左右の余白(%のみ)
+		$posy: 6.5vw;
+		//1,3本目のバーの上下の余白
+		$btn-rad: 0;
+		//ボタンの角丸
+		$bar-rad: 0;
+		//バーの角丸
+		$bar-offbg: #333;
+		//バーの背景OFF時
+		$bar-onbg: #333;
+		//バーの背景ON時
+		$time: 0.3s;
+		//アニメ時間
+		position: relative;
+		display: inline-block;
+		@include box-sizing(border-box);
+		width: $btnsize;
+		@include border-radius($btn-rad); //border-radius
+		font-size: 0;
+		vertical-align: top;
+		cursor: pointer;
+		&:before {
+			display: block;
+			content: '';
+			padding: 100% 0 0;
+		}
+		.bar {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			@include transition($time); //プロパティの変化時間
+			span {
+				position: absolute;
+				left: $posx;
+				display: inline-block;
+				@include box-sizing(border-box);
+				@include border-radius($bar-rad); //border-radius
+				@include transition($time); //プロパティの変化時間
+				width: 100% - $posx * 2;
+				height: $bar;
+				background: $bar-offbg;
+				&:nth-of-type(1) {
+					top: $posy;
+				}
+				&:nth-of-type(2) {
+					top: 50%;
+					margin-top: $bar / -2;
+				}
+				&:nth-of-type(3) {
+					bottom: $posy;
+				}
+			}
+		}
+		&.active {
+			span {
+				background: $bar-onbg;
+				&:nth-of-type(1) {
+					top: 50%;
+					margin-top: $bar / -2;
+					@include translateY(-50%); //Y軸移動
+					@include rotate(-45deg); //回転
+				}
+				&:nth-of-type(2) {
+					@include transform(rotateY(90deg));
+					@include opacity(0); //opacity
+				}
+				&:nth-of-type(3) {
+					bottom: 50%;
+					margin-bottom: $bar / -2;
+					@include translateY(50%); //Y軸移動
+					@include rotate(45deg); //回転
+				}
+			}
+		}
+	}
+}

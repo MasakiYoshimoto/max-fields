@@ -1,0 +1,492 @@
+@charset "UTF-8";
+@import "_core";
+// ============================
+// 下層共通要素
+// ============================
+.l-page{
+	.mv{
+		padding: 145px 0;
+		.in{
+			h2{
+				font-size: 34.6px;
+				font-weight: bold;
+				letter-spacing: 6.9px;
+				text-align: center;
+				color: #fff;
+			}
+		}
+	}
+	.mv.ef-frame{
+		padding: 0;
+		width: 100%;
+		overflow: hidden;
+		vertical-align: bottom;
+		.bg{
+			position: relative;
+			width: 1920px;
+			max-width: 1920px;
+			margin-left: 50%;
+			transform: translate(-50%,0);
+			height: auto;
+		}
+		.text{
+			.in{
+				font-size: 34.6px;
+				font-weight: bold;
+				letter-spacing: 6.9px;
+				text-align: center;
+				line-height: 1.5;
+				color: #333;
+			}
+		}
+	}
+}
+
+.page-body{
+	padding: 8rem 0 14rem;
+	background: url(img/company_bg_01.jpg) no-repeat center bottom/100% auto;
+}
+.sec{
+	p:not([class]){
+		line-height: 2;
+	}
+	p:not([class]):not(:first-child){
+		padding-top: 1em;
+	}
+}
+.sec ~ .sec{
+	padding-top: 10rem;
+}
+
+
+/*
+ ██████  ███████        ██████  ██████  ███    ██ ████████  █████   ██████ ████████
+██  ████      ██       ██      ██    ██ ████   ██    ██    ██   ██ ██         ██
+██ ██ ██     ██  █████ ██      ██    ██ ██ ██  ██    ██    ███████ ██         ██
+████  ██    ██         ██      ██    ██ ██  ██ ██    ██    ██   ██ ██         ██
+ ██████     ██          ██████  ██████  ██   ████    ██    ██   ██  ██████    ██
+*/
+.l-contact,
+.l-entry,
+.l-confirm,
+.l-complete{
+	.mv{
+		background: url(img/contact_mv.jpg) no-repeat center/cover;
+	}
+	section {
+		background: url(img/contact_bg_01.jpg) no-repeat center bottom/100% auto;
+		.in {
+			padding: 110px 0 105px;
+			h3 {
+				@include font-size(40);
+				font-weight: bold;
+				letter-spacing: 2px;
+				text-align: center;
+				color: #000;
+				margin-bottom: 100px;
+				position: relative;
+				&::after{
+					content: '';
+					position: absolute;
+					left: 50%;
+					bottom: -20px;
+					width: 100px;
+					height: 6px;
+					-moz-transform: translateX(-50%);
+					-webkit-transform: translateX(-50%);
+					-ms-transform: translateX(-50%);
+					transform: translateX(-50%);
+					background-color: #71b22c;
+				}
+			}
+			.input-txt,
+			.conf-txt{
+				@include font-size(18);
+				line-height: 1.75;
+				letter-spacing: .9px;
+				text-align: center;
+				color: #111;
+				margin-bottom: 60px;
+			}
+			.comp-txt{
+				@include font-size(18);
+				line-height: 1.75;
+				letter-spacing: .9px;
+				text-align: center;
+				color: #111;
+				margin-bottom: 30px;
+				padding-top: 30px;
+			}
+		}
+	}
+}
+/*=============================
+MW WP Form
+==============================*/
+.mw_wp_form {
+	padding-top: 120px;
+	margin-top: -120px;
+	.btnarea {
+		margin: 0 auto 40px;
+		text-align: center;
+	}
+	input[type='submit'] {
+		/* ボタン全般の設定 */
+		border: 0;
+		display: inline-block;
+		width: 100%;
+		color: #fff;
+		padding: 23px 0;
+		@include font-size(18);
+		font-weight: bold;
+		letter-spacing: 3.4px;
+		text-align: center;
+		background-image: linear-gradient(to right, #71b22c,#7bc130);
+		box-shadow: inset 0 -2px 0 0 #589e12;
+		border-radius: 4px;
+		&:hover{
+			opacity: .7;
+		}
+	}
+	input[name='submitConfirm'] {
+		/* 確認ボタン */
+		//		@include img-box('assets/img/page/contact/contact_conf.png');	//ボタンを画像化
+	}
+	input[name='submitBack'] {
+		/* 戻るボタン */
+		//		@include img-box('assets/img/page/contact/contact_back.png');	//ボタンを画像化
+	}
+	input[name^='mwform_submitButton'] {
+		/* 送信ボタン */
+		//		@include img-box('assets/img/page/contact/contact_send.png');	//ボタンを画像化
+	}
+	input[type='text'],
+	input[type='email']{
+		width: 50%;
+		border: solid 1px #aaaaaa;
+	}
+	textarea {
+		resize: vertical;
+		width: 100%;
+		border: solid 1px #aaaaaa;
+		min-height: 150px;
+	}
+	.must,
+	.any{
+		// 必須入力・任意入力共通
+		float: right;
+		padding: 5px 8px;
+		color: #fefefe;
+		text-align: center;
+	}
+	.must {
+		/*　必須入力　*/
+		background: #fd9e23;
+	}
+	.any {
+		/*　任意入力　*/
+		background-color: #333;
+	}
+	.error {
+		/* エラーメッセージ */
+		line-height: 1.8;
+	}
+	&:not(.mw_wp_form_input){
+		.input-content {
+			/* 入力画面にのみ表示される要素 */
+			display: none!important;
+		}
+	}
+	&:not(.mw_wp_form_confirm){
+		.conf-content {
+			/* 確認画面にのみ表示される要素 */
+			display: none!important;
+		}
+	}
+	&:not(.mw_wp_form_complete){
+		.comp-content {
+			/* 確認画面にのみ表示される要素 */
+			display: none!important;
+		}
+	}
+	table {
+		@include font-size(16);
+		letter-spacing: .8px;
+		color: #111;
+		width: 960px;
+		margin: 0 auto 55px;
+		border-top: solid 1px #ddd;
+		border-left: solid 1px #ddd;
+		tbody {
+			tr {
+				th {
+					background-color: #ededed;
+					padding: 25px;
+					width: 300px;
+					border-right: solid 1px #ddd;
+					border-bottom: solid 1px #ddd;
+					font-weight: 700;
+					vertical-align: top;
+					background: #ededed;
+					.th{
+						margin-top: 4px;
+						display: inline-block;
+					}
+				}
+				td {
+					padding: 25px;
+					background-color: #fff;
+					border-right: solid 1px #ddd;
+					border-bottom: solid 1px #ddd;
+					font-weight: 400;
+					input[type=radio] {
+						display: none;
+					}
+					input[type=radio] + .mwform-radio-field-text::before{
+						position: relative;
+						top: 5px;
+						// content: "\f096";
+						content: "\f372";
+						// font-family: fontAwesome;
+						font-family: "Ionicons";
+						display: inline-block;
+						width: 28px;
+						color: #ddd;
+						font-size: 28px;
+						margin-right: 10px;
+					}
+					input[type=radio]:checked + .mwform-radio-field-text::before{
+						position: relative;
+						top: 5px;
+						// content: "\f046";
+						content: "\f373";
+						// font-family: fontAwesome;
+						font-family: "Ionicons";
+						display: inline-block;
+						width: 28px;
+						color: #333;
+						font-size: 28px;
+						margin-right: 10px;
+					}
+					&.radio{
+						.mwform-radio-field{
+							.mwform-radio-field-text{
+								margin-right: 150px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.submit{
+		@include display-flex();
+		@include align-items(center);
+		@include justify-content(center);
+		width: 960px;
+		margin: 0 auto;
+		.back {
+			margin-right: 30px;
+			width: 48%;
+			position: relative;
+			i{
+				position: absolute;
+				left: 10px;
+				top: 26px;
+				@include font-size(15);
+				color: #fff;
+				z-index: 2;
+			}
+		}
+		.next{
+			width: 48%;
+			position: relative;
+			i{
+				position: absolute;
+				right: 10px;
+				top: 26px;
+				@include font-size(15);
+				color: #fff;
+				z-index: 2;
+			}
+		}
+	}
+}
+
+/*
+ ██████  ██████        ██    ██  ██████  ██  ██████ ███████
+██  ████      ██       ██    ██ ██    ██ ██ ██      ██
+██ ██ ██  █████  █████ ██    ██ ██    ██ ██ ██      █████
+████  ██      ██        ██  ██  ██    ██ ██ ██      ██
+ ██████  ██████          ████    ██████  ██  ██████ ███████
+*/
+.l-voice{
+	.sec ~ .sec{
+		padding-top: 5rem;
+	}
+	.voice-list{
+		>li{
+			border-radius: 5px;
+			width: 48%;
+			padding: 1.5rem;
+			background: $siteColor;
+		}
+		>li:nth-child(n+3){
+			margin-top: 2rem;
+		}
+		.head{
+			padding-bottom: 1.5rem;
+			font-size: 1.8rem;
+			font-weight: 700;
+			color: #FFF;
+			.title{
+				padding-right: 4.5rem;
+				white-space: nowrap;
+			}
+			.name{
+				line-height: 1.3;
+			}
+		}
+		.box{
+			padding: 4rem;
+			line-height: 1.5;
+			background: #FFF;
+		}
+	}
+}
+
+/*
+ ██████  ██   ██    ████████  ██████  ██████  ██  ██████ ███████
+██  ████ ██   ██       ██    ██    ██ ██   ██ ██ ██      ██
+██ ██ ██ ███████ █████ ██    ██    ██ ██████  ██ ██      ███████
+████  ██      ██       ██    ██    ██ ██      ██ ██           ██
+ ██████       ██       ██     ██████  ██      ██  ██████ ███████
+*/
+.l-topics{
+	.topics-list{
+		padding: 6rem 8rem;
+		border: 1px solid #ddd;
+		font-size: 1.5rem;
+		>li ~ li{
+			padding-top: 2rem;
+		}
+		a{
+			display: block;
+		}
+		.date{
+			padding-right: 2rem;
+			font-weight: 700;
+		}
+		.title{
+			white-space:nowrap;
+			overflow:hidden;
+			text-overflow:ellipsis;
+		}
+	}
+}
+
+/*
+ ██████  ███████    ████████  ██████  ██████  ██  ██████ ███████       ███████
+██  ████ ██            ██    ██    ██ ██   ██ ██ ██      ██            ██
+██ ██ ██ ███████ █████ ██    ██    ██ ██████  ██ ██      ███████ █████ ███████
+████  ██      ██       ██    ██    ██ ██      ██ ██           ██            ██
+ ██████  ███████       ██     ██████  ██      ██  ██████ ███████       ███████
+*/
+.l-topics-s{
+	.box{
+		padding: 6rem 8rem;
+		border: 1px solid #ddd;
+	}
+	.title{
+		padding-bottom: 2rem;
+		font-size: 2.8rem;
+		font-weight: 700;
+		line-height: 1.3;
+	}
+	.date{
+		display: block;
+		padding-bottom: 3rem;
+	}
+}
+/*
+ ██████   ██████         ██████  ██████  ███    ███ ██████   █████  ███    ██ ██    ██
+██  ████ ██             ██      ██    ██ ████  ████ ██   ██ ██   ██ ████   ██  ██  ██
+██ ██ ██ ███████  █████ ██      ██    ██ ██ ████ ██ ██████  ███████ ██ ██  ██   ████
+████  ██ ██    ██       ██      ██    ██ ██  ██  ██ ██      ██   ██ ██  ██ ██    ██
+ ██████   ██████         ██████  ██████  ██      ██ ██      ██   ██ ██   ████    ██
+*/
+
+.l-company{
+	.mv{
+		background: url(img/company_mv.jpg) no-repeat center/cover;
+	}
+	section {
+		background: url(img/company_bg_01.jpg) no-repeat center bottom/100% auto;
+		.in {
+			padding: 110px 0 105px;
+			h3 {
+				@include font-size(40);
+				font-weight: bold;
+				letter-spacing: 2px;
+				text-align: center;
+				color: #000;
+				margin-bottom: 130px;
+				position: relative;
+				&::after{
+					content: '';
+					position: absolute;
+					left: 50%;
+					bottom: -20px;
+					width: 100px;
+					height: 6px;
+					-moz-transform: translateX(-50%);
+					-webkit-transform: translateX(-50%);
+					-ms-transform: translateX(-50%);
+					transform: translateX(-50%);
+					background-color: #71b22c;
+				}
+			}
+			>table{
+				>tbody {
+					@include font-size(16);
+					line-height: 1.75;
+					letter-spacing: .8px;
+					color: #111;
+					>tr {
+						width: 100%;
+						border-top: solid 1px #ddd;
+						border-left: solid 1px #ddd;
+						>th {
+							width: 300px;
+							background-color: #f0ffe0;
+							border-right: solid 1px #ddd;
+							border-bottom: solid 1px #ddd;
+							padding: 30px;
+							background: #f6f9f3;
+						}
+						>td {
+							border-right: solid 1px #ddd;
+							border-bottom: solid 1px #ddd;
+							padding: 30px;
+							background-color: #fff;
+							>p {
+								margin-bottom: 45px;
+								.map {
+									padding: 10px 22px;
+									display: inline-block;
+									margin-top: 8px;
+									background-color: $acColor;
+									text-align: center;
+									color: #fefefe;
+								}
+								&:last-of-type{
+									margin-bottom: 0;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

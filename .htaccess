@@ -1,0 +1,5 @@
+
+AuthUserFile "/home/joblive/jlstaging.info/htpasswd/max-fields/.htpasswd"
+AuthName "Member Site"
+AuthType BASIC
+require valid-user

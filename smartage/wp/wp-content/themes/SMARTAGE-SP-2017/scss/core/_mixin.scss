@@ -1,0 +1,294 @@
+@charset 'UTF-8'; // ====================================
+// Compass標準Mixin
+// ====================================
+//@include opacity(.7);	//opacity　ベンダープレフィックス
+//@include box-sizing(border-box);	//box-sizing　ベンダープレフィックス
+//@include border-radius(5px);//border-radius　ベンダープレフィックス
+//@include scale(2,2);	//拡大縮小★
+//@include rotate(15deg);	//回転
+//@include text-shadow(2px 2px 1px #777);	//テキストシャドウ
+//@include box-shadow(2px 2px 3px #444);	//ボックスシャドウ
+//@include transition(width 2s linear 0.5s);	//装飾が変化する際の変化時間とエフェクト
+//@include translate(0,0)	//縦横移動★
+//@include translateX(Tx)	//横移動
+//@include translateY(Ty)	//縦移動
+//@include transform-origin()	//変形基準点★
+// ====================================
+// ■カスタムMixin
+// ====================================
+//@include debug();	//デバッグ
+@mixin debug{//デバッグ
+	@warn "■■■デバッグコードON■■■";
+	a:not([href]),a[href=""]{
+		background:red!important;
+		*{
+			@include opacity(.5);//opacity
+		}
+	}
+	img:not([alt]),img[alt=""],
+	img:not([width]),img[width=""]{
+		@include animation-name(error);//アニメーション名
+		@include animation-delay(0);//開始時間
+		@include animation-duration(3s);//1ループの時間
+		@include animation-timing-function(linear);//アニメーションタイプ
+		@include animation-iteration-count(infinite);//実行回数 infinite:無限
+		@include experimental(animation-fill-mode,both);//アニメ開始前後のスタイル [none:維持しない] forwards:最終状態を維持 backwards:開始前から初期状態 both:fb両方
+		@include animation-direction(alternate);//再生方向 [normal:順再生] reverse:逆再生 alternate:順⇔逆再生 alternate-reverse:逆⇔順再生
+	}
+	@include keyframes(error){//アニメーション定義
+		0%{//初期状態
+			@include opacity(0);//opacity
+		}
+		100%{//最終状態
+			@include opacity(1);//opacity
+		}
+	}
+}
+//@include cf();	//クリアフィックス
+@mixin cf() {
+	//クリアフィックス（Connpass標準のエイリアス）
+	@include pie-clearfix;
+}
+//@include font-size(18);	//フォントサイズ
+@mixin font-size($size) {
+	//フォントサイズ
+	font-size: $size * 1px;
+	font-size: ($size / 10) * 1rem; //PCはpxにremを上書き
+}
+//@include res-bg('assets/img/.png',no-repeat,xpx,ypx,color);	//レスポンシブ対応背景
+@mixin res-bg($image,$repeat,$x,$y,$color:null) {
+	background-image: url($image);
+	background-repeat: $repeat;
+	background-position: $x $y;
+	background-color: $color;
+	@media #{$media-sp} {
+		//SP相当
+		background-size: image-width($image)/2 image-height($image)/2;
+	}
+}
+//@include img-box('assets/img/.png');	//画像を背景にしたボックス
+@mixin img-box($image) {
+	border: none;
+	background: url($image) no-repeat 0 0;
+	@media #{$media-notsp} {
+		//非SP
+		width: image-width($image); //画像の横幅取得
+		height: image-height($image); //画像の縦幅取得
+	}
+	@media #{$media-sp} {
+		//SP相当
+		width: image-width($image)/2; //画像の横幅取得
+		height: image-height($image)/2; //画像の縦幅取得
+		background-size: image-width($image)/2 image-height($image)/2;
+	}
+}
+//基本のフォント設定
+//@include basefont{}
+@mixin basefont {
+	body,
+	button,
+	input,
+	select,
+	textarea {
+		@content;
+	}
+}
+//プレースホルダーのスタイル設定
+//@include placeholder{}
+@mixin placeholder {
+	form {
+		::-webkit-input-placeholder {
+			@content;
+		}
+		:-moz-placeholder {
+			opacity: 1;
+			@content;
+		}
+		::-moz-placeholder {
+			opacity: 1;
+			@content;
+		}
+		:-ms-input-placeholder {
+			@content;
+		}
+	}
+}
+//ドラッグ選択範囲のスタイル設定
+//@include selection(){}
+@mixin selection($selector:null) {
+	#{$selector}::-moz-selection {
+		@content;
+	}
+	#{$selector}::selection {
+		@content;
+	}
+}
+//	@include BalloonArrow(2rem,'bottom'){	//吹き出し矢印（一変の幅,配置）
+//		background:#FFF;
+//		z-index:1;
+//	}
+@mixin BalloonArrow($size:2rem,$pos:'bottom') {
+	//吹き出し矢印（一変の幅,配置）
+	$move: -1 * ($size / 2);
+	display: block;
+	content: '';
+	position: absolute;
+	@if $pos == 'bottom' {
+		left: 50%;
+		bottom: $move;
+		margin-left: $move;
+	}
+	@elseif $pos == 'top' {
+		left: 50%;
+		top: $move;
+		margin-left: $move;
+	}
+	@elseif $pos == 'left' {
+		top: 50%;
+		left: $move;
+		margin-top: $move;
+	}
+	@elseif $pos == 'right' {
+		top: 50%;
+		right: $move;
+		margin-top: $move;
+	}
+	@include rotate(45deg); //回転
+	width: $size;
+	height: $size;
+	@content;
+}
+//	@include delta(50px,25px,25px,#FFF,'bottom');	//三角形　（高さ,左側長さ,右側長さ,色,向き）
+@mixin delta($height,$left,$right,$color,$pos:'bottom') {
+	//三角形　（高さ,左側長さ,右側長さ,色,向き）
+	width: 0;
+	height: 0;
+	border-style: solid;
+	@if $pos == 'bottom' {
+		border-width: $height $right 0 $left;
+		border-color: $color transparent transparent transparent;
+	}
+	@elseif $pos == 'top' {
+		border-width: 0 $height $right $left;
+		border-color: transparent transparent $color transparent;
+	}
+	@elseif $pos == 'left' {
+		border-width: $right $height $left 0;
+		border-color: transparent $color transparent transparent;
+	}
+	@elseif $pos == 'right' {
+		border-width: $left 0 $right $height;
+		border-color: transparent transparent transparent $color;
+	}
+	@content;
+}
+
+//	@include arrow_v(5px,2px,#FFF,'right');	//V字矢印　（長さ,太さ,色,向き）
+@mixin arrow_v($length,$stroke,$color,$pos:'right') {//V字矢印　（長さ,太さ,色,向き）
+	content: "";
+	display: inline-block;
+	width: $length;
+	height: $length;
+	border-top: $stroke solid $color;
+	border-right: $stroke solid $color;
+
+	@if $pos == 'bottom' {
+		@include rotate(135deg);//回転
+	}
+	@elseif $pos == 'top' {
+		@include rotate(-45deg);//回転
+	}
+	@elseif $pos == 'left' {
+		@include rotate(-135deg);//回転
+	}
+	@elseif $pos == 'right' {
+		@include rotate(45deg);//回転
+	}
+	@content;
+}
+
+
+
+@mixin half-img() {
+	//画像サイズ半減
+	img {
+		zoom: .5;
+	}
+}
+@mixin wave($delay,$step:5,$base-delay:0,$type:"transition") {
+	$delay: $delay * 1s;
+	$base-delay: $base-delay * 1s;
+	@for $i from 0 through $step {
+		&.wave#{$i} {
+			#{$type}-delay: $delay * $i + $base-delay; //開始時間
+		}
+	}
+}
+
+@mixin f-4-list($width:1030px, $mr:20px, $mb:20px) {
+	.f-4-list {
+		box-sizing: border-box;
+		li {
+			box-sizing: border-box;
+			float: left;
+			width: ($width - $mr * 3) / 4;
+			margin: 0 $mr $mb 0;
+		}
+		li:nth-child(4n) {
+			margin-right: 0;
+		}
+	}
+}
+@mixin f-3-list($width:1030px, $mr:20px, $mb:20px) {
+	.f-3-list {
+		box-sizing: border-box;
+		li {
+			box-sizing: border-box;
+			float: left;
+			width: ($width - $mr * 2) / 3;
+			margin: 0 $mr $mb 0;
+		}
+		li:nth-child(3n) {
+			margin-right: 0;
+		}
+	}
+}
+
+@mixin td-none(){
+	a:hover,
+	a:active,
+	a:focus{
+		text-decoration:none;
+	}
+}
+
+//@include longshadow(rgba(#000,.2),100);	//ロングシャドウをかける
+@mixin longshadow($color:rgba(#000,.2),$length:100){
+	overflow: hidden;
+	text-shadow: makelongshadow($color,$length);
+}
+@function makelongshadow($shadowColor,$length){
+	$val: 0px 0px $shadowColor;
+	@for $i from 1 through $length{
+		$val: #{$val},#{$i}px #{$i}px #{$shadowColor};
+	}
+	@return $val;
+}
+
+@mixin webfont($font){	//Webフォント
+	@if $font == "noto"{
+		font-family: 'Noto Sans Japanese',$gothic;
+	}
+	@if $font == "gald"{
+		font-family: 'Galderglynn Titling',$gothic;
+	}
+	@if $font == "lato"{
+		font-family: 'Lato',$gothic;
+	}
+	@if $font == "hana"{
+		font-family: '花園明朝A',$mincho;
+	}
+	@if $font == "lora"{
+		font-family: 'Lora',$mincho;
+	}
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="/control/manage.css">
+<script language="JavaScript" src="/control/common.js"></script>
+<title>管理画面</title>
+</head>
+
+<body>
+<form name="logout" method="post" action="/control/users/logout"></form>
+<div align="center">
+<table width="600" border="0" cellpadding="0" cellspacing="0" bgcolor="#EFEFEF">
+<tr>
+<td bgcolor="#000099"><div style="float:left;width: 450px;" class="title">管理画面-登録カテゴリー選択</div><div style="float:right;width: 100px;padding:20px 5px;"><input type="button" value="ログアウト" onclick="document.logout.submit();"></div></td>
+</tr>
+<tr>
+<td height="30"><div class="pankuzu"><a href="/control/tops">トップ</a>&gt;&gt;登録カテゴリー選択</div></td>
+</tr>
+<tr>
+<td height="30">
+<div class="main">
+<div style="border-bottom:#777777 1px solid;width:580px"><div style="border-bottom:#999999 2px solid;width:110px;padding:3px">カテゴリーリスト</div></div><BR>
+{{if $app.message}}<FONT COLOR="RED"><li>{{$app.message}}</li></FONT><BR><BR>{{/if}}
+{{foreach from=$error key="key" item="value"}}
+	<FONT COLOR="RED"><li>{{$value}}</li></FONT>
+{{/foreach}}
+データ登録を行うカテゴリーを選択して下さい。<BR><BR>
+<table class="table">
+<TR><th>　</th><th>カテゴリー名</th><th>　</th></TR>
+<FORM NAME="LIST" METHOD="POST" ACTION="category_do.php">
+	{{foreach from=$list key="key" item="value"}}
+		<TR><TD>{{$value.Cmscategory.c_id}}</TD><TD>{{$value.Cmscategory.name|escape:'html':'utf-8'}}</TD><TD><input type="button" value="選　択" onclick="cado_GoList( 'list' , {{$value.Cmscategory.c_id}} )"></TD></TR>
+	{{/foreach}}
+	</FORM>
+</table>
+{{ $form->create('Cmscategory',$this->aa('url','/cmsdocuments/','name','list')) }}
+{{ $form->hidden('c_id',$this->aa('value',""))}}
+</form>
+<BR>
+<a href="/control/tops">戻　る</a>
+</div>
+</td>
+</tr>
+<tr>
+<td bgcolor="#000099">&nbsp;</td>
+</tr>
+</table>
+</div>
+
+</body>
+</html>

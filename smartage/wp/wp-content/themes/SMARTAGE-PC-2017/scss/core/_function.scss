@@ -1,0 +1,20 @@
+@charset "UTF-8";
+// ====================================
+// カスタムFunction
+// ====================================
+//par(,,0%)
+@function par($box,$base,$unit:0%){//割合を百分率で算出
+	@return $unit + ($box / $base) * 100;
+}
+//r-imgsize($image,"w")
+//r-imgsize($image,"h")
+@function r-imgsize($image,$type:"w"){
+	@if $device == "w"{
+		$result:image-width($image);
+	}@elseif $device == "h"{
+		$result:image-height($image);
+	}@else{
+		@warn "r-imgsize：縦横設定「#{$type}」が不正";
+	}
+	@return $result;
+}

@@ -1,0 +1,140 @@
+@charset "UTF-8";
+@import "_core";
+// ============================
+// ベーススタイル
+// 要素自体のスタイルを設定
+// 汎用性が低くなるのであまり設定しないこと
+// ============================
+/*==============================
+Base
+==============================*/
+.sp{
+	display:none!important;
+}
+.pc-hide{
+	display:none;
+}
+a:hover{
+	@include transition(.3s);//装飾が変化する際の変化時間とエフェクト
+}
+html{
+	@include box-sizing(border-box);	//box-sizing　ベンダープレフィックス
+	font-size:62.5%;
+}
+*,*:before,*:after{
+	@include box-sizing(inherit);//htmlのborder-boxを継承（低負荷）
+}
+img{
+	@include box-sizing(content-box);//border-box除去
+	max-width:100%;
+	height:auto;
+	vertical-align:middle;//インライン画像のベースライン余白除去
+}
+b,strong{
+	font-weight:700;
+}
+@include basefont{	//body,button,input,select,textareaのフォント設定
+	// font-family:$gothic;
+	word-wrap:break-word;
+}
+//iPhoneのボタン装飾無効
+input[type="button"],input[type="submit"] {
+	-webkit-appearance: none;
+}
+
+//アウトラインを消す
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea,
+select {
+	outline: none;
+}
+//ボタン・ラベル上のマウスカーソルを指カーソルに
+a,
+area,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="checkbox"],
+input[type="radio"],
+button,
+select,
+label{
+
+	cursor:pointer;
+}
+@include placeholder{	//プレースホルダー（テキストフォームの例文）のスタイル設定
+	color:#C6C6C6;
+}
+
+/*==============================
+テーブル
+==============================*/
+table {
+	width: 100%;
+	max-width: 100%;
+	tfoot,
+	thead {
+		tr {}
+	}
+	thead {
+		tr {}
+	}
+	tfoot {
+		tr {}
+	}
+	tbody {
+		tr {}
+		tr:nth-child(odd) {}
+		tr:nth-child(even) {}
+	}
+	tfoot {}
+	td,
+	th {
+		// padding: 3px;
+		// min-height: 1em;
+		&:first-child {
+		}
+		&:last-child {}
+	}
+	th {
+		white-space: nowrap;
+		// font-weight: 700;
+		word-wrap: break-word;
+		word-break: break-all;
+	}
+	td {
+		word-wrap: break-word;
+		word-break: break-all;
+	}
+	p:not([class]):not(:last-child) {
+		// margin-bottom: 1em;
+	}
+	&.fix {
+		table-layout: fixed;
+	}
+	&.th-lock{
+		th {
+			word-wrap:normal;
+			word-break:keep-all;
+		}
+	}
+	@media #{$media-sp} {// SP
+		td,
+		th {
+			word-wrap: break-word;
+			word-break: break-all;
+		}
+	}// SP
+}
+
+//
+// input[type='text'],
+// textarea {
+// 	margin: .1em;
+// 	width: 100%;
+// 	&.miniform{
+// 		width: 40%;
+// 	}
+// }

@@ -1,0 +1,7 @@
+<ul class="{{$default_archives_setting.ul_class}}">
+{{foreach name="defaultarchives" from=$output_archives key="key" item="value"}}
+<li class="{{if $smarty.foreach.defaultarchives.last}}{{$default_archives_setting.li_class_last}}{{else}}{{$default_archives_setting.li_class}}{{/if}}">
+	<a href="{{$default_archives_setting.link}}?a={{$value.yearmonth|ym_format:'Ym'}}" rel="">{{$value.yearmonth|ym_format:"Y年m月"}}({{$value.count}})</a>
+</li>
+{{/foreach}}
+</ul> 

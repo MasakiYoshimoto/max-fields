@@ -1,0 +1,146 @@
+<?php /* Smarty version 2.6.27, created on 2013-08-19 10:32:00
+         compiled from /var/www/vhosts/evolve-max.com/httpdocs/cake_app/control/views/sitemaps//lists.html */ ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css; charset=UTF-8" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<title>管理画面</title>
+<link href="<?php echo $this->_tpl_vars['html']->webroot('css/common.css'); ?>
+" rel="stylesheet" type="text/css">
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+google.load("jquery","1.3.1");
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+</script>
+<script type="text/javascript" src="<?php echo $this->_tpl_vars['html']->webroot('js/lightbox/jquery.lightbox-0.5.js'); ?>
+"></script>
+<link href="<?php echo $this->_tpl_vars['html']->webroot('js/lightbox/jquery.lightbox-0.5.css'); ?>
+" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="<?php echo $this->_tpl_vars['html']->webroot('js/jquery.page-scroller-307.js'); ?>
+"></script>
+<script language="JavaScript" src="<?php echo $this->_tpl_vars['html']->webroot('jscripts/common.js'); ?>
+"></script>
+</head>
+
+
+<body>
+<div class="wordBreak" style="word-break:break-all;">
+
+<!--header-->
+<div id="header">
+<div id="header-inner">
+
+<!--logo-->
+<?php echo $this->_tpl_vars['this']->renderElement('logo'); ?>
+
+<!--logoここまで-->
+
+</div>
+</div>
+<!--headerここまで-->
+
+<!--pagebody-->
+<div id="pagebody">
+<div id="pagebody-inner">
+
+<!--sidebar-->
+<?php echo $this->_tpl_vars['this']->renderElement('side_menu'); ?>
+
+<!--sidebarここまで-->
+
+
+
+<!--content-->
+<div id="content">
+<h2>SITEMAP XML作成</h2>
+<div id="content-inner">
+
+<div class="cont">
+<p>設定を選択後、作成もしくはダウンロードして下さい。</p>
+</div>
+
+<div class="cont">
+<?php echo $this->_tpl_vars['form']->create('Sitemap',$this->_tpl_vars['this']->aa('action','/write','name','Sitemap','Autocomplete','off')); ?>
+
+<?php echo $this->_tpl_vars['form']->hidden('_token',$this->_tpl_vars['this']->aa('value',$this->_tpl_vars['token'])); ?>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr class="head">
+    <td>URL</td>
+    <td>更新頻度</td>
+    <td>優先度</td>
+    <td>除外</td>
+  </tr>
+	<?php $_from = $this->_tpl_vars['list']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }$this->_foreach['list'] = array('total' => count($_from), 'iteration' => 0);
+if ($this->_foreach['list']['total'] > 0):
+    foreach ($_from as $this->_tpl_vars['key'] => $this->_tpl_vars['value']):
+        $this->_foreach['list']['iteration']++;
+?>
+	<tr>
+	<td><?php echo $this->_tpl_vars['value']; ?>
+<?php echo $this->_tpl_vars['form']->hidden('name',$this->_tpl_vars['this']->aa('name','data[Sitemap][data][][link]','value',$this->_tpl_vars['value'])); ?>
+</td>
+	<td align="center">
+		<select name="data[Sitemap][data][<?php echo ($this->_foreach['list']['iteration']-1); ?>
+][changefreq]">
+			<option value="hourly">毎時間</option>
+			<option value="daily" <?php if (($this->_foreach['list']['iteration'] <= 1)): ?>selected<?php endif; ?>>毎日</option>
+			<option value="weekly" <?php if (! ($this->_foreach['list']['iteration'] <= 1)): ?>selected<?php endif; ?>>毎週</option>
+			<option value="monthly">毎月</option>
+		</select>
+	</td>
+	<td align="center">
+		<select name="data[Sitemap][data][<?php echo ($this->_foreach['list']['iteration']-1); ?>
+][priority]">
+			<option value="1.0" <?php if (($this->_foreach['list']['iteration'] <= 1)): ?>selected<?php endif; ?>>高</option>
+			<option value="0.5" <?php if (! ($this->_foreach['list']['iteration'] <= 1)): ?>selected<?php endif; ?>>中</option>
+			<option value="0.0">低</option>
+		</select>
+	</td>
+	<td align="center">
+		<input type="checkbox" name="data[Sitemap][data][<?php echo ($this->_foreach['list']['iteration']-1); ?>
+][del]" value="1" />
+	</td>
+	</tr>
+	<?php endforeach; endif; unset($_from); ?>
+	<tr>
+	<td class="button_field" colspan="4" align="center"><input type="button" value="作　成" onclick="makeSitemap('<?php echo $this->_tpl_vars['html']->webroot('sitemaps/write'); ?>
+');" />　<input type="button" value="ダウンロード" onclick="makeSitemap('<?php echo $this->_tpl_vars['html']->webroot('sitemaps/download'); ?>
+');" /></td>
+	</tr>
+</table>
+</form>
+</div>
+
+</div>
+</div>
+
+<!--contentここまで-->
+
+</div>
+</div>
+<!--pagebodyここまで-->
+
+<!--scroll-->
+<div id="scroll">
+<div id="scroll-inner">
+<a href="#header">ページの先頭へ</a>
+</div>
+</div>
+<!--scrollここまで-->
+
+<!--footer-->
+<div id="footer">
+</div>
+<!--footerここまで-->
+
+<?php echo $this->_tpl_vars['this']->renderElement('copyright'); ?>
+
+
+</div>
+</body>
+</html>

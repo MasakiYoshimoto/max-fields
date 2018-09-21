@@ -1,0 +1,11 @@
+<dl class="{{$default_filelist_setting.dl_class}}">
+{{if $data.ATTACHFILE1}}
+<dt class="{{$default_filelist_setting.dt_class}}"><a href="{{$file_url}}/{{$data.ATTACHFILE1}}{{$magic}}"><img src="./img/{{$data.EXTENSION1}}.png" width="{{$default_filelist_setting.width}}" height="{{$default_filelist_setting.height}}" alt="{{$data.FILE_TYPE1}}" /></a></dt>
+<dd class="{{$default_filelist_setting.dd_class}}"><a href="{{$file_url}}/{{$data.ATTACHFILE1}}{{$magic}}">{{if $data.ATTACHFILE1_TITLE}}{{$data.ATTACHFILE1_TITLE}}{{else}}{{$data.FILE_TYPE1}}ファイル{{/if}}</a></dd>{{/if}}
+{{if $data.ATTACHFILE2}}
+<dt class="{{$default_filelist_setting.dt_class}}"><a href="{{$file_url}}/{{$data.ATTACHFILE2}}{{$magic}}"><img src="./img/{{$data.EXTENSION2}}.png" width="{{$default_filelist_setting.width}}" height="{{$default_filelist_setting.height}}" alt="{{$data.FILE_TYPE2}}" /></a></dt>
+<dd class="{{$default_filelist_setting.dd_class}}"><a href="{{$file_url}}/{{$data.ATTACHFILE2}}{{$magic}}">{{if $data.ATTACHFILE2_TITLE}}{{$data.ATTACHFILE2_TITLE}}{{else}}{{$data.FILE_TYPE2}}ファイル{{/if}}</a></dd>{{/if}}
+{{if $data.ATTACHFILE3}}
+<dt class="{{$default_filelist_setting.dt_class}}"><a href="{{$file_url}}/{{$data.ATTACHFILE3}}{{$magic}}"><img src="./img/{{$data.EXTENSION3}}.png" width="{{$default_filelist_setting.width}}" height="{{$default_filelist_setting.height}}" alt="{{$data.FILE_TYPE3}}" /></a></dt>
+<dd class="{{$default_filelist_setting.dd_class}}"><a href="{{$file_url}}/{{$data.ATTACHFILE3}}{{$magic}}">{{if $data.ATTACHFILE3_TITLE}}{{$data.ATTACHFILE3_TITLE}}{{else}}{{$data.FILE_TYPE3}}ファイル{{/if}}</a></dd>{{/if}}
+</dl>

@@ -1,0 +1,78 @@
+{{php}}
+define('PAGE_TITLE', 'お知らせ | 株式会社ソフィアマックス');
+define('PAGE_DESCRIPTION', '神奈川・都内の派遣アウトソーシングはソフィアマックス。人財の違いで御社のビジネスをサポートいたします。');
+define('BODY_CLASS', 'info');
+
+include('./sophiamax/include/header.php');{{/php}}
+
+{{cms_detail id=2}}
+<!-- コンテント -->
+<div id="topicpath">
+	<ol>
+		<li><a href="../">ホーム</a></li>
+		<li><a href="./">お知らせ</a></li>
+		<li>{{$data.TITLE}}</li>
+	</ol>
+</div>
+
+
+<!-- コンテント -->
+<div id="contentWrap">
+
+	<div id="contentMain">
+
+		<div class="contentBox">
+
+			<div class="mainHeader">
+				<h2>
+					<img src="img/title_icon.gif" alt="information" width="152" height="124">
+					<span>お知らせ</span>
+				</h2>
+			</div>
+
+			<div class="infoArticleHeader">
+				<span>{{$data.RELEASE_DATE|d_format:"Y.m.d"}}</span>
+				<a href="./">お知らせ一覧</a>
+				<h3>{{$data.TITLE}}</h3>
+			</div><!--/.infoArticleHeader-->
+
+			<div class="infoArticleBody">{{$data.HONBUN}}</div>
+
+
+			{{if $data.PICNUM}}
+				<div class="infoArticleImage">
+					<ul>
+						{{if $data.PIC1}}<li><a href="{{$image_url}}/{{$data.PIC1}}" rel="colorbox"><img src="{{$wwwroot}}/thumbs/img2.php{{$magic}}&filename={{$image_url}}/{{$data.PIC1}}&newxsize=190" alt="{{$data.TITLE}}"></a></li>{{/if}}
+						{{if $data.PIC2}}<li><a href="{{$image_url}}/{{$data.PIC2}}" rel="colorbox"><img src="{{$wwwroot}}/thumbs/img2.php{{$magic}}&filename={{$image_url}}/{{$data.PIC2}}&newxsize=190" alt="{{$data.TITLE}}"></a></li>{{/if}}
+						{{if $data.PIC3}}<li><a href="{{$image_url}}/{{$data.PIC3}}" rel="colorbox"><img src="{{$wwwroot}}/thumbs/img2.php{{$magic}}&filename={{$image_url}}/{{$data.PIC3}}&newxsize=190" alt="{{$data.TITLE}}"></a></li>{{/if}}
+					</ul>
+				</div><!--/.infoArticleImage-->
+			{{/if}}
+
+			{{if $data.FILENUM}}
+				<div class="infoArticleFile">
+					<h4><img src="img/file_download.gif" alt="File Donwload" width="97" height="16"></h4>
+					<ul>
+						{{if $data.ATTACHFILE1}}<li><a href="{{$file_url}}/{{$data.ATTACHFILE1}}" target="_blank">{{if $data.ATTACHFILE1_TITLE}}{{$data.ATTACHFILE1_TITLE}}{{else}}{{$data.FILE_TYPE1}}ファイル{{/if}}（{{$data.EXTENSION1}}）</a></li>{{/if}}
+						{{if $data.ATTACHFILE2}}<li><a href="{{$file_url}}/{{$data.ATTACHFILE2}}" target="_blank">{{if $data.ATTACHFILE2_TITLE}}{{$data.ATTACHFILE2_TITLE}}{{else}}{{$data.FILE_TYPE2}}ファイル{{/if}}（{{$data.EXTENSION2}}）</a></li>{{/if}}
+						{{if $data.ATTACHFILE3}}<li><a href="{{$file_url}}/{{$data.ATTACHFILE3}}" target="_blank">{{if $data.ATTACHFILE3_TITLE}}{{$data.ATTACHFILE3_TITLE}}{{else}}{{$data.FILE_TYPE3}}ファイル{{/if}}（{{$data.EXTENSION3}}）</a></li>{{/if}}
+					</ul>
+				</div><!--/.infoArticleFile-->
+			{{/if}}
+
+			<div class="infoBackIndex">
+				<a href="./">お知らせ一覧</a>
+			</div><!--/.infoBackIndex-->
+
+		</div><!--/.contentBox-->
+
+	</div><!--/#contentMain-->
+
+	<!-- サイドバーエリア -->
+	
+{{php}} include('./sophiamax/include/sidebar.php');{{/php}}
+
+</div><!--/#contentWrap-->
+
+
+{{php}} include('./sophiamax/include/footer.php');{{/php}}

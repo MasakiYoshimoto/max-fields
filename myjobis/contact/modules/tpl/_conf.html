@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>トキノスタンス｜お問合せ｜静岡・東京　有料職業紹介</title>
+<meta name="keywords" content="トキノスタンス,トキスタ,職業紹介,転職,求人,採用,静岡,東京">
+<meta name="description" content="静岡・東京の有料職業紹介。転職・採用の課題解決にトキスタの手厚いコミュニケーションでお役に立ちます。">
+<!--[if IE]> 
+<meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+<![endif]-->
+{{include file="$wwwroot_path/include/head.html"}}
+<link type="text/css" href="/css/contact.css" rel="stylesheet" media="all" />
+</head>
+<body>
+
+<!--page-->
+<div id="page">
+
+<!--main-->
+<div id="main">
+
+<!--header-->
+{{include file="$wwwroot_path/include/header.html"}}
+<!--header end-->
+
+<!--content-->
+<div id="content">
+
+<h1><img src="../images/contact_h1.gif" width="351" height="40" alt="お問合せ" /></h1>
+<h2>お問合せ</h2>
+<p>下記にご入力いただくお客様の個人情報はトキノスタンスからお問合せのご返答などで利用いたします。</p>
+
+<form action="" method="post" name="form1" id="form1">
+<!--エラー表示サンプル：可能であればerrorクラスを追加して下さい。
+<input name="mail" type="text" id="mail" size="40" class="formItem01 error" />
+-->
+<div id="secContactusTable">
+<div id="blockContactError">
+<table summary="お問い合わせ" class="generalTable" id="contactusTable">
+<tr>
+<th scope="row">会社名（漢字）</th>
+<td>
+    {{$conf.company}}&nbsp;</td>
+</tr>
+<tr>
+<th scope="row">氏名（漢字）</th>
+<td>
+    {{$conf.name}}&nbsp;
+</td>
+</tr>
+<tr>
+<th scope="row">氏名（フリガナ）</th>
+<td>
+    {{$conf.name_kana}}&nbsp;
+</td>
+</tr>
+<tr>
+<th scope="row">電話番号</th>
+<td>{{$conf.tel}}&nbsp;
+</td>
+</tr>
+<tr>
+<th scope="row">ご住所</th>
+<td><ul class="fItemList">
+<li>郵便番号　　　
+    {{$conf.zip}}&nbsp;
+<li>
+都道府県　　　
+    {{$conf.pref}}&nbsp;
+</li>
+<li>市区郡以降　
+    {{$conf.address}}&nbsp;
+</li>
+</ul></td>
+</tr>
+
+<tr>
+<tr>
+<th scope="row">メールアドレス</th>
+<td>
+    {{$conf.email}}&nbsp;
+</td>
+</tr>
+<tr>
+  <th scope="row">お問合せ内容</th>
+  <td>
+  {{$conf.contents|nl2br}}&nbsp;
+  </td>
+</tr>
+</table>
+</div><!-- secContactusTable -->
+</div>
+
+<div class="center"><input type="hidden" name="check_data" value="confirm"></div>
+
+</form>
+
+<div class="submit2">
+<form action="./" method="post" name="form1" id="form2">
+<input type="hidden" name="m" value="3" />
+<p><button type="submit"><img src="../images/b_back.gif" class="xOver" alt="戻る" /></button></p>
+</form>
+<form action="./" method="post" name="form1" id="form3">
+<input type="hidden" name="m" value="4" />
+<input type="hidden" name="_token" value="{{$_token}}" />
+<p><button type="submit"><img src="../images/b_send.gif" class="xOver" alt="送信する" /></button></p>
+</form>
+</div><!--submit2-->
+
+
+</div>
+<!--content end-->
+
+<!--main_bnr-->
+{{include file="$wwwroot_path/include/main_banner.html"}}
+<!--main_bnr end-->
+
+</div>
+<!--main end-->
+
+<!--sidebar-->
+{{include file="$wwwroot_path/include/side.html"}}
+<!--side end-->
+
+<!--footer-->
+{{include file="$wwwroot_path/include/footer.html"}}
+<!--footer end-->
+
+<div class="copy">
+Copyright&nbsp;&copy;&nbsp;2014&nbsp;tokino&nbsp;stance&nbsp;Co.Ltd.
+</div>
+
+</div>
+<!--page end-->
+
+</body>
+</html>

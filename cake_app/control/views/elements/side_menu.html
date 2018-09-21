@@ -1,0 +1,56 @@
+<div id="sideBar">
+
+	<div class="sideMenu">
+		<h2>メニュー</h2>
+		<ul>
+			<li><a href="{{ $html->webroot('tops')}}">トップ</a></li>
+			{{if $use_default_function}}
+			{{if $category_list}}
+			{{foreach name="category_list" from=$category_list key="key" item="value"}}
+			<li><a href="{{ $html->webroot('cmsdocuments/index/')}}cc:{{$value.Cmscategory.c_id|yen|escape:'html':'utf-8'}}">{{$value.Cmscategory.name|yen|escape:'html':'utf-8'}}管理</a></li>
+			{{/foreach}}
+			{{if $category_num && $categoryuse_num&&$group_id>=$cms_category_allow_level}}
+			{{if $categoryuse_num==1}}
+			<li class="noBdr"><a href="{{ $html->webroot('cmsdoccategories/lists/')}}cc:{{$use_category_list[0].Cmscategory.c_id|yen|escape:'html':'utf-8'}}">カテゴリー管理</a></li>
+			{{else}}
+			<li class="noBdr"><a href="{{ $html->webroot('cmsdoccategories/')}}">カテゴリー管理</a></li>
+			{{/if}}
+			{{/if}}
+			{{/if}}
+			{{/if}}
+		</ul>
+	</div>
+
+	{{foreach name="menu_list" from=$side_menus key="key" item="value"}}
+	{{if $value.level <= $group_id }}
+	<div class="sideMenu">
+		<h2>{{$value.title|yen|escape:'html':'utf-8'}}</h2>
+		{{foreach name="menu_list2" from=$value.menus key="key2" item="value2"}}
+		{{if $value2.level <= $group_id }}
+		<ul>
+			<li><a href="{{if preg_match('@https?://@',$value2.url)}}{{$value2.url|yen|escape:'html':'utf-8'}}{{else}}{{ $html->webroot($value2.url)}}{{/if}}" {{if $value2.target}} target="{{$value2.target|yen|escape:'html':'utf-8'}}"{{/if}}>{{$value2.title|yen|escape:'html':'utf-8'}}</a></li>
+		</ul>
+		{{/if}}
+		{{/foreach}}
+	</div>
+	{{/if}}
+	{{/foreach}}
+
+	{{if $group_id==2 || $group_id==99}}
+	<div class="sideMenu">
+		<h2>設定</h2>
+		<ul>
+			{{if $group_id == 99 }}
+			<li><a href="{{ $html->webroot('cmscategories')}}">設定</a></li>
+			<li><a href="{{ $html->webroot('plugins')}}">プラグイン設定</a></li>
+			{{/if}}
+			<li><a href="{{ $html->webroot('sites')}}">サイト設定</a></li>
+			<li><a href="{{ $html->webroot('analytics')}}">Analytics設定</a></li>
+			<li class="noBdr"><a href="{{ $html->webroot('sitemaps')}}">SITEMAP XML作成</a></li>
+		</ul>
+	</div>
+	{{/if}}
+	{{foreach name="links_list" from=$side_links key="key" item="value"}}
+	{{if $value.link.level <= $group_id }}<a href="{{if preg_match('@https?://@',$value.link.url)}}{{$value.link.url|yen|escape:'html':'utf-8'}}{{else}}{{ $html->webroot($value.link.url)}}{{/if}}" {{if preg_match('@https?://@',$value.link.url)}} target="_blank"{{/if}}>{{$value.link.title|yen|escape:'html':'utf-8'}}</a><br/>{{/if}}
+	{{/foreach}}
+</div>

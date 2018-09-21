@@ -1,0 +1,34 @@
+﻿{{name}}様より
+
+下記内容にて登録申込みフォームより発信がありました。
+
+ご対応のほどよろしくお願いいたします。
+
+【申込み者応募希望の募集案件】
+●職場・企業キャッチコピー
+{{catchcopy}}
+
+●氏名（漢字）　{{name}}
+●氏名（フリガナ）　{{kana}}
+●生年月日　{{birthday}}
+●性別　{{sex}}
+●メールアドレス　{{email}}
+●電話番号　{{tel}}
+●郵便番号　{{zip}}
+●都道府県　{{pref}}
+●市区郡以降　{{address}}
+●最終学歴　{{latest_academic_background}}
+●就業開始可能日　{{start_date}}
+●英語-会話レベル　{{english_conversation}}
+●英語-実務経験　{{english_experience}}
+●英語以外の言語
+{{language_etc}}
+●普通自動車免許　{{drivers_license}}
+●その他資格
+{{license}}
+
+●経験職種
+{{experience_job}}
+
+●その他特記事項
+{{etc_experience}}

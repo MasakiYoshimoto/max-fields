@@ -1,0 +1,273 @@
+@charset "UTF-8";
+@import "_core";
+/*==============================
+General
+==============================*/
+.cf{
+	@extend %cf;
+}
+.u-list{
+	>li{
+		width:98%;
+		margin-left:2%;
+		list-style-type:disc;
+	}
+}
+.o-list{
+	>li{
+		width:98%;
+		margin-left:2%;
+		list-style-type:decimal;
+	}
+}
+.flex,
+.flex-list{
+	display:-webkit-flex;
+	display:flex;	//Flexbox
+	&.bet{
+		-webkit-justify-content:space-between;
+		justify-content:space-between;	//アイテムを均等に揃える　両端を詰める
+	}
+	&.vtop{
+		-webkit-align-items:flex-start;
+		align-items:flex-start;	//アイテムを上段に揃える
+	}
+	&.vcenter{
+		-webkit-align-items:center;
+		align-items:center;	//アイテムを中段に揃える
+	}
+	&.hcenter{
+		-webkit-justify-content:center;
+		justify-content:center;	//アイテムを水平上の中央に寄せる
+	}
+	&.str{
+		-webkit-align-items:stretch;
+		align-items:stretch;	//アイテムの高さを統一する
+	}
+	&.break{
+		-webkit-flex-wrap:wrap;
+		flex-wrap:wrap;	//アイテムを折り返す
+	}
+	&.sp-break{
+		@media #{$media-sp} {	//SP相当の幅
+			-webkit-flex-wrap:wrap;
+			flex-wrap:wrap;	//アイテムを折り返す
+		}	//SP相当の幅
+	}
+}
+@if $ListStyles{
+	.float-list{
+		@extend %cf;
+		> li:not(.fl-right){
+			float:left;
+		}
+	}
+	
+	.flex-list{
+		@include display-flex();	//Flexbox
+		@include flex-direction(row);	//アイテムを左上から並べていく
+		&.jc-start{
+			@include justify-content(flex-start);	//アイテムを均等に揃える
+		}
+		&.jc-end{
+			@include justify-content(flex-end);	//アイテムを均等に揃える
+		}
+		&.jc-center{
+			@include justify-content(center);	//アイテムを均等に揃える
+		}
+		&.jc-between{
+			@include justify-content(space-between);	//アイテムを均等に揃える
+		}
+		&.jc-around{
+			@include justify-content(space-around);	//アイテムを均等に揃える
+		}
+		&.ai-start{
+			@include align-items(flex-start);	//アイテムを均等に揃える
+		}
+		&.ai-end{
+			@include align-items(flex-end);	//アイテムを均等に揃える
+		}
+		&.ai-center{
+			@include align-items(center);	//アイテムを均等に揃える
+		}
+		&.ai-between{
+			@include align-items(space-between);	//アイテムを均等に揃える
+		}
+		&.ai-around{
+			@include align-items(space-around);	//アイテムを均等に揃える
+		}
+	}
+	.table-list{
+		display:table;
+		width:100%;
+		> li{
+			display:table-cell;
+			vertical-align:top;
+		}
+		&.fix{
+			table-layout:fixed;
+		}
+	}
+	.table-list.res{
+		@media #{$media-sp} {// SP
+			display:block;
+			width:100%;
+			> li{
+				display:block;
+			}
+		}// SP
+	}
+	.inline-list{
+		font-size:0;
+		letter-spacing:-.4em;
+		> li{
+			display:inline-block;
+			letter-spacing:normal;
+			vertical-align:top;
+			@include font-size($base-fs);
+		}
+	}
+	.bnr-list{
+		> li{
+			> a{
+				display:block;
+				img{
+					display:block;
+					width:100%;
+				}
+			}
+			@media #{$media-sp}{	//SP相当
+				float:none;
+				margin-left:0;
+				margin-right:0;
+			}
+		}
+	}
+	@media #{$media-sp}{	//SP相当
+		.float-list,
+		.table-list,
+		.inline-list{
+			&.spshift{
+				> li{
+					display:block;
+					float:none;
+					width:100%;
+				}
+			}
+		}
+	}
+}
+@media #{$media-notsp}{	//非SP
+	@if $opa-img{
+		a.oc,.oc a{
+			display:inline-block;
+			vertical-align:bottom;
+			img{
+				@include transition(.3s);//装飾が変化する際の変化時間とエフェクト
+			}
+			&:hover{
+				img{
+					@include opacity(.7);
+				}
+			}
+		}
+	}
+	@if $rotate-img{
+		a.rox,.rox a{
+			display:inline-block;
+			vertical-align:bottom;
+			&:hover{
+				img{
+					@include transform(rotateX(360deg));
+					@include transition(.3s);//装飾が変化する際の変化時間とエフェクト
+				}
+			}
+		}
+		a.roy,.roy a{
+			display:inline-block;
+			vertical-align:bottom;
+			&:hover{
+				img{
+					@include transform(rotateY(360deg));
+					@include transition(.3s);//装飾が変化する際の変化時間とエフェクト
+				}
+			}
+		}
+	}
+	@if $glay-img{
+		a.gs,.gs a{
+			img{
+				@include transition(.3s);//装飾が変化する際の変化時間とエフェクト
+				-webkit-filter:grayscale(1);
+				filter:gray;
+				filter:grayscale(1);
+				filter:url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+			}
+			&[href=""]{//空リンクはaタグとして機能させない
+				pointer-events:none;
+			}
+			&:not([href=""]){//URLが入っている場合のみ、ホバーでグレースケール解除
+				img:hover{
+					-webkit-filter:grayscale(0);
+					filter:none;
+					filter:grayscale(0);
+				}
+			}
+		}
+	}
+	@if $zoom-img{
+		a.zoom,.zoom a{
+			display:inline-block;
+			overflow:hidden;
+			vertical-align:bottom;
+			img:hover{
+				@include transition(.3s);//装飾が変化する際の変化時間とエフェクト
+				@include scale(1.1,1.1);	//拡大縮小
+			}
+		}
+	}
+}
+
+//HTML上でmargin-top-bottomを調整する　5px刻み10～80
+@if $margintb{
+	@for $i from 2 through 16{
+		.mt#{$i * 5}{
+			margin-top:($i * 5px)!important;
+		}
+		.mb#{$i * 5}{
+			margin-bottom:($i * 5px)!important;
+		}
+	}
+}
+//HTML上でmargin-left-rightを調整する　5px刻み10～80
+@if $marginlr{
+	@for $i from 2 through 16{
+		.ml#{$i * 5}{
+			margin-left:($i * 5px)!important;
+		}
+		.mr#{$i * 5}{
+			margin-right:($i * 5px)!important;
+		}
+	}
+}
+
+@if $fontsize{
+	@for $i from 10 through 80{
+		.fs#{$i}{
+			@include font-size($i);
+		}
+	}
+}
+
+.youtube-iframe {
+	position: relative;
+	width: 100%;
+	padding-top: 56.25%;
+	iframe {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 100% !important;
+		height: 100% !important;
+	}
+}
