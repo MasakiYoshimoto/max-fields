@@ -26,16 +26,16 @@
 
 // ** MySQL 設定 - この情報はホスティング先から入手してください。 ** //
 /** WordPress のためのデータベース名 */
-define('DB_NAME', 'joblive_maxfields');
+define('DB_NAME', 'cms');
 
 /** MySQL データベースのユーザー名 */
-define('DB_USER', 'joblive_max');
+define('DB_USER', 'smartage');
 
 /** MySQL データベースのパスワード */
-define('DB_PASSWORD', 'maxlogin');
+define('DB_PASSWORD', 'tt84g9v6awze09');
 
 /** MySQL のホスト名 */
-define('DB_HOST', 'mysql5016.xserver.jp');
+define('DB_HOST', '');
 
 /** データベースのテーブルを作成する際のデータベースの文字セット */
 define('DB_CHARSET', 'utf8');

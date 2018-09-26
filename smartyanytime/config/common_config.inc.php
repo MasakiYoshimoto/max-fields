@@ -10,11 +10,11 @@ define('PARTS_TEMPLATE_DIR' , WWWROOT.'/parts' );
 // DBの設定
 ////////////////////////////////////////////
 define('USE_DB'            , true );
-define('DB_HOST_ADDRESS'   , 'mysql5016.xserver.jp' );
+define('DB_HOST_ADDRESS'   , 'localhost' );
 define('DB_PORT'           , '3306' );
-define('DB_ID'             , 'joblive_maxfield' );
-define('DB_PASS'           , 'maxlogin' );
-define('DB_NAME'           , 'joblive_maxfields' );
+define('DB_ID'             , 'evolve-max' );
+define('DB_PASS'           , 'JT72WuLt' );
+define('DB_NAME'           , 'cms' );
 define('DB_ENCODING'       , 'utf8');
 define('DB_PREFIX'            , 'cms_');
 

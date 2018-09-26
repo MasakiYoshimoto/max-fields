@@ -54,7 +54,7 @@ define('ROOT_PATH', is_top_dir('rapt_test')? '/rapt_test/' : '/');
 <a id="pageTop"></a>
 
 <!--マックスフィールズグループ グローバルヘッダー-->
-<script src="/globalheader/include.js"></script>
+<script src="http://www.evolve-max.com/globalheader/include.js"></script>
 
 
 

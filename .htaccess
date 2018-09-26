@@ -1,5 +1,6 @@
-
-AuthUserFile "/home/joblive/jlstaging.info/htpasswd/max-fields/.htpasswd"
+SetEnvIf Request_URI ".*" Ngx_Cache_NoCacheMode=off
+SetEnvIf Request_URI ".*" Ngx_Cache_StaticMode
+AuthUserFile "/home/joblive/stsite.info/htpasswd/.htpasswd"
 AuthName "Member Site"
 AuthType BASIC
 require valid-user

@@ -1,4 +1,4 @@
-F<?php
+<?php
 // testディレクトリ対策
 // uriの一番上のディレクトリ名が rapt_test なら、rapt_test を ROOT_PATHにする
 function is_top_dir($dir_name){

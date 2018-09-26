@@ -8,7 +8,7 @@
 	/////////////////////////////////////////////
 	// ライブラリディレクトリ
 	////////////////////////////////////////////
-	define('SMARTYANYTIME_DIR'   , '/home/joblive/jlstaging.info/public_html/max-fields/smartyanytime' );
+	define('SMARTYANYTIME_DIR'   , '/var/www/vhosts/evolve-max.com/httpdocs/smartyanytime' );
 
 	/////////////////////////////////////////////
 	// 設定
@@ -27,6 +27,6 @@
 	////////////////////////////////////////////
 //	$obj->smartyanytime['info']['document_root'] = '';
 
-    $obj->displayPage();
+	$obj->displayPage();
 
 ?>

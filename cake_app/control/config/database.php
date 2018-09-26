@@ -81,11 +81,11 @@ class DATABASE_CONFIG {
 	var $default = array(
 		'driver' => 'mysql',
 		'persistent' => 'mysql_connect',
-		'host' => 'mysql5016.xserver.jp',
+		'host' => 'localhost',
 		'port' => '3306',
-		'login' => 'joblive_max',
-		'password' => 'maxlogin',
-		'database' => 'joblive_maxfields',
+		'login' => 'evolve-max',
+		'password' => 'JT72WuLt',
+		'database' => 'cms',
 		'encoding' => 'utf8',
 		'prefix' => 'cms_',
 	);
