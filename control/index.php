@@ -41,7 +41,7 @@
  * /var/www/vhosts/evolve-max.com/httpdocs/rapt_test/
  */
 	if (!defined('ROOT')) {
-		define('ROOT', DS.'var'.DS.'www'.DS.'vhosts'.DS.'evolve-max.com'.DS.'httpdocs'.DS.'cake_app');
+		define('ROOT', DS.'home'.DS.'maxfields'.DS.'evolve-max.com'.DS.'public_html'.DS.'cake_app');
 	}
 /**
  * The actual directory name for the "app".
@@ -55,7 +55,7 @@
  *
  */
 	if (!defined('CAKE_CORE_INCLUDE_PATH')) {
-		define('CAKE_CORE_INCLUDE_PATH', DS.'var'.DS.'www'.DS.'vhosts'.DS.'evolve-max.com'.DS.'httpdocs'.DS.'cake');
+		define('CAKE_CORE_INCLUDE_PATH', DS.'home'.DS.'maxfields'.DS.'evolve-max.com'.DS.'public_html'.DS.'cake');
 	}
 
 /**

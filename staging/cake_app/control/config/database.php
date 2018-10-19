@@ -79,12 +79,12 @@
 class DATABASE_CONFIG {
 
 	var $default = array(
-		'driver' => 'mysql',
+    'driver' => 'mysql',
 		'persistent' => 'mysql_connect',
-		'host' => 'localhost',
+		'host' => 'mysql5029.xserver.jp',
 		'port' => '3306',
-		'login' => 'evolve-max',
-		'password' => 'JT72WuLt',
+		'login' => 'maxfields_admin',
+		'password' => 'maxlogin',
 		'database' => 'cms',
 		'encoding' => 'utf8',
 		'prefix' => 'cms_',

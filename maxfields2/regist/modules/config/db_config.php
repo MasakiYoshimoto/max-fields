@@ -1,9 +1,9 @@
 <?php
 	return array(
-		'host' => 'localhost',
+		'host' => 'mysql5029.xserver.jp',
 		'port'=>'3306',
-		'id' => 'evolve-max',
-		'password' => 'JT72WuLt',
+		'id' => 'maxfields_admin',
+		'password' => 'maxlogin',
 		'database' => 'cms',
 		'encoding' => 'utf8',
 		'prefix' => 'cms_'
