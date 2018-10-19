@@ -1,0 +1,507 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* formatting style
+-----------------------------------------*/
+* {
+	font-style: normal;
+	margin: 0px;
+	padding: 0px;
+}
+
+html { 
+} 
+
+body {
+	color: #222222;
+	line-height: 160%;
+	font-family: sans-serif;
+	margin: 0px;
+	padding: 0px;
+	font-size: 90%;
+	background-color: #F6F6F6;
+	letter-spacing: 0;
+}
+
+em {
+    font-style: italic;
+
+}
+
+hr {
+	display:none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	margin: 0px;
+	padding: 0px;
+}
+
+ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+
+br {
+	letter-spacing: 0;
+}
+
+
+
+
+/* link style
+-----------------------------------------*/
+a img {
+	border-style: none;
+}
+a:link {
+	color: #333;
+	text-decoration: none;
+}
+a:visited {
+	color: #333;
+	text-decoration: none;
+}
+a:hover {
+	color: #666;
+	text-decoration: underline;
+}
+a:active {
+	text-decoration: none;
+}
+/* basic layout
+-----------------------------------------*/
+
+#header {
+	background-image: url(../images/bg_img.jpg);
+	background-repeat: repeat-x;
+}
+
+#header-inner {
+	width: 900px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 45px;
+	padding-bottom: 45px;
+}
+
+#pagebody {
+	overflow: hidden;
+	position: relative;
+	background-color: #FFF;
+}
+
+#pagebody-inner {
+	width: 900px;
+	margin-right: auto;
+	margin-left: auto;
+	overflow: hidden;
+	margin-bottom: 50px;
+}
+
+#scroll {
+	clear: both;
+	padding-top: 5px;
+	background-color: #CCC;
+	padding-bottom: 5px;
+	font-size: 12px;
+}
+
+#scroll-inner {
+	width: 900px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: right;
+}
+
+#footer {
+}
+
+#copyright {
+	font-size: 80%;
+}
+
+#copyright-inner {
+	width: 900px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+/* header layout
+-----------------------------------------*/
+#logo p {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+p#headNavi {
+	width: 170px;
+	position: relative;
+	top: -22px;
+	left: 730px;
+	text-align: right;
+	font-size: 10px;
+}
+
+p#headNavi a {
+}
+
+/* content layout
+-----------------------------------------*/
+
+#content {
+	float: left;
+	margin: 0px;
+	width: 673px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius:5px;
+	CCborderRadius:5px;
+	border: 1px solid #CCC;
+	padding-bottom:85px;
+}
+
+#content h2 {
+	font-size: 100%;
+	font-weight: bolder;
+	color: #FFF;
+	background-color: #999;
+	padding: 8px;
+}
+
+#content-inner {
+	background-position: top;
+	margin: 0px;
+	padding-top: 15px;
+	padding-right: 15px;
+	padding-bottom: 30px;
+	padding-left: 15px;
+}
+
+#content-inner h3 {
+	padding-bottom: 3px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #999;
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+
+#content-inner p {
+	font-size: 12px;
+	line-height: 1.6em;
+	padding-right: 0px;
+	padding-left: 0px;
+}
+
+.cont {
+	margin-bottom: 30px;
+}
+
+.pageList {
+	height:430px;
+}
+
+.cont table.cont_table {
+	border-top-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-left-style: solid;
+	border-top-color: #CCC;
+	border-left-color: #CCC;
+	font-size: 12px;
+	padding: 0px;
+}
+
+.cont table tr {
+}
+
+.cont table.cont_table tr.head {
+	background-color: #E6E6E6;
+	text-align: center;
+	color: #333;
+	font-weight: bold;
+}
+
+.cont table.cont_table td.cont_td {
+	padding: 7px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-right-color: #CCC;
+	border-bottom-color: #CCC;
+}
+
+.cont table.cont_table td.clr {
+	font-weight: bold;
+	color: #333;
+	background-color: #E6E6E6;
+}
+
+.cont #newBtn {
+	margin-bottom: 15px;
+}
+
+ul#pageNavi {
+	overflow: hidden;
+	list-style-type: none;
+}
+
+ul#pageNavi li {
+	float: left;
+	display: block;
+	border: 1px solid #CCC;
+	text-align: center;
+	font-size: 10px;
+	margin-right: 8px;
+	background-color: #999;
+	width: 22px;
+	font-weight: bold;
+	color: #FFF;
+}
+
+ul#pageNavi li a {
+	display: block;
+	text-align: center;
+	font-size: 10px;
+	background-color: #FFF;
+	text-decoration: none;
+}
+
+ul#pageNavi li a:hover {
+	background-color: #EEE;
+}
+
+
+/* sidebar layout
+-----------------------------------------*/
+
+#sideBar {
+	width: 200px;
+	float: left;
+	margin-right: 25px;
+}
+
+.sideMenu {
+	margin-bottom: 25px;
+}
+
+.sideMenu h2 {
+	font-size: 90%;
+	font-weight: bolder;
+	color: #FFF;
+	background-color: #999;
+	margin: 0px;
+	padding: 8px;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-top-left-radius: 5px;
+	-moz-border-top-right-radius: 5px;
+	border-top-left-radius:5px;
+	border-top-right-radius:5px;
+	CCborderRadius:5px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-top-color: #CCC;
+	border-right-color: #CCC;
+	border-left-color: #CCC;
+}
+
+.sideMenu ul {
+}
+
+.sideMenu li {
+	margin-bottom: 0px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-color: #CCC;
+	border-bottom-color: #CCC;
+	border-left-color: #CCC;
+	font-size: 12px;
+}
+
+.sideMenu li.noBdr {
+	-webkit-border-bottom-right-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	border-bottom-left-radius:5px;
+	border-bottom-right-radius:5px;
+	CCborderRadius:5px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-color: #CCC;
+	border-bottom-color: #CCC;
+	border-left-color: #CCC;
+}
+
+.sideMenu li a {
+	display: block;
+	background-image: url(../images/sideNavi_li_img.jpg);
+	background-repeat: no-repeat;
+	background-position: 10px center;
+	font-size: 90%;
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 30px;
+}
+
+.sideMenu li a:hover {
+	color: #000;
+}
+
+
+
+
+/* scroll layout
+-----------------------------------------*/
+
+#scroll a {
+	color: #000;
+	font-size: 90%;
+}
+
+#scroll a:hover {
+}
+.redTxt {
+	color: #900;
+	font-size: 11px;
+}
+.smallTxt {
+	font-size: 11px;
+}
+
+/* form layout
+-----------------------------------------*/
+.cont input[type="text"] {
+	padding: 4px;
+	border: 1px solid #999;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 5px;
+	margin-left: 0px;
+}
+
+.cont input[type="password"] {
+	padding: 4px;
+	border: 1px solid #999;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 5px;
+	margin-left: 0px;
+}
+
+.cont textarea.normaltextarea {
+	padding: 4px;
+	border: 1px solid #999;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 5px;
+	margin-left: 0px;
+}
+
+.cont input[type="checkbox"] {
+	margin-bottom: 5px;
+}
+
+.cont input[type="radio"] {
+	margin-bottom: 5px;
+}
+
+
+/* etc layout
+-----------------------------------------*/
+.cont p a#viewAll {
+	display: block;
+	color: #039;
+	background-image: url(../images/backNavi_icon.jpg);
+	background-repeat: no-repeat;
+	padding-left: 17px;
+	width: 120px;
+	background-position: 0px 2px;
+}
+
+#formBtn {
+	text-align: center;
+}
+
+.error {
+	margin-bottom: 30px;
+	background-color: #FEEDF1;
+	border: 1px solid #C00;
+	padding: 20px;
+}
+
+
+/* login layout
+-----------------------------------------*/
+#mainArea {
+	background-color: #FFF;
+	width: 300px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius:5px;
+	CCborderRadius:5px;
+	border: 1px solid #CCC;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 100px;
+	padding-top: 40px;
+	padding-right: 40px;
+	padding-bottom: 50px;
+	padding-left: 40px;
+}
+
+#mainArea p#mainTitle {
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 25px;
+	color: #69C;
+}
+
+dl.nyuroku {
+}
+
+dl.nyuroku dt {
+}
+
+dl.nyuroku dd {
+}
+
+dl.nyuroku dd input[type="text"] {
+	padding: 4px;
+	border: 1px solid #999;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 3px;
+	margin-left: 0px;
+	font-size: 20px;
+	
+}
+
+dl.nyuroku dd input[type="password"] {
+	padding: 4px;
+	border: 1px solid #999;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-left: 0px;
+	font-size: 20px;
+	
+}

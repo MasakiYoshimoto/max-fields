@@ -1,0 +1,178 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* subNavi layout
+-----------------------------------------*/
+#subNavi ul {
+	overflow: hidden;
+	position: relative;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+
+#subNavi ul li {
+	list-style: none;
+	float: left;
+}
+
+#subNavi ul li a {
+	display: block;
+	color: #FFF;
+	margin-right: 10px;
+	font-size: 12px;
+	background-image: url(../images/common/arrow2.gif);
+	background-repeat: no-repeat;
+	background-position: 0px 7px;
+	padding-left: 9px;
+}
+
+#subNavi ul li#sNavi01 a {
+}
+
+#subNavi ul li#sNavi02 a {
+}
+
+#subNavi ul li#sNavi03 a {
+}
+
+#subNavi ul li#sNavi04 a {
+}
+
+#subNavi ul li#sNavi05 a {
+}
+
+#subNavi ul li#sNavi06 a {
+}
+
+#subNavi ul li#sNavi07 a {
+}
+
+#subNavi ul li#sNavi01 a:hover ,
+#subNavi ul li#sNavi02 a:hover ,
+#subNavi ul li#sNavi03 a:hover ,
+#subNavi ul li#sNavi04 a:hover ,
+#subNavi ul li#sNavi05 a:hover ,
+#subNavi ul li#sNavi06 a:hover ,
+#subNavi ul li#sNavi07 a:hover {
+}
+
+
+/* sidebar layout
+-----------------------------------------*/
+
+#sidebar {
+	width: 215px;
+	float: left;
+	margin-right: 20px;
+	padding-left: 5px;
+	padding-top: 38px;
+}
+
+#sidebar ul {
+}
+
+#sidebar li {
+	margin-bottom: 10px;
+	list-style: none;
+}
+
+#sidebar li a {
+	display: block;
+	text-indent: -9999px;
+}
+
+#sidebar li#bnr01 a {
+	background-image: url(../images/common/bnr01.jpg);
+	background-repeat: no-repeat;
+	height: 120px;
+	width: 215px;
+}
+
+#sidebar li#bnr01 a:hover {
+	background-position: 0px -120px;
+}
+
+#sidebar li#bnr02 a {
+	background-image: url(../images/common/bnr02.jpg);
+	background-repeat: no-repeat;
+	height: 90px;
+	width: 215px;
+}
+
+#sidebar li#bnr02 a:hover {
+	background-position: 0px -90px;
+}
+
+#sidebar li#bnr03 a {
+	background-image: url(../images/common/bnr03.jpg);
+	background-repeat: no-repeat;
+	height: 65px;
+	width: 215px;
+}
+
+#sidebar li#bnr04 a {
+	background-image: url(../images/common/bnr04.jpg);
+	background-repeat: no-repeat;
+	height: 65px;
+	width: 215px;
+}
+
+#sidebar li#bnr05 a {
+	background-image: url(../images/common/bnr05.jpg);
+	background-repeat: no-repeat;
+	height: 80px;
+	width: 215px;
+}
+
+#sidebar li#bnr03 a:hover ,
+#sidebar li#bnr04 a:hover {
+	background-position: 0px -65px;
+}
+
+#sidebar li#bnr05 a:hover {
+	background-position: 0px -80px;
+}
+
+
+
+/* content layout
+-----------------------------------------*/
+#content {
+	float: left;
+	width: 670px;
+	background-repeat: repeat-y;
+	margin: 0px;
+	padding: 0px;
+	background-image: url(../images/common/content_mid.jpg);
+}
+
+#content-inner #content-inner2 {
+	background-image: url(../images/common/content_btm.jpg);
+	background-repeat: no-repeat;
+	background-position: bottom;
+	margin: 0px;
+	padding: 80px 30px 30px;
+}
+
+#topInfo {
+	width: 610px;
+}
+
+#breadList {
+	font-size: 12px;
+	background-image: url(../images/common/bread_bg.jpg);
+	background-repeat: no-repeat;
+	height: 23px;
+	padding-top: 14px;
+	padding-left: 100px;
+}
+
+#content h2 {
+	font-size: 110%;
+	font-weight: bold;
+	color: #6699CC;
+	height: 25px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #6699CC;
+	padding: 0px;
+}

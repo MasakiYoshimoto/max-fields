@@ -1,0 +1,182 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* globalNavi layout
+-----------------------------------------*/
+#globalNavi ul {
+	overflow: hidden;
+	position: relative;
+}
+
+#globalNavi ul li {
+	list-style: none;
+	float: left;
+}
+
+#globalNavi ul li a {
+	display: block;
+	height: 40px;
+	color: #FFF;
+	text-indent: -9999px;
+}
+
+#globalNavi ul li#navi01 a {
+	background-image: url(../images/common/navi01.gif);
+	background-repeat: no-repeat;
+	width: 140px;
+	height: 40px;
+}
+
+#globalNavi ul li#navi02 a {
+	background-image: url(../images/common/navi02.gif);
+	background-repeat: no-repeat;
+	height: 40px;
+	width: 127px;
+}
+
+#globalNavi ul li#navi03 a {
+	background-image: url(../images/common/navi03.gif);
+	background-repeat: no-repeat;
+	height: 40px;
+	width: 95px;
+}
+
+#globalNavi ul li#navi04 a {
+	background-image: url(../images/common/navi04.gif);
+	background-repeat: no-repeat;
+	height: 40px;
+	width: 100px;
+}
+
+#globalNavi ul li#navi05 a {
+	background-image: url(../images/common/navi05.gif);
+	background-repeat: no-repeat;
+	height: 40px;
+	width: 126px;
+}
+
+#globalNavi ul li#navi06 a {
+	background-image: url(../images/common/navi06.gif);
+	background-repeat: no-repeat;
+	height: 40px;
+	width: 162px;
+}
+
+#globalNavi ul li#navi07 a {
+	background-image: url(../images/common/navi07.gif);
+	background-repeat: no-repeat;
+	height: 40px;
+	width: 87px;
+}
+
+#globalNavi ul li#navi08 a {
+	background-image: url(../images/common/navi08.gif);
+	background-repeat: no-repeat;
+	height: 40px;
+	width: 63px;
+}
+
+#globalNavi ul li#navi01 a:hover ,
+#globalNavi ul li#navi02 a:hover ,
+#globalNavi ul li#navi03 a:hover ,
+#globalNavi ul li#navi04 a:hover ,
+#globalNavi ul li#navi05 a:hover ,
+#globalNavi ul li#navi06 a:hover ,
+#globalNavi ul li#navi07 a:hover ,
+#globalNavi ul li#navi08 a:hover {
+	background-position: 0px -40px;
+}
+
+#camp #globalNavi ul li#navi01 a {
+	background-position: 0px -40px;
+	}
+
+
+#maintenance #globalNavi ul li#navi02 a ,
+#maintenance2 #globalNavi ul li#navi02 a ,
+#maintenance3 #globalNavi ul li#navi02 a ,
+#maintenance4 #globalNavi ul li#navi02 a ,
+#maintenance5 #globalNavi ul li#navi02 a ,
+#maintenance6 #globalNavi ul li#navi02 a ,
+#maintenance7 #globalNavi ul li#navi02 a  {
+	background-position: 0px -80px;
+}
+
+#event #globalNavi ul li#navi03 a ,
+#event2 #globalNavi ul li#navi03 a ,
+#event2More #globalNavi ul li#navi03 a ,
+#event3 #globalNavi ul li#navi03 a ,
+#event3More #globalNavi ul li#navi03 a {
+	background-position: 0px -80px;
+}
+
+#shakai #globalNavi ul li#navi04 a ,
+#shakai2 #globalNavi ul li#navi04 a ,
+#shakaiChubu #globalNavi ul li#navi04 a ,
+#shakaiChubuMore #globalNavi ul li#navi04 a ,
+#shakaiSeibu #globalNavi ul li#navi04 a ,
+#shakaiSeibuMore #globalNavi ul li#navi04 a ,
+#shakaiTobu #globalNavi ul li#navi04 a ,
+#shakaiTobuMore #globalNavi ul li#navi04 a ,
+#saigai #globalNavi ul li#navi04 a ,
+#kenketsu #globalNavi ul li#navi04 a {
+	background-position: 0px -80px;
+}
+
+#seibishi #globalNavi ul li#navi05 a ,
+#seibishi2 #globalNavi ul li#navi05 a ,
+#seibishi1kyu #globalNavi ul li#navi05 a ,
+#seibishi1kyuMore #globalNavi ul li#navi05 a ,
+#seibishi2kyu #globalNavi ul li#navi05 a ,
+#seibishi2kyuMore #globalNavi ul li#navi05 a ,
+#seibishi3kyu #globalNavi ul li#navi05 a ,
+#seibishi3kyuMore #globalNavi ul li#navi05 a ,
+#seibishiInfo #globalNavi ul li#navi05 a ,
+#seibishiInfoMore #globalNavi ul li#navi05 a ,
+#seibishiTokushu #globalNavi ul li#navi05 a ,
+#seibishiTokushuMore #globalNavi ul li#navi05 a {
+	background-position: 0px -80px;
+}
+
+#kankei #globalNavi ul li#navi06 a ,
+#kankeiKenkei #globalNavi ul li#navi06 a ,
+#kankeiKenkeiMore #globalNavi ul li#navi06 a ,
+#kankeiKokudo #globalNavi ul li#navi06 a ,
+#kankeiKotsu #globalNavi ul li#navi06 a ,
+#kankeiKotsuMore #globalNavi ul li#navi06 a {
+	background-position: 0px -80px;
+}
+
+#about #globalNavi ul li#navi07 a ,
+#aboutInfo #globalNavi ul li#navi07 a ,
+#aboutJoho #globalNavi ul li#navi07 a ,
+#aboutSaikin #globalNavi ul li#navi07 a ,
+#aboutSaikinMore #globalNavi ul li#navi07 a {
+	background-position: 0px -80px;
+}
+
+#link #globalNavi ul li#navi08 a ,
+#link2 #globalNavi ul li#navi08 a ,
+#link3 #globalNavi ul li#navi08 a ,
+#link4 #globalNavi ul li#navi08 a ,
+#link5 #globalNavi ul li#navi08 a ,
+#link6 #globalNavi ul li#navi08 a ,
+#link7 #globalNavi ul li#navi08 a {
+	background-position: 0px -80px;
+}
+
+
+/* サブナビゲーションが無いページのglobalNaviマージン設定
+-----------------------------------------*/
+#info #globalNavi ,
+#info2 #globalNavi ,
+#camp #globalNavi ,
+#privacy #globalNavi ,
+#recall #globalNavi ,
+#oasis #globalNavi ,
+#login #globalNavi ,
+#use #globalNavi ,
+#kekka #globalNavi ,
+#sitemap #globalNavi {
+	margin-bottom: 25px;
+}

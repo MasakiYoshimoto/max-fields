@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css; charset=UTF-8" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<title>管理画面</title>
+<link href="{{ $html->webroot('css/common.css')}}" rel="stylesheet" type="text/css">
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+google.load("jquery","1.3.1");
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+</script>
+<script type="text/javascript" src="{{ $html->webroot('js/lightbox/jquery.lightbox-0.5.js')}}"></script>
+<link href="{{ $html->webroot('js/lightbox/jquery.lightbox-0.5.css')}}" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{{ $html->webroot('js/jquery.page-scroller-307.js')}}"></script>
+<script language="JavaScript" src="{{ $html->webroot('jscripts/common.js')}}"></script>
+</head>
+
+
+<body>
+<div class="wordBreak" style="word-break:break-all;">
+
+<!--header-->
+<div id="header">
+<div id="header-inner">
+
+<!--logo-->
+{{$this->renderElement('logo')}}
+<!--logoここまで-->
+
+</div>
+</div>
+<!--headerここまで-->
+
+<!--pagebody-->
+<div id="pagebody">
+<div id="pagebody-inner">
+
+<!--sidebar-->
+{{$this->renderElement('side_menu')}}
+<!--sidebarここまで-->
+
+
+
+<!--content-->
+<div id="content">
+<h2>カテゴリー詳細設定</h2>
+<div id="content-inner">
+
+<div class="cont">
+
+<h3>【{{$c_id}}：{{$name}}】</h3>
+
+<form name="list" method="POST" action="">
+{{foreach from=$list name="list" key="key" item="value"}}
+<table width="100%">
+	<tr class="head">
+		<td colspan="2">{{$value.no}}　{{if $smarty.foreach.list.first==true}}{{else}}<a href="#" onclick="go_itemssort({{$value.Cmsitem.i_id}},1);return false;"><img src="{{ $html->webroot('images/up_icon.jpg')}}" border="0" style="margin-bottom: 5px;"></a>{{/if}}{{if $smarty.foreach.list.last==true}}{{else}}<a href="#" onclick="go_itemssort({{$value.Cmsitem.i_id}},2);return false;"><img src="{{ $html->webroot('images/down_icon.jpg')}}" border="0"></a>{{/if}}</td>
+	</tr>
+	<tr>
+		<td>必須</td>
+		<td><input type="checkbox" name="required{{$value.Cmsitem.i_id}}" value="1" {{if $value.Cmsitem.required == 1}}CHECKED{{/if}}></td>
+	</tr>
+	<tr>
+		<td>名　称</td>
+		<td><input type="text" name="item_name{{$value.Cmsitem.i_id}}" size="50" value="{{$value.Cmsitem.name|escape:'html':'utf-8'}}"></td>
+	</tr>
+	<tr>
+		<td>値</td>
+		<td><input type="text" name="values{{$value.Cmsitem.i_id}}" size="50" value="{{$value.Cmsitem.values_string|escape:'html':'utf-8'}}"></td>
+	</tr>
+	<tr>
+		<td>文字数</td>
+		<td><input type="text" name="max{{$value.Cmsitem.i_id}}" size="50" value="{{if $value.Cmsitem.max}}{{$value.Cmsitem.max|escape:'html':'utf-8'}}{{/if}}"></td>
+	</tr>
+	<tr>
+		<td>単　位</td>
+		<td><input type="text" name="unit{{$value.Cmsitem.i_id}}" size="50" value="{{$value.Cmsitem.unit|escape:'html':'utf-8'}}"></td>
+	</tr>
+	<tr>
+		<td>変数名</td>
+		<td><input type="text" name="variable_name{{$value.Cmsitem.i_id}}" size="50" value="{{$value.Cmsitem.variable_name|escape:'html':'utf-8'}}"></td>
+	</tr>
+	<tr>
+		<td>説　明</td>
+		<td><textarea name="explanation{{$value.Cmsitem.i_id}}" cols="45" rows="10">{{$value.Cmsitem.explanation|escape:'html':'utf-8'}}</textarea></td>
+	</tr>
+	<tr>
+		<td>種　類</td>
+		<td>
+		{{if $value.Cmsitem.type==1}}
+		１行テキスト
+		{{/if}}
+		{{if $value.Cmsitem.type==2}}
+		テキストエリア
+		{{/if}}
+		{{if $value.Cmsitem.type==3}}
+		画像
+		{{/if}}
+		{{if $value.Cmsitem.type==4}}
+		添付ファイル
+		{{/if}}
+		{{if $value.Cmsitem.type==5}}
+		ラジオボタン
+		{{/if}}
+		{{if $value.Cmsitem.type==6}}
+		セレクト
+		{{/if}}
+		{{if $value.Cmsitem.type==7}}
+		チェックボックス
+		{{/if}}
+		{{if $value.Cmsitem.type==8}}
+		日付
+		{{/if}}
+		{{if $value.Cmsitem.type==9}}
+		日時
+		{{/if}}
+		{{if $value.Cmsitem.type==10}}
+		テキストエリア（ノーマル）
+		{{/if}}
+		</td>
+	</tr>
+	<tr class="head">
+		<td colspan="2"><div class="center_box"><div class="koushin_del"><input type="button" value="更　新" onclick="items_update( {{$value.Cmsitem.i_id}} )">　　<input type="button" value="削　除" onclick="items_del( {{$value.Cmsitem.i_id}} )"></div></div></td>
+	</tr>
+</table>
+<br/>
+{{/foreach}}
+</form>
+</div>
+
+<br>
+<h3>アイテムの新規追加</h3>
+{{ $form->create('Cmsitem',$this->aa('action','/add')) }}
+{{ $form->hidden('_token',$this->aa('value',$token))}}
+{{ $form->hidden('c_id',$this->aa('value',$c_id))}}
+<table>
+<tr><td align="center">種　類</td><td>：{{$form->select('Cmsitem.type' , $lists , null , null , false)}}
+</td></tr>
+<tr><td align="center">名　称</td><td>：{{ $form->input('item_name',$this->aa('type','text','size','40','label',"false",'div',"false","error","false"))}}</td></tr>
+<tr><td align="center">値</td><td>：{{ $form->input('values',$this->aa('type','text','size','40','label',"false",'div',"false","error","false"))}}</td></tr>
+<tr><td align="center">文字数</td><td>：{{ $form->input('max',$this->aa('type','text','size','40','label',"false",'div',"false","error","false"))}}</td></tr>
+<tr><td align="center">単　位</td><td>：{{ $form->input('unit',$this->aa('type','text','size','40','label',"false",'div',"false","error","false"))}}</td></tr>
+<tr><td align="center">変　数</td><td>：{{ $form->input('variable_name',$this->aa('type','text','size','40','label',"false",'div',"false","error","false"))}}</td></tr>
+<tr><td align="center">説　明</td><td>：{{ $form->input('explanation',$this->aa('type','text','size','40','label',"false",'div',"false","error","false"))}}</td></tr>
+<tr><td align="center">必　須</td><td>：{{ $form->checkbox('Cmsitem.required')}}</td></tr>
+</table>
+{{$form->end($this->aa('label','追　加','div',"false"))}}
+
+{{ $form->create('Cmsitem',$this->aa('action','/up','name','update')) }}
+{{ $form->hidden('_token',$this->aa('value',$token))}}
+{{ $form->hidden('up_c_id',$this->aa('value',$c_id))}}
+{{ $form->hidden('up_i_id',$this->aa('value',""))}}
+{{ $form->hidden('up_item_name',$this->aa('value',""))}}
+{{ $form->hidden('up_values',$this->aa('value',""))}}
+{{ $form->hidden('up_max',$this->aa('value',""))}}
+{{ $form->hidden('up_unit',$this->aa('value',""))}}
+{{ $form->hidden('up_variable_name',$this->aa('value',""))}}
+{{ $form->hidden('up_explanation',$this->aa('value',""))}}
+{{ $form->hidden('up_required',$this->aa('value',""))}}
+</form>
+{{ $form->create('Cmsitem',$this->aa('action','/del','name','del')) }}
+{{ $form->hidden('_token',$this->aa('value',$token))}}
+{{ $form->hidden('del_i_id',$this->aa('value',""))}}
+</form>
+{{ $form->create('Cmsitem',$this->aa('action','/sort','name','sort')) }}
+{{ $form->hidden('c_id',$this->aa('value',$c_id))}}
+{{ $form->hidden('i_id',$this->aa('value',''))}}
+{{ $form->hidden('sort_flag',$this->aa('value',''))}}
+</form>
+
+</div>
+</div>
+<!--contentここまで-->
+
+</div>
+</div>
+<!--pagebodyここまで-->
+
+<!--scroll-->
+<div id="scroll">
+<div id="scroll-inner">
+<a href="#header">ページの先頭へ</a>
+</div>
+</div>
+<!--scrollここまで-->
+
+<!--footer-->
+<div id="footer">
+</div>
+<!--footerここまで-->
+
+{{$this->renderElement('copyright')}}
+
+</div>
+</body>
+</html>

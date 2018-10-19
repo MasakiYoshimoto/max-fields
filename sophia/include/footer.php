@@ -3,21 +3,27 @@
 	<div id="boxNav">
 		<dl>
 			<dt><a href="<?php echo ROOT_PATH?>sophia/about/"><img src="<?php echo ROOT_PATH?>sophia/img/nav_about.gif" alt="ソフィアマックスとは？" width="160" height="120"></a></dt>
+			<div class="sofia">
 			<dd class="link"><a href="<?php echo ROOT_PATH?>sophia/about/">ソフィアマックスについて</a></dd>
 			<dd class="link"><a href="<?php echo ROOT_PATH?>sophia/about/#anchor-outline">会社概要</a></dd>
 			<dd class="link"><a href="<?php echo ROOT_PATH?>sophia/about/#anchor-access">アクセスマップ</a></dd>
+		</div>
 		</dl>
 		<dl>
 			<dt><a href="<?php echo ROOT_PATH?>sophia/employer/"><img src="<?php echo ROOT_PATH?>sophia/img/nav_employer.gif" alt="企業ご担当者の皆様" width="170" height="120"></a></dt>
+			<div class="sofia">
 			<dd class="link"><a href="<?php echo ROOT_PATH?>sophia/employer/#anchor-support01">企業・経営の改善・改良</a></dd>
 			<dd class="link"><a href="<?php echo ROOT_PATH?>sophia/employer/#anchor-support02">起業・開店・サポート</a></dd>
 			<dd class="link"><a href="<?php echo ROOT_PATH?>sophia/employer/smartage/">スマートエイジについて</a></dd>
+		</div>
 		</dl>
 		<dl>
 			<dt><a href="<?php echo ROOT_PATH?>sophia/employee/"><img src="<?php echo ROOT_PATH?>sophia/img/nav_employee.gif" alt="働く皆様" width="160" height="120"></a></dt>
+			<div class="sofia">
 			<dd class="link"><a href="<?php echo ROOT_PATH?>sophia/employee/#anchor-requirements">募集要項</a></dd>
 			<dd class="link"><a href="<?php echo ROOT_PATH?>sophia/employee/2.html">保険制度・基礎研修・フォロー制度</a></dd>
 			<dd class="link"><a href="<?php echo ROOT_PATH?>sophia/employee/smartage/">まずはご登録を！スマートエイジ</a></dd>
+		</div>
 		</dl>
 	</div><!--/#bottomNav-->
 <?php endif;?>
@@ -47,7 +53,22 @@
 .html">サイトマップ</a></li>
 			</ul>
 		</div>
-		<div id="siteFooterGroupLogo"><a href="http://www.evolve-max.com/"><img src="<?php echo ROOT_PATH?>global/img/footer_logo.gif" alt="マックスフィールズグループ" width="60" height="60"></a></div>
+		<div id="siteFooterNav_sp">
+			<ul>
+				<li><a href="<?php echo ROOT_PATH?>sophia/about/">ソフィアマックスとは</a></li>
+				<li><a href="<?php echo ROOT_PATH?>sophia/about/#anchor-outline">会社概要</a></li>
+				<li><a href="<?php echo ROOT_PATH?>sophia/employer/">企業ご担当者の皆様</a></li>
+				<li><a href="<?php echo ROOT_PATH?>sophia/employee/">働く皆様</a></li>
+				<li><a href="<?php echo ROOT_PATH?>sophia/employee/2.html">保険制度・基礎研修・フォロー制度</a></li>
+				<li><a href="<?php echo ROOT_PATH?>sophia/contact/">お問い合わせ</a></li>
+				<li><a href="<?php echo ROOT_PATH?>sophia/info/">インフォメーション</a></li>
+				<li><a href="<?php echo ROOT_PATH?>sophia/search/">求人検索</a></li>
+				<li><a href="<?php echo ROOT_PATH?>privacy.html">個人情報保護方針</a></li>
+				<li><a href="<?php echo ROOT_PATH?>sitepolicy.html">サイトポリシー</a></li>
+				<li><a href="<?php echo ROOT_PATH?>sitemap.html">サイトマップ</a></li>
+			</ul>
+		</div>
+		<div id="siteFooterGroupLogo"><a href="/"><img src="<?php echo ROOT_PATH?>global/img/footer_logo.gif" alt="マックスフィールズグループ" width="60" height="60"></a></div>
 		<div id="siteFooterCopyright">Copyright &copy; MAX FIELDS. CO.,Ltd. All Rights Reserved.</div>
 	</div><!--/#siteFooterInner-->
 </div><!--/#siteFooter-->

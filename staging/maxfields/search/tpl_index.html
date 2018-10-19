@@ -1,0 +1,104 @@
+{{php}}
+define('PAGE_TITLE', '求人案件 | 株式会社マックスフィールズ');
+define('PAGE_DESCRIPTION', '静岡・都内の派遣アウトソーシング、コンサルティングはマックスフィールズ。あなたの力を発揮する確かなフィールド。');
+define('BODY_CLASS', 'jobsearch');
+
+include('/var/www/vhosts/evolve-max.com/httpdocs/staging/maxfields/include/header2.php'); {{/php}}
+
+
+<!-- コンテント -->
+<div id="topicpath">
+	<ol>
+		<li><a href="../">ホーム</a></li>
+		<li>求人案件</li>
+	</ol>
+</div>
+<!-- コンテント(SP用) -->
+<div id="topicpath_sp">
+	<ol>
+		<li><a href="../">ホーム</a></li>
+		<li>求人案件</li>
+	</ol>
+</div>
+<!-- コンテント -->
+<div id="contentWrap">
+
+	<div id="contentMain">
+
+		<div class="contentBox">
+
+			<div class="mainHeader">
+				<h2>
+					<img src="img/title.gif" alt="Job information">
+					<span>求人案件</span>
+				</h2>
+			</div>
+				<p class="outTitle00">◎ 求人検索</p>
+						<div id="secondary">
+							{{php}} include('./maxfields/include/search_box.php'); {{/php}}
+						</div><!-- end #secondary-->
+
+				<p class="outTitle00">◎ 求人一覧</p>
+                        {{job2_list job=$smarty.get.job area=$smarty.get.area search_null=true max=9}}
+                        {{if $job.list}}
+						<div id="primary">
+								<div id="jobinfo">
+									<ul>
+									{{foreach name="job_list" from=$job.list key="key" item="value"}}
+										<li>
+                                            {{if $value.category == 10000}}
+                                            {{assign var="cat_no" value="1"}}
+                                            {{elseif  $value.category == 10010}}
+                                            {{assign var="cat_no" value="2"}}
+                                            {{elseif  $value.category == 10020}}
+                                            {{assign var="cat_no" value="3"}}
+                                            {{elseif  $value.category == 10030}}
+                                            {{assign var="cat_no" value="3"}}
+                                            {{elseif  $value.category == 10040}}
+                                            {{assign var="cat_no" value="4"}}
+                                            {{elseif  $value.category == 10050}}
+                                            {{assign var="cat_no" value="5"}}
+                                            {{elseif  $value.category == 99999}}
+                                            {{assign var="cat_no" value="6"}}
+                                            {{/if}}
+											<p class="search_cdn0{{ $cat_no }}_ttl">{{ $category[$value.category] }}<p>
+											<h3 class="jobtitle"><a href="detail.html?d={{$value.id}}{{$job.search_query}}">{{$value.catchcopy}}</a></h3>
+											<div class="thumbnail"><img src="{{$wwwroot}}/thumbs/img2.php{{$magic}}&filename=/cms_contents/images/{{$value.pic1}}&newxsize=160&newysize=107&trim=1" width="160" height="107"></div>
+											<p class="detail_s">{{$value.work|strip:''|mb_truncate:70}}</p>
+											<div class="readmore"><a href="detail.html?d={{$value.id}}{{$job.search_query}}" title="詳しく見る">詳細を見る</a></div>
+										</li>
+									{{/foreach}}
+									</ul>
+								</div>
+                            {{if $job.list && $job.maxpage != 1}}
+                            <div id="pagenavi">
+                                <ul>
+                                    {{if $job.list && $job.page!=1}}<li class="arrow"><a href="./?p={{$job.page-1}}{{$job.search_query}}">&lt;</a></li>{{/if}}
+                                    {{foreach name="job_page_list" from=$job.page_list key="key" item="value"}}
+                                    <li class="{{if $job.page == $value}}current{{else}}current02{{/if}}"><a href="./?p={{$value}}{{$job.search_query}}">{{$value}}</a></li>
+                                    {{/foreach}}
+                                    {{if $job.list && $job.maxpage && $job.maxpage != $job.page}}<li class="arrow"><a href="./?p={{$job.page+1}}{{$job.search_query}}">&gt;</a></li>{{/if}}
+                                </ul>
+                            </div>
+                            {{/if}}
+                        </div><!-- end #primary-->
+                       {{else}}
+                        <div id="primary">
+                        該当する求人案件がありませんでした。
+                        </div>
+                       {{/if}}
+
+			<div class="mainPageTop"><a href="#pageTop">ページトップ</a></div>
+
+		</div><!--/.contentBox-->
+
+	</div><!--/#contentMain-->
+
+	<!-- サイドバーエリア -->
+
+{{php}} include('/var/www/vhosts/evolve-max.com/httpdocs/staging/maxfields/include/sidebar.php'); {{/php}}
+
+</div><!--/#contentWrap-->
+
+
+{{php}} include('/var/www/vhosts/evolve-max.com/httpdocs/staging/maxfields/include/footer.php'); {{/php}}

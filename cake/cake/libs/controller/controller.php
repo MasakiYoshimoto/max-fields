@@ -72,7 +72,7 @@ class Controller extends Object {
  *
  * Example: var $uses = array('Product', 'Post', 'Comment');
  *
- * Can be set to array() to use no models.  Can be set to false to 
+ * Can be set to array() to use no models.  Can be set to false to
  * use no models and prevent the merging of $uses with AppController
  *
  * @var mixed A single name as a string or a list of names as an array.
@@ -294,7 +294,7 @@ class Controller extends Object {
  */
 	var $methods = array();
 /**
- * This controller's primary model class name, the Inflector::classify()'ed version of 
+ * This controller's primary model class name, the Inflector::classify()'ed version of
  * the controller's $name property.
  *
  * Example: For a controller named 'Comments', the modelClass would be 'Comment'
@@ -940,6 +940,7 @@ class Controller extends Object {
  * @link http://book.cakephp.org/view/165/Controller-Setup
  */
 	function paginate($object = null, $scope = array(), $whitelist = array()) {
+    echo "hogehoge";
 		if (is_array($object)) {
 			$whitelist = $scope;
 			$scope = $object;

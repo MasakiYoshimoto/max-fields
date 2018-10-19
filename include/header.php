@@ -17,8 +17,11 @@ define('ROOT_PATH', is_top_dir('rapt_test')? '/rapt_test/' : '/');
 <meta charset="utf-8">
 <title><?php echo PAGE_TITLE?></title>
 <meta name="description" content="<?php echo PAGE_DESCRIPTION?>">
+<meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="<?php echo ROOT_PATH?>global/css/global.css">
 <link rel="stylesheet" href="<?php echo ROOT_PATH?>maxfields/css/maxfields.css">
+<link rel="stylesheet" href="<?php echo ROOT_PATH?>global/css/maxgroup_sp.css">
+<link rel="stylesheet" href="<?php echo ROOT_PATH?>maxfields/css/maxfields_sp.css">
 <link rel="stylesheet" href="<?php echo ROOT_PATH?>maxfields/css/group_content.css">
 <script src="<?php echo ROOT_PATH?>global/js/jquery-1.9.1.min.js"></script>
 
@@ -54,7 +57,4 @@ define('ROOT_PATH', is_top_dir('rapt_test')? '/rapt_test/' : '/');
 <a id="pageTop"></a>
 
 <!--マックスフィールズグループ グローバルヘッダー-->
-<script src="http://www.evolve-max.com/globalheader/include.js"></script>
-
-
-
+<script src="<?php echo ROOT_PATH?>globalheader/include.js"></script>

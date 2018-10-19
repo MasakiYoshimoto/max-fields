@@ -17,9 +17,13 @@ define('ROOT_PATH', is_top_dir('rapt_test')? '/rapt_test/' : '/');
 <meta charset="utf-8">
 <title><?php echo PAGE_TITLE?></title>
 <meta name="description" content="<?php echo PAGE_DESCRIPTION?>">
+<meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="<?php echo ROOT_PATH?>global/css/global.css">
+<link rel="stylesheet" href="<?php echo ROOT_PATH?>global/css/global_sp.css">
 <link rel="stylesheet" href="<?php echo ROOT_PATH?>maxfields/css/maxfields.css">
-
+<link rel="stylesheet" href="<?php echo ROOT_PATH?>maxfields/css/maxfields_sp.css">
+<link rel="stylesheet" href="<?php echo ROOT_PATH?>maxfields/css/menu.css">
+<link rel="stylesheet" href="<?php echo ROOT_PATH?>maxfields/css/group_content_sp.css">
 <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="<?php echo ROOT_PATH?>img/favicon.ico">
 
 <script src="<?php echo ROOT_PATH?>global/js/jquery-1.9.1.min.js"></script>
@@ -54,7 +58,7 @@ define('ROOT_PATH', is_top_dir('rapt_test')? '/rapt_test/' : '/');
 <a id="pageTop"></a>
 
 <!--マックスフィールズグループ グローバルヘッダー-->
-<script src="http://www.evolve-max.com/globalheader/include.js"></script>
+<script src="<?php echo ROOT_PATH?>globalheader/include.js"></script>
 
 <!-- ヘッダー -->
 <div id="siteHeader">
@@ -62,7 +66,7 @@ define('ROOT_PATH', is_top_dir('rapt_test')? '/rapt_test/' : '/');
 		<div id="siteHeaderTop">
 			<h1 id="siteHeaderLogo"><a href="<?php echo ROOT_PATH?>maxfields/"><img src="<?php echo ROOT_PATH?>maxfields/img/header_logo.png" alt="株式会社マックスフィールズ" width="240" height="60"></a></h1>
 			<div id="siteHeaderContact">
-				<a class="faq" href="<?php echo ROOT_PATH?>maxfields/faq/">よくある質問</a>
+				<!--<a class="faq" href="<?php echo ROOT_PATH?>maxfields/faq/">よくある質問</a>-->
 				<a class="contact" href="<?php echo ROOT_PATH?>maxfields/contact/">お問い合わせ</a>
 			</div>
 		</div>
@@ -72,6 +76,37 @@ define('ROOT_PATH', is_top_dir('rapt_test')? '/rapt_test/' : '/');
 				<li><a href="<?php echo ROOT_PATH?>maxfields/info/">インフォメーション</a></li>
 			</ul>
 		</div>
+
+		<header>
+		  <div id="nav-drawer">
+		      <input id="nav-input" type="checkbox" class="nav-unshown">
+		      <label id="nav-open" for="nav-input"><span></span></label>
+		      <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+		      <div id="nav-content">
+						<ul class="nav-ul">
+							<li><a href="<?php echo ROOT_PATH?>maxfields/">HOME</a></li>
+							<li><a href="<?php echo ROOT_PATH?>maxfields/about">マックスフィールズとは</a></li>
+							<li><a href="<?php echo ROOT_PATH?>maxfields/about/outline.html">会社概要</a></li>
+					 	 <li><a href="<?php echo ROOT_PATH?>maxfields/consult">コンサルティング事業</a></li>
+					 	 <li><a href="<?php echo ROOT_PATH?>maxfields/outsource">アウトソーシング事業</a></li>
+					 	 <!--<li><a href="<?php echo ROOT_PATH?>maxfields/careerpro">職業紹介・人材派遣業</a></li>-->
+					 	 <li><a href="<?php echo ROOT_PATH?>maxfields/recruit">自社リクルート</a></li>
+					 	 <li><a href="<?php echo ROOT_PATH?>maxfields/info">インフォメーション</a></li>
+					 	 <!--<li><a href="<?php echo ROOT_PATH?>maxfields/faq">よくあるご質問</a></li>-->
+					 	 <li><a href="<?php echo ROOT_PATH?>maxfields/contact">お問い合わせ</a></li>
+					 	 <li><a href="<?php echo ROOT_PATH?>privacy.html">個人情報保護方針</a></li>
+					 	 <li><a href="<?php echo ROOT_PATH?>sitepolicy.html">サイトポリシー</a></li>
+  </ul>
+	<ul class="nav-ul2">
+		<li><a href="<?php echo ROOT_PATH?>maxfields/">▶︎ Maxfields</a></li>
+		<li><a href="<?php echo ROOT_PATH?>sophia/">▶︎ Sofia-max</a></li>
+		<li><a href="http://www.dd-max.com/">▶︎ D&D max</a></li>
+		<li><a href="http://www.jobmax.jp/">▶︎ Job max solutions</a></li>
+	</ul>
+					</div>
+		  </div>
+		</header>
+
 	</div><!--/#siteHeaderInner-->
 </div><!--/#siteHeader-->
 
@@ -79,9 +114,10 @@ define('ROOT_PATH', is_top_dir('rapt_test')? '/rapt_test/' : '/');
 <div id="siteNav" class="maxfields">
 	<ul>
 		<li><a href="<?php echo ROOT_PATH?>maxfields/about/">マックスフィールズとは</a></li>
+		<li><a href="<?php echo ROOT_PATH?>maxfields/about/outline.html">会社概要</a></li>
 		<li><a href="<?php echo ROOT_PATH?>maxfields/consult/">コンサルティング事業</a></li>
 		<li><a href="<?php echo ROOT_PATH?>maxfields/outsource/">アウトソーシング事業</a></li>
-		<li><a href="<?php echo ROOT_PATH?>maxfields/careerpro/">職業紹介</a></li>
+		<!--<li><a href="<?php echo ROOT_PATH?>maxfields/careerpro/">職業紹介</a></li>-->
 		<li><a href="<?php echo ROOT_PATH?>maxfields/recruit/">自社リクルート</a></li>
 	</ul>
 </div><!--/#siteNav-->

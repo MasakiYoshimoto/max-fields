@@ -1,0 +1,66 @@
+{{php}}
+define('PAGE_TITLE', 'お知らせ | 株式会社ソフィアマックス');
+define('PAGE_DESCRIPTION', '神奈川・都内の派遣アウトソーシングはソフィアマックス。人財の違いで御社のビジネスをサポートいたします。');
+define('BODY_CLASS', 'info');
+
+include('/var/www/vhosts/evolve-max.com/httpdocs/staging/sophia/include/header.php');{{/php}}
+
+<!-- コンテント -->
+<div id="topicpath">
+	<ol>
+		<li><a href="../">ホーム</a></li>
+		<li>お知らせ</li>
+	</ol>
+</div>
+
+
+<!-- コンテント -->
+<div id="contentWrap">
+
+	<div id="contentMain">
+
+		<div class="contentBox">
+
+			<div class="mainHeader">
+				<h2>
+					<img src="img/title_icon.gif" alt="information" width="152" height="124">
+					<span>お知らせ</span>
+				</h2>
+			</div>
+
+			<div class="infoList">
+				{{cms_setlist id=2 max=10 name='info' move=true notdata=true}}
+				<ul>
+					{{foreach name="info_list" from=$info.list key="key" item="value"}}
+						<li>
+							<a href="article.html?d={{$value.ID}}">
+								<span class="date">{{$value.RELEASE_DATE|d_format:"Y.m.d"}}</span>
+								<span class="title">{{$value.TITLE}}</span>
+							</a>
+						</li>
+					{{/foreach}}
+				</ul>
+			</div><!--/.infoList-->
+
+			{{if $info && $info.maxpage != 1}}
+				<div class="infoPaging">
+					{{if $info.page != 1}}<a class="prev" href="./index.html?p={{$info.page-1}}">&lt;</a>{{/if}}
+						{{foreach name="info_pagelist" from=$info.page_list key="key" item="value"}}
+							<a class="number{{if $info.page == $value}} current{{/if}}" href="./index.html?p={{$value}}">{{$value}}</a>
+						{{/foreach}}
+					{{if $info.list && $info.maxpage != $info.page}}<a class="next" href="./index.html?p={{$info.page+1}}">&gt;</a>{{/if}}
+				</div><!--/.infoPaging-->
+			{{/if}}
+
+		</div><!--/.contentBox-->
+
+	</div><!--/#contentMain-->
+
+	<!-- サイドバーエリア -->
+
+{{php}} include('/var/www/vhosts/evolve-max.com/httpdocs/staging/sophia/include/sidebar.php');{{/php}}
+
+</div><!--/#contentWrap-->
+
+
+{{php}} include('/var/www/vhosts/evolve-max.com/httpdocs/staging/sophia/include/footer.php');{{/php}}

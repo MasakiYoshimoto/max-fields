@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css; charset=UTF-8" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<title>プレビュー</title>
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+google.load("jquery","1.3.1");
+</script>
+<style TYPE="text/css">
+<!--
+
+* {
+	font-style: normal;
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	font-size: 12px;
+	font-family: sans-serif;
+	line-height: 0.8em;
+}
+
+#preview_contents {
+	margin: 5px;
+}
+
+</style>
+<script type="text/javascript">
+function iframeResize(){
+var PageHight = document.body.scrollHeight + 30;
+	window.parent.document.getElementById('preview').style.height = PageHight + 'px';
+}
+window.onload = iframeResize;
+
+jQuery(document).ready(function(){
+	$('a').attr('target','_blank');
+});
+</script>
+</head>
+<body>
+<div id="preview_contents">
+{{$contents|yen}}
+</div>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css; charset=UTF-8" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<title>管理画面</title>
+<link href="{{ $html->webroot('css/common.css')}}" rel="stylesheet" type="text/css">
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+google.load("jquery","1.3.1");
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+</script>
+<script type="text/javascript" src="{{ $html->webroot('js/lightbox/jquery.lightbox-0.5.js')}}"></script>
+<link href="{{ $html->webroot('js/lightbox/jquery.lightbox-0.5.css')}}" rel="stylesheet" type="text/css" />
+<link href="{{ $html->webroot('js/sexylightbox/sexylightbox.css')}}" rel="stylesheet"  type="text/css" media="all" />
+<script type="text/javascript" src="{{ $html->webroot('js/jquery.page-scroller-307.js')}}"></script>
+<script language="JavaScript" src="{{ $html->webroot('js/sexylightbox/jquery.easing.1.3.js')}}"></script>
+<script language="JavaScript" src="{{ $html->webroot('js/sexylightbox/sexylightbox.v2.3.jquery.min.js')}}"></script>
+<script language="JavaScript" src="{{ $html->webroot('jscripts/common.js')}}"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		SexyLightbox.initialize({color:'black', dir: '{{ $html->webroot("js/sexylightbox/images")}}'});
+		{{if !$use_fulledit}}$('#input_contents a').attr('target','_blank');{{/if}}
+	});
+</script>
+</head>
+
+
+<body>
+<div class="wordBreak" style="word-break:break-all;">
+
+<!--header-->
+<div id="header">
+<div id="header-inner">
+
+<!--logo-->
+{{$this->renderElement('logo')}}
+<!--logoここまで-->
+
+</div>
+</div>
+<!--headerここまで-->
+
+<!--pagebody-->
+<div id="pagebody">
+<div id="pagebody-inner">
+
+<!--sidebar-->
+{{$this->renderElement('side_menu')}}
+<!--sidebarここまで-->
+
+
+
+<!--content-->
+<div id="content">
+<h2>{{$category_name}}管理</h2>
+<div id="content-inner">
+
+<div class="cont">
+<h3>確認画面</h3>
+<p>内容を確認して登録ボタンを押して下さい。</p>
+</div>
+
+<div class="cont">
+{{ $form->create('Cmsdocument',$this->aa('action','/adddo','name','conf')) }}
+{{ $form->hidden('_token',$this->aa('value',$token))}}
+{{ $form->hidden('mode',$this->aa('value','add'))}}
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td width="28%" class="clr">ID</td>
+		<td width="72%">&nbsp;</td>
+	</tr>
+	<tr>
+		<td class="clr">タイトル</td>
+		<td>{{$input.title|yen|escape:'html':'utf-8'|nl2br}}　</td>
+	</tr>
+{{if $use_rss==1}}
+	<tr>
+		<td class="clr">内容の説明</td>
+		<td>{{$input.explanation|yen|escape:'html':'utf-8'|nl2br}}　</td>
+	</tr>
+{{/if}}
+	<tr>
+		<td class="clr">公開/非公開</td>
+		<td>{{if $input.disable!=1}}公開{{else}}非公開{{/if}}　</td>
+	</tr>
+{{if $use_period==1}}
+	<tr>
+		<td class="clr">公開期間設定</td>
+		<td>{{if $input.period==1}}設定{{else}}未設定{{/if}}　</td>
+	</tr>
+{{if $input.period==1}}
+	<tr>
+		<td class="clr">公開開始日</td>
+		<td>{{$input.start_date}}　</td>
+	</tr>
+	<tr>
+		<td class="clr">公開終了日</td>
+		<td>{{$input.end_date}}　</td>
+	</tr>
+{{/if}}
+{{/if}}
+{{if $use_category==1}}
+	<tr>
+		<td class="clr">カテゴリー</td>
+		<td>{{$input.category_string}}　</td>
+	</tr>
+{{/if}}
+{{if $use_link==1}}
+	<tr>
+		<td class="clr">ダイレクトリンク</td>
+		<td>
+			{{if $input.directlink_flag == "url"}}<A href="{{$input.directlink_url|yen|escape:'html':'utf-8'}}" target="_blank">{{$input.directlink|yen|escape:'html':'utf-8'}}</a>{{/if}}
+			{{if $input.directlink_flag == "file"}}
+				{{if $use_filemanager}}
+					<A href="{{$input.directlink2|yen|escape:'html':'utf-8'}}" target="_blank">ファイルを確認する</a>
+				{{else}}
+					<A href="{{$input.directlink.input_value2|yen|escape:'html':'utf-8'}}" target="_blank">ファイルを確認する</a>
+				{{/if}}
+			{{/if}}
+		</td>
+	</tr>
+{{/if}}
+{{foreach from=$itemdata key="key" item="value"}}
+	<tr>
+		<td class="clr">{{$value.Cmsitem.name|yen|escape:'html':'utf-8'}}</td>
+		<td>
+			{{if $value.Cmsitem.type==3 && $value.Cmsitem.input_value}}
+			<table style="border: none;">
+				<tr>
+					<td style="border: none;">
+						<a href="{{$value.Cmsitem.input_value|yen|escape:'html':'utf-8'}}" rel="sexylightbox" target="_blank">
+							<img src="{{$value.Cmsitem.input_value|yen|escape:'html':'utf-8'}}" border="0" width="{{$value.Cmsitem.w|yen|escape:'html':'utf-8'}}" height="{{$value.Cmsitem.h|yen|escape:'html':'utf-8'}}" />
+						</a>
+					</td>
+					<td width="5%" style="border: none;"></td>
+					<td style="border: none;">
+						<span class="redTxt">※左のサムネイル画像をクリックされますと、<br/>実際の画像が表示、確認できます。</span>
+					</td>
+				</tr>
+			</table>
+			{{elseif $value.Cmsitem.type==4 && $value.Cmsitem.input_value}}
+			<a href="{{$value.Cmsitem.input_value}}" target="_blank">ファイルを確認する</a>
+			{{elseif $value.Cmsitem.type==2 }}
+
+				{{if $use_fulledit}}
+				<iframe src="{{$html->webroot('cmsdocuments/preview/')}}n:{{$value.Cmsitem.variable_name}}" height="100" width="480" border="0" style="border:none;" frameborder="0" id="preview"></iframe>
+				{{else}}
+				<div id="input_contents">{{$value.Cmsitem.outputtext|yen}}</div>
+				{{/if}}
+
+			{{else}}
+			{{$value.Cmsitem.input_value|yen|escape:'html':'utf-8'|nl2br}}{{if $value.Cmsitem.type==1}}&nbsp;{{$value.Cmsitem.unit|escape:'html':'utf-8'}}{{/if}}
+			{{/if}}&nbsp;
+		</td>
+	</tr>
+{{/foreach}}
+</table>
+</form>
+{{ $form->create('Cmsdocument',$this->aa('action','/adddo','name','doc_return')) }}
+{{ $form->hidden('mode',$this->aa('value','edit'))}}
+</form>
+</div>
+
+<p id="formBtn"><img src="{{ $html->webroot('images/touroku_btn.jpg')}}" width="93" height="27" alt="登録" style="cursor: pointer" onclick="document.conf.submit();" /> 　<img src="{{ $html->webroot('images/modoru_btn.jpg')}}" width="93" height="27" alt="戻る" style="cursor: pointer" onclick="document_return();" /> </p>
+
+</div>
+</div>
+<!--contentここまで-->
+
+</div>
+</div>
+<!--pagebodyここまで-->
+
+<!--scroll-->
+<div id="scroll">
+<div id="scroll-inner">
+<a href="#header">ページの先頭へ</a>
+</div>
+</div>
+<!--scrollここまで-->
+
+<!--footer-->
+<div id="footer">
+</div>
+<!--footerここまで-->
+
+{{$this->renderElement('copyright')}}
+
+</div>
+</body>
+</html>

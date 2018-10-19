@@ -1,0 +1,6 @@
+{{foreach name="defaultlist" from=$output_list key="key" item="value"}}
+<dl class="{{$default_list_setting.dl_class}}">
+<dt class="{{$default_list_setting.dt_class}}">{{$value.RELEASE_DATE|d_format:"Y/m/d"}}</dt>
+<dd class="{{$default_list_setting.dd_class}}"><a href="{{$default_list_setting.link}}?d={{$value.ID}}">{{$value.TITLE}}</a></dd>
+</dl>
+{{/foreach}}

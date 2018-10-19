@@ -1,6 +1,33 @@
-SetEnvIf Request_URI ".*" Ngx_Cache_NoCacheMode=off
-SetEnvIf Request_URI ".*" Ngx_Cache_StaticMode
-AuthUserFile "/home/joblive/stsite.info/htpasswd/.htpasswd"
-AuthName "Member Site"
-AuthType BASIC
-require valid-user
+AddHandler fcgid-script .htm
+
+<Files ~ "\.(ini|sql)$">
+deny from all
+</Files>
+<Files ~ "^tpl_.*\.(html|htm|txt)$">
+deny from all
+</Files>
+
+<IfModule mod_rewrite.c>
+    Options +FollowSymLinks
+    RewriteEngine On
+    RewriteBase /
+
+    # Renewal Redirect
+    # /maxfields/search/ -> /sophia/search/
+    RewriteRule ^maxfields/search/(.*)$ /sophia/search/$1 [R=301,L]
+
+    RewriteCond %{REQUEST_URI} !/$
+    RewriteCond %{REQUEST_URI} !\.[^/\.]+$
+    RewriteRule .* %{REQUEST_URI}/ [L,R]
+
+    RewriteCond %{REQUEST_URI} /$
+    RewriteCond %{REQUEST_FILENAME}/index.html -s
+    RewriteRule .* %{REQUEST_URI}index.html [L]
+
+    RewriteCond %{REQUEST_URI} /$
+    RewriteCond %{REQUEST_FILENAME}/index.php -s
+    RewriteRule .* %{REQUEST_URI}index.php [L]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ index.php?u=$1 [QSA,L]
+</IfModule>

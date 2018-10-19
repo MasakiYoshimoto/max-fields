@@ -63,7 +63,7 @@ include('./sophia/include/header.php'); {{/php}}
                                             {{/if}}
 											<p class="search_cdn0{{ $cat_no }}_ttl">{{ $category[$value.category] }}<p>
 											<h3 class="jobtitle"><a href="detail.html?d={{$value.id}}{{$job.search_query}}">{{$value.catchcopy}}</a></h3>
-											<div class="thumbnail"><img src="{{$wwwroot}}/thumbs/img2.php{{$magic}}&filename=/cms_contents/images/{{$value.pic1}}&newxsize=160&newysize=107&trim=1" width="160" height="107"></div>
+											<div class="thumbnail sp-hide"><img src="{{$wwwroot}}/thumbs/img2.php{{$magic}}&filename=/cms_contents/images/{{$value.pic1}}&newxsize=160&newysize=107&trim=1" width="160" height="107"></div>
 											<p class="detail_s">{{$value.work|strip:''|mb_truncate:70}}</p>
 											<div class="readmore"><a href="detail.html?d={{$value.id}}{{$job.search_query}}" title="詳しく見る">詳細を見る</a></div>
 										</li>
@@ -95,7 +95,7 @@ include('./sophia/include/header.php'); {{/php}}
 	</div><!--/#contentMain-->
 
 	<!-- サイドバーエリア -->
-	
+
 {{php}} include('./sophia/include/sidebar.php'); {{/php}}
 
 </div><!--/#contentWrap-->

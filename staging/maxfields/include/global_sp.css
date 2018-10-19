@@ -1,0 +1,731 @@
+@charset "utf-8";
+/*
+ * base.css 基本のスタイル
+ * リセット
+ * ヘッダー
+ * コンテントのフレーム
+ * コンテントサブ内
+ * フッター
+ */
+
+ @media screen and (max-width:480px){
+/*====================================================================
+
+	大見出し
+
+====================================================================*/
+
+/*----------------------------------------------------
+	中見出し
+/*--------------------------------------------------*/
+
+/* 小見出し */
+
+
+/*====================================================================
+
+	リセット
+
+====================================================================*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, data, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+}
+
+article, aside, figure, figcaption,footer,
+h1, h2, h3, h4, h5, h6, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+li {
+	list-style: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+caption, th, td {
+	text-align: left;
+	vertical-align: top;
+	font-weight: normal;
+}
+
+img {
+	vertical-align: top;
+}
+
+q:before, q:after {
+	content: '';
+}
+
+em, strong {
+	font-weight: bold;
+	font-style: normal;
+}
+
+address, caption, cite, code, dfn, var {
+	font-weight: normal;
+	font-style: normal;
+}
+
+a {
+	color: #000;
+	text-decoration: none;
+}
+a img {
+	border: none;
+}
+
+html.transition a img,
+html.transition .fade {
+	opacity: 1;
+	-webkit-transition: opacity 0.4s;
+	-moz-transition: opacity 0.4s;
+	-o-transition: opacity 0.4s;
+	transition: opacity 0.4s;
+}
+html.transition a:hover img,
+html.transition .fade:hover {
+	opacity: 0.6;
+}
+html.transition a:hover img.nofade {
+	opacity: 1;
+}
+
+/* 基本のフォント */
+body {
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "ＭＳ Ｐゴシック", sans-serif;
+	line-height: 1.5;
+	font-size: 13px ;
+	color: #000;
+}
+
+
+/*====================================================================
+
+	スタイルのためのクラス
+
+====================================================================*/
+
+.mt0  {margin-top: 0px!important;}
+.mt5  {margin-top: 5px!important;}
+.mt10 {margin-top:10px!important;}
+.mt15 {margin-top:15px!important;}
+.mt20 {margin-top:20px!important;}
+.mt25 {margin-top:25px!important;}
+.mt30 {margin-top:30px!important;}
+.mt35 {margin-top:35px!important;}
+.mt40 {margin-top:40px!important;}
+.mt45 {margin-top:45px!important;}
+.mt50 {margin-top:50px!important;}
+.mt55 {margin-top:55px!important;}
+.mt60 {margin-top:60px!important;}
+.mt65 {margin-top:65px!important;}
+.mt70 {margin-top:70px!important;}
+.mt75 {margin-top:75px!important;}
+.mt80 {margin-top:80px!important;}
+.mt85 {margin-top:85px!important;}
+.mt90 {margin-top:90px!important;}
+.mt95 {margin-top:95px!important;}
+.mt100 {margin-top:100px!important;}
+
+.mb0  {margin-bottom: 0px!important;}
+.mb5  {margin-bottom: 5px!important;}
+.mb10 {margin-bottom:10px!important;}
+.mb15 {margin-bottom:15px!important;}
+.mb20 {margin-bottom:20px!important;}
+.mb25 {margin-bottom:25px!important;}
+.mb30 {margin-bottom:30px!important;}
+.mb35 {margin-bottom:35px!important;}
+.mb40 {margin-bottom:40px!important;}
+.mb45 {margin-bottom:45px!important;}
+.mb50 {margin-bottom:50px!important;}
+.mb60 {margin-bottom:60px!important;}
+.mb70 {margin-bottom:70px!important;}
+.mb80 {margin-bottom:80px!important;}
+.mb90 {margin-bottom:90px!important;}
+.mb100 {margin-bottom:100px!important;}
+
+.ml0  {margin-left: 0px!important;}
+.ml5  {margin-left: 5px!important;}
+.ml10 {margin-left:10px!important;}
+.ml15 {margin-left:15px!important;}
+.ml20 {margin-left:20px!important;}
+.ml25 {margin-left:25px!important;}
+.ml30 {margin-left:30px!important;}
+.ml35 {margin-left:35px!important;}
+.ml40 {margin-left:40px!important;}
+.ml45 {margin-left:45px!important;}
+.ml50 {margin-left:50px!important;}
+
+.taL {text-align:left!important;}
+.taC {text-align:center!important;}
+.taR {text-align:right!important;}
+
+.fL {float:left!important;}
+.fR {float:right!important;}
+.fN {float:none!important;}
+.cL {clear:left!important;}
+.cR {clear:right!important;}
+.cB {clear:both!important;}
+
+.w100 {width:100%!important;}
+.w150 {width:100%!important;}
+.w200 {width:100%!important;}
+.w250 {width:100%!important;}
+.w300 {width:100%!important;}
+.w350 {width:100%!important;}
+.w400 {width:100%!important;}
+
+.fs11 {font-size:11px!important;}
+.fs12 {font-size:12px!important;}
+.fs13 {font-size:13px!important;}
+.fs14 {font-size:14px!important;}
+.fs15 {font-size:15px!important;}
+.fs16 {font-size:16px!important;}
+.fs17 {font-size:17px!important;}
+.fs18 {font-size:18px!important;}
+.fs20 {font-size:20px!important;}
+
+.bold {font-weight:bold!important;}
+
+.clearfix {
+	*zoom: 1;
+}
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.clear{
+	celar:both;
+}
+
+/*====================================================================
+
+	body
+
+====================================================================*/
+
+body {
+	background: #fff;
+}
+
+
+
+/*====================================================================
+
+	ページトップのアンカー
+
+====================================================================*/
+
+#pageTop {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+
+
+/*====================================================================
+
+	ヘッダー
+
+====================================================================*/
+
+#siteHeader {
+	background: url(../img/header_bg.gif) repeat-x 0 bottom;
+	*zoom: 1;
+}
+#siteHeaderInner {
+	margin: 0 auto;
+	padding: 30px 0 0;
+	width: 100%!important;
+}
+
+#siteHeaderTop {
+	*zoom: 1;
+}
+#siteHeaderTop:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+#siteHeaderLogo {
+	float: left;
+	height: auto;
+}
+
+#siteHeaderContact {
+	float: right;
+}
+#siteHeaderContact a {
+	display: block;
+	*display: block;
+	*zoom: 1;
+	margin-left: 10px;
+	margin-right: 5px;
+	padding-left: 28px;
+	height: auto;
+	background-repeat: no-repeat;
+	background-position: 0 50%;
+	line-height: 21px;
+}
+#siteHeaderContact a:hover{
+	text-decoration:underline;
+}
+#siteHeaderContact a.contact {
+	background-image: url(../img/header_contact.png);
+}
+#siteHeaderContact a.faq {
+	background-image: url(../img/header_faq.png);
+}
+
+#siteHeaderNav {
+	position: relative;
+	z-index: 1; /* ナビの影を避けるため */
+}
+#siteHeaderNav ul {
+	text-align: right;
+	/*border-right: 1px solid #ccc;*/
+	padding-right: 3px;
+	background: url(../img/header_nav_glue.gif) no-repeat right bottom;
+}
+#siteHeaderNav li {
+	display: block;
+	*display: block;
+	*zoom: 1;
+	/*border-left: 1px solid #ccc;*/
+	padding-left: 3px;
+	background: url(../img/header_nav_glue.gif) no-repeat left bottom;
+}
+#siteHeaderNav a {
+	display: block;
+	*display: block;
+	*zoom: 1;
+	padding: 4px 16px 4px 30px;
+	background: url(../img/arrow_1.gif) no-repeat 14px 50%;
+}
+
+#siteHeaderNav a:hover{
+	text-decoration:underline;
+}
+
+/*====================================================================
+
+	ナビ
+
+====================================================================*/
+
+#siteNav {
+	position: relative;
+	margin: 0 0 24px;
+	min-width: 100%!important;
+	background: #ad0003;
+	text-align: center;
+	line-height: 1;
+}
+#siteNav ul {
+	display: block;
+	*display: block;
+	*zoom: 1;
+	max-width: 940px;
+	min-width: 100%!important;
+	background: url(../img/nav_glue.gif) no-repeat left 50%;
+}
+#siteNav li {
+	display: block;
+	*display: block;
+	*zoom: 1;
+	background: url(../img/nav_glue.gif) no-repeat right 50%;
+}
+#siteNav a {
+	display: block;
+	*display: block;
+	*zoom: 1;
+	vertical-align: middle;
+	padding: 12px 1em;
+	color: #fff;
+}
+
+
+/*maxfields用*/
+#siteNav.maxfields a {
+	padding: 12px 2em;
+}
+
+
+/*GMI用*/
+#siteNav.gmi a {
+	padding: 12px 2.5em;
+	min-width:4em
+}
+
+
+
+#siteNav a:hover{
+	text-decoration:underline;
+}
+
+#siteNav:after {
+	content: "";
+	display: block;
+	position: absolute;
+	left: 0;
+	bottom: -10px;
+	width: 100%!important%;
+	height: auto;
+	background: url(../img/nav_shadow.png) repeat-x 0 0;
+}
+
+
+/*====================================================================
+
+	パン屑
+
+====================================================================*/
+
+#topicpath {
+	margin: 0 auto 24px;
+	width: 100%!important;
+}
+#topicpath ol {
+	overflow: hidden;
+	font-size: 11px;
+}
+#topicpath li {
+	float: right;
+	margin-right: 0.5em;
+	color:#999;
+}
+#topicpath li:after {
+	content: "<";
+	margin-left: 0.5em;
+}
+#topicpath li:first-child {
+	margin-right: 0;
+}
+#topicpath li:first-child:after {
+	content: none;
+}
+#topicpath a {
+}
+
+#topicpath a:hover {
+	text-decoration:underline;
+}
+
+
+/*====================================================================
+
+	コンテント
+
+====================================================================*/
+
+#contentWrap {
+	margin: 0 auto;
+	padding: 0 0 60px;
+	width: 100%!important;
+	*zoom: 1;
+}
+#contentWrap:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+#contentMain {
+	float: left;
+	width: 100%!important;
+}
+
+#sidebar {
+	float: right;
+	width: 100%!important;
+}
+
+
+/*====================================================================
+
+	サブコンテント内
+
+====================================================================*/
+
+.sidebarBannar {
+	margin: 0 0 10px;
+	border: 1px solid #eee;
+	padding: 4px 0;
+	text-align: center;
+}
+
+.sidebarNav {
+	margin: 0 0 10px;
+	border: 1px solid #eee;
+	padding: 10px 15px 15px;
+}
+.sidebarNav h2 {
+	border-bottom: 4px solid #AD0003;
+	padding: 3px 5px 8px;
+}
+.sidebarNav ul {
+	margin: 5px 0 0;
+}
+.sidebarNav li {
+	border-bottom: 1px dotted #ccc;
+}
+.sidebarNav a {
+	display: block;
+	padding: 8px 6px 8px 20px;
+	background: url(../img/arrow_2.gif) no-repeat 10px 50%;
+	line-height: 1.2;
+}
+
+.sidebarNav a:hover{
+	color:#ccc;
+}
+
+/*====================================================================
+
+	グループバナー
+
+====================================================================*/
+
+#groupBannar {
+	margin: 0px auto;
+	padding: 0 0 60px;
+	width: 100%!important;
+
+}
+#groupBannar h2 {
+	margin: 0 0 10px 10px;
+	padding-left: 13px;
+	background: url(../img/arrow_1.gif) no-repeat 0 40%;
+	font-size: 120%;
+}
+#groupBannar ul {
+	overflow: hidden;
+	*zoom: 1;
+}
+#groupBannar li {
+	float: left;
+	width: 100%!important;
+}
+#groupBannar li + li {
+	margin-left: 20px;
+}
+#groupBannar a {
+	display: block;
+	*zoom: 1;
+	border: 1px solid #ccc;
+	padding: 10px 0;
+	background: #fff;
+	text-align: center;
+}
+
+
+/*====================================================================
+
+	フッター
+
+====================================================================*/
+
+#siteFooter {
+	margin: 0;
+	border-top: 8px solid #222;
+	min-width: 100%!important;
+	background: url(../img/footer_bg.gif) repeat-x 0 bottom;
+	*zoom: 1;
+}
+#siteFooterInner {
+	position: relative;
+	margin: 0 auto;
+	padding: 20px 0 40px;
+	width: 100%!important;
+}
+
+#siteFooterTotop {
+	position: absolute;
+	right: 10px;
+	top: -30px;
+}
+#siteFooterTotop a {
+	display: block;
+	*display: block;
+	*zoom: 1;
+	border-right: 15px solid #222;
+	padding: 0 20px;
+	height: auto;
+	background: #222 url(../img/footer_totop.png) no-repeat right 7px;
+	line-height: 28px;
+	font-size: 11px;
+	color: #fff;
+}
+
+#siteFooterGrouptop {
+	float: right;
+}
+#siteFooterGrouptop a {
+	display: block;
+	*display: block;
+	*zoom: 1;
+	padding-left: 16px;
+	background: url(../img/arrow_4.png) no-repeat 0 50%;
+}
+
+#siteFooterGrouptop a:hover{
+	text-decoration:underline;
+}
+
+#siteFooterNav {
+}
+#siteFooterNav ul {}
+#siteFooterNav li {
+	display: block;
+	margin-right: 30px;
+}
+#siteFooterNav a {
+	display: block;
+	*display: block;
+	*zoom: 1;
+	padding: 4px 0 4px 10px;
+	background: url(../img/arrow_3.gif) no-repeat 0 50%;
+}
+
+#siteFooterNav a:hover{
+	text-decoration:underline;
+}
+
+#siteFooterGroupLogo {
+	clear: both;
+	padding: 40px 0 0;
+	text-align: center;
+}
+
+#siteFooterCopyright {
+	padding: 20px 0 0;
+	text-align: center;
+}
+
+
+
+/*====================================================================
+
+	カラーボックス
+
+====================================================================*/
+/*
+    ColorBox Core Style:
+    The following CSS is consistent between example themes and should not be altered.
+*/
+#colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:9999; overflow:hidden;}
+#cboxOverlay{position:fixed; width:100%!important; height:auto%;}
+#cboxMiddleLeft, #cboxBottomLeft{clear:left;}
+#cboxContent{position:relative;}
+#cboxLoadedContent{overflow:auto;}
+#cboxTitle{margin:0;}
+#cboxLoadingOverlay, #cboxLoadingGraphic{position:absolute; top:0; left:0; width:100%!important; height:auto;}
+#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow{cursor:pointer;}
+.cboxPhoto{float:left; margin:auto; border:0; display:block;}
+.cboxIframe{width:100%!important%; height:auto; display:block; border:0;}
+
+/*
+    User Style:
+    Change the following styles to modify the appearance of ColorBox.  They are
+    ordered & tabbed in a way that represents the nesting of the generated HTML.
+*/
+/*#cboxOverlay{background:url(images/overlay.png) repeat 0 0;}*/
+#cboxOverlay{background:#aaa; }
+#colorbox{}
+    #cboxTopLeft{width:100%!important; height:auto; background:#FFF;}
+    #cboxTopRight{width:100%!important; height:auto; background:#FFF;}
+    #cboxBottomLeft{width:100%!important; height:auto; background:#FFF;}
+    #cboxBottomRight{width:100%!important; height:auto; background:#FFF;}
+    #cboxMiddleLeft{width:100%!important; background:#FFF;}
+    #cboxMiddleRight{width:100%!important; background:#FFF;}
+    #cboxTopCenter{height:auto; background:#FFF;}
+    #cboxBottomCenter{height:auto; background:#FFF;}
+    #cboxContent{background:#fff; overflow:hidden;}
+        .cboxIframe{background:#fff;}
+        #cboxError{padding:50px; border:1px solid #ccc;}
+        #cboxLoadedContent{margin-bottom:28px;}
+        #cboxTitle{position:absolute; bottom:4px; left:0; text-align:center; width:100%!important; color:#949494;}
+        #cboxCurrent{position:absolute; bottom:4px; left:58px; color:#949494;}
+        #cboxSlideshow{position:absolute; bottom:4px; right:30px; color:#0092ef;}
+        #cboxPrevious{position:absolute; bottom:0; left:0; background:url(../img/colorbox/controls.png) no-repeat -75px 0; width:100%!important; height:auto; text-indent:-9999px;}
+        #cboxPrevious:hover{background-position:-75px -25px;}
+        #cboxNext{position:absolute; bottom:0; left:27px; background:url(../img/colorbox/controls.png) no-repeat -50px 0; width:100%!important; height:auto; text-indent:-9999px;}
+        #cboxNext:hover{background-position:-50px -25px;}
+        #cboxLoadingOverlay{background:url(../img/colorbox/loading_background.png) no-repeat center center;}
+        #cboxLoadingGraphic{background:url(../img/colorbox/loading.gif) no-repeat center center;}
+        /*
+        #cboxClose{position:absolute; bottom:0; right:0; background:url(../img/colorbox/controls.png) no-repeat -25px 0; width:25px; height:25px; text-indent:-9999px;}
+        #cboxClose:hover{background-position:-25px -25px;}
+        */
+        #cboxClose{
+            position:absolute;
+            bottom:0;
+            right:0;
+            background: #000 url(../img/colorbox/close.png) no-repeat 50% 50%;
+            width:100%!important;
+            height:auto;
+            text-indent:-9999px;
+        }
+
+/*
+  The following fixes a problem where IE7 and IE8 replace a PNG's alpha transparency with a black fill
+  when an alpha filter (opacity change) is set on the element or ancestor element.  This style is not applied to or needed in IE9.
+  See: http://jacklmoore.com/notes/ie-transparency-problems/
+*/
+.cboxIE #cboxTopLeft,
+.cboxIE #cboxTopCenter,
+.cboxIE #cboxTopRight,
+.cboxIE #cboxBottomLeft,
+.cboxIE #cboxBottomCenter,
+.cboxIE #cboxBottomRight,
+.cboxIE #cboxMiddleLeft,
+.cboxIE #cboxMiddleRight {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);
+}
+
+/*
+  The following provides PNG transparency support for IE6
+  Feel free to remove this and the /ie6/ directory if you have dropped IE6 support.
+*/
+.cboxIE6 #cboxTopLeft{background:url(../img/colorbox/ie6/borderTopLeft.png);}
+.cboxIE6 #cboxTopCenter{background:url(../img/colorbox/ie6/borderTopCenter.png);}
+.cboxIE6 #cboxTopRight{background:url(../img/colorbox/ie6/borderTopRight.png);}
+.cboxIE6 #cboxBottomLeft{background:url(../img/colorbox/ie6/borderBottomLeft.png);}
+.cboxIE6 #cboxBottomCenter{background:url(../img/colorbox/ie6/borderBottomCenter.png);}
+.cboxIE6 #cboxBottomRight{background:url(../img/colorbox/ie6/borderBottomRight.png);}
+.cboxIE6 #cboxMiddleLeft{background:url(../img/colorbox/ie6/borderMiddleLeft.png);}
+.cboxIE6 #cboxMiddleRight{background:url(../img/colorbox/ie6/borderMiddleRight.png);}
+
+.cboxIE6 #cboxTopLeft,
+.cboxIE6 #cboxTopCenter,
+.cboxIE6 #cboxTopRight,
+.cboxIE6 #cboxBottomLeft,
+.cboxIE6 #cboxBottomCenter,
+.cboxIE6 #cboxBottomRight,
+.cboxIE6 #cboxMiddleLeft,
+.cboxIE6 #cboxMiddleRight {
+    _behavior: expression(this.src = this.src ? this.src : this.currentStyle.backgroundImage.split('"')[1], this.style.background = "none", this.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src=" + this.src + ", sizingMethod='scale')");
+}
+}

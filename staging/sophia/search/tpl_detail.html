@@ -1,0 +1,126 @@
+{{php}}
+define('PAGE_TITLE', '求人案件詳細 | 株式会社マックスフィールズ');
+define('PAGE_DESCRIPTION', '静岡・都内の派遣アウトソーシング、コンサルティングはマックスフィールズ。あなたの力を発揮する確かなフィールド。');
+define('BODY_CLASS', 'jobsearch');
+
+include('/var/www/vhosts/evolve-max.com/httpdocs/staging/sophia/include/header.php'); {{/php}}
+
+
+<!-- コンテント -->
+<div id="topicpath">
+	<ol>
+		<li><a href="../">ホーム</a></li>
+		<li>求人案件詳細</li>
+	</ol>
+</div>
+<!-- コンテント(SP用) -->
+<div id="topicpath_sp">
+	<ol>
+		<li><a href="../">ホーム</a></li>
+		<li>求人案件詳細</li>
+	</ol>
+</div>
+
+<!-- コンテント -->
+<div id="contentWrap">
+
+	<div id="contentMain">
+
+		<div class="contentBox">
+
+			<div class="mainHeader">
+				<h2>
+					<img src="img/title.gif" alt="Job information">
+					<span>求人案件</span>
+				</h2>
+			</div>
+			<div class="sp-hide">
+				<p class="outTitle00">◎ 求人検索</p>
+						<div id="secondary">
+							{{php}} include('./sophia/include/search_box.php'); {{/php}}
+						</div></div><!-- end #secondary-->
+            {{job2_detail}}
+            {{if $data.category == 10000}}
+            {{assign var="cat_no" value="1"}}
+            {{elseif  $data.category == 10010}}
+            {{assign var="cat_no" value="2"}}
+            {{elseif  $data.category == 10020}}
+            {{assign var="cat_no" value="3"}}
+            {{elseif  $data.category == 10030}}
+            {{assign var="cat_no" value="3"}}
+            {{elseif  $data.category == 10040}}
+            {{assign var="cat_no" value="4"}}
+            {{elseif  $data.category == 10050}}
+            {{assign var="cat_no" value="5"}}
+            {{elseif  $data.category == 99999}}
+            {{assign var="cat_no" value="6"}}
+            {{/if}}
+				<p class="outTitle00">◎ 求人案件詳細</p>
+						<div id="primary">
+								<div id="jobdetail">
+									<p class="search_cdn0{{$cat_no}}_ttl">{{ $category[$data.category] }}<p>
+									<h3 class="jobtitle">{{$data.catchcopy}}</h3>
+									<div class="thumbnail sp-hide">
+									<p><img src="{{$wwwroot}}/thumbs/img2.php{{$magic}}&filename=/cms_contents/images/{{$data.pic1}}&newxsize=370&newysize=247&trim=1" alt="{{$data.catchcopy}}"></p></div>
+									<div class="regist_bnr">
+										<a href="../regist/?d={{$data.id}}" title="登録申込み"><img src="img/bnr_regist.gif" width="300" height="56" alt="登録申込みフォームへ"/></a>
+									</div>
+									<dl>
+									<dt>予定勤務地</dt>
+									<dd>{{$area[$data.location]|nl2br}}</dd>
+
+									<dt>仕事内容・職場紹介</dt>
+									<dd>{{ $data.work|nl2br }}</dd>
+
+									<dt>賃金形態</dt>
+									<dd>{{ $data.wages_type|nl2br }}</dd>
+
+									<dt>就業形態</dt>
+									<dd>{{ $data.work_type|nl2br }}</dd>
+
+									<dt>休日</dt>
+									<dd>{{ $data.holiday|nl2br }}</dd>
+
+									<dt>必要な経験能力</dt>
+									<dd>{{ $data.require_ability|nl2br }}</dd>
+
+									<dt>学歴資格</dt>
+									<dd>{{ $data.educational_background|nl2br }}</dd>
+
+									<dt>お知らせ</dt>
+									<dd>{{ $data.project_contents|nl2br }}</dd>
+
+									<dt>待遇</dt>
+									<dd>{{ $data.treatment|nl2br }}</dd>
+
+									<dt>選考内容</dt>
+									<dd>{{ $data.selection|nl2br }}</dd>
+									</dl>
+								</div>
+
+								<div class="regist_bnr">
+									<p>ご応募ご希望の方はまず登録！！</p>
+									<a href="../regist/?d={{$data.id}}" title="登録申込み"><img src="img/bnr_regist.gif" width="300" height="56" alt="登録申込みフォームへ"/></a>
+								</div>
+								</div><!-- end #primary-->
+
+								<div class="pc-hide">
+									<p class="outTitle00 other">◎ 他の求人を探す</p>
+											<div id="secondary">
+												{{php}} include('./sophia/include/search_box.php'); {{/php}}
+											</div></div>
+
+			<div class="mainPageTop"><a href="#pageTop">ページトップ</a></div>
+
+		</div><!--/.contentBox-->
+
+	</div><!--/#contentMain-->
+
+	<!-- サイドバーエリア -->
+
+{{php}} include('/var/www/vhosts/evolve-max.com/httpdocs/staging/sophia/include/sidebar.php'); {{/php}}
+
+</div><!--/#contentWrap-->
+
+
+{{php}} include('/var/www/vhosts/evolve-max.com/httpdocs/staging/sophia/include/footer.php'); {{/php}}

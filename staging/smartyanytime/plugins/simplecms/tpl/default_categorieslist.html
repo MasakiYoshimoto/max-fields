@@ -1,0 +1,7 @@
+<ul class="{{$default_categories_setting.ul_class}}">
+{{foreach name="defaultcategories" from=$output_categories key="key" item="value"}}
+<li class="{{if $smarty.foreach.defaultcategories.last}}{{$default_categories_setting.li_class_last}}{{else}}{{$default_categories_setting.li_class}}{{/if}}">
+	<a href="{{$default_categories_setting.link}}?c={{$value.id}}" rel="">{{$value.name}}({{$value.count}})</a>
+</li>
+{{/foreach}}
+</ul> 

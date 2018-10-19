@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css; charset=UTF-8" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<title>管理画面</title>
+<link href="{{ $html->webroot('css/common.css')}}" rel="stylesheet" type="text/css">
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+google.load("jquery","1.3.1");
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+</script>
+<script type="text/javascript" src="{{ $html->webroot('js/lightbox/jquery.lightbox-0.5.js')}}"></script>
+<link href="{{ $html->webroot('js/lightbox/jquery.lightbox-0.5.css')}}" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{{ $html->webroot('js/curvycorner/jquery.curvycorners.packed.js')}}"></script>
+<script type="text/javascript" src="{{ $html->webroot('js/jquery.page-scroller-307.js')}}"></script>
+<script language="JavaScript" src="{{ $html->webroot('jscripts/common.js')}}"></script>
+<script type="text/javascript">
+	function offer_edit(id) {
+		document.edit.elements['data[Job2Offer][id]'].value = id;
+		document.edit.submit();
+	}
+
+	function offer_del(id) {
+		if(confirm('このデータを削除してもよろしいですか？')) {
+			document.del.elements['data[Job2Offer][id]'].value = id;
+			document.del.submit();
+		}
+	}
+</script>
+</head>
+
+
+<body>
+<div class="wordBreak" style="word-break:break-all;">
+
+<!--header-->
+<div id="header">
+<div id="header-inner">
+
+<!--logo-->
+{{$this->renderElement('logo')}}
+<!--logoここまで-->
+
+</div>
+</div>
+<!--headerここまで-->
+
+<!--pagebody-->
+<div id="pagebody">
+<div id="pagebody-inner">
+
+<!--sidebar-->
+{{$this->renderElement('side_menu')}}
+<!--sidebarここまで-->
+
+
+
+<!--content-->
+<div id="content">
+<h2>求人案件</h2>
+<div id="content-inner">
+
+<div class="cont">
+<p>新規作成・編集ボタンを押して作業を行って下さい。</p>
+</div>
+
+<div class="cont"> <img src="{{ $html->webroot('images/new_btn.jpg')}}" width="93" height="27" alt="新規作成" id="newBtn" style="cursor: pointer" onclick="document.add.submit( );" />
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr class="head">
+            <td width="69%">職場・企業キャッチコピー　</td>
+            <td width="15%">登録日</td>
+            <td width="16%">編集・削除</td>
+        </tr>
+        {{foreach name="list" from=$list key="key" item="value"}}
+        <tr>
+            <td {{if $value.Job2Offer.disable}}bgcolor="#d3d3d3"{{elseif $value.Job2Offer.status==1}}bgcolor="#ccffcc"{{elseif $value.Job2Offer.status==2}}bgcolor="#ffcccc"{{/if}}>{{if $value.Job2Offer.company}}&lt;{{$value.Job2Offer.company}}&gt;{{/if}}{{$value.Job2Offer.catchcopy|trim|mb_truncate:40|yen|escape:'html':'utf-8'}}</td>
+            <td {{if $value.Job2Offer.disable}}bgcolor="#d3d3d3"{{elseif $value.Job2Offer.status==1}}bgcolor="#ccffcc"{{elseif $value.Job2Offer.status==2}}bgcolor="#ffcccc"{{/if}}>{{$value.Job2Offer.reg_date|d_format:'Y/m/d'|escape:'html':'utf-8'}}</td>
+            <td {{if $value.Job2Offer.disable}}bgcolor="#d3d3d3"{{elseif $value.Job2Offer.status==1}}bgcolor="#ccffcc"{{elseif $value.Job2Offer.status==2}}bgcolor="#ffcccc"{{/if}}><img src="{{ $html->webroot('images/edit_icon.jpg')}}" width="40" height="19" alt="編集"  style="cursor: pointer" onclick="offer_edit( {{$value.Job2Offer.id}} );" />&nbsp;<img src="{{ $html->webroot('images/delete_icon.jpg')}}" width="40" height="19" alt="削除"  style="cursor: pointer" onclick="offer_del( {{$value.Job2Offer.id}} );" /></td>
+        </tr>
+        {{/foreach}}
+    </table>
+</table>
+</div>
+
+{{if $paginator->counter("%pages%") > 1 }}
+<ul id="pageNavi">
+{{foreach from=$pagelist key="key" item="value"}}
+<li>{{if $paginator->counter("%page%")!=$value.page}}<a href="{{ $html->webroot('')}}job2/job2_offers/index/page:{{$value.page}}">{{$value.page}}</a>{{else}}{{$value.page}}{{/if}}</li>
+{{/foreach}}
+</ul>
+{{/if}}
+
+</div>
+</div>
+{{ $form->create('Job2Offer',$this->aa('action','/add','name','add')) }}
+</form>
+{{ $form->create('Job2Offer',$this->aa('action','/edit','name','edit')) }}
+{{ $form->hidden('id',$this->aa('value',''))}}
+</form>
+{{ $form->create('Job2Offer',$this->aa('action','/del','name','del')) }}
+{{ $form->hidden('_token',$this->aa('value',$token))}}
+{{ $form->hidden('id',$this->aa('value',""))}}
+</form>
+<!--contentここまで-->
+
+</div>
+</div>
+<!--pagebodyここまで-->
+
+<!--scroll-->
+<div id="scroll">
+<div id="scroll-inner">
+<a href="#header">ページの先頭へ</a>
+</div>
+</div>
+<!--scrollここまで-->
+
+<!--footer-->
+<div id="footer">
+</div>
+<!--footerここまで-->
+
+{{$this->renderElement('copyright')}}
+
+</div>
+</body>
+</html>

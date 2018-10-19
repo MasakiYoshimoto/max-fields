@@ -34,10 +34,11 @@ include('./sophia/include/header.php'); {{/php}}
 					<span>求人案件</span>
 				</h2>
 			</div>
+			<div class="sp-hide">
 				<p class="outTitle00">◎ 求人検索</p>
 						<div id="secondary">
 							{{php}} include('./sophia/include/search_box.php'); {{/php}}
-						</div><!-- end #secondary-->
+						</div></div><!-- end #secondary-->
             {{job2_detail}}
             {{if $data.category == 10000}}
             {{assign var="cat_no" value="1"}}
@@ -59,8 +60,11 @@ include('./sophia/include/header.php'); {{/php}}
 								<div id="jobdetail">
 									<p class="search_cdn0{{$cat_no}}_ttl">{{ $category[$data.category] }}<p>
 									<h3 class="jobtitle">{{$data.catchcopy}}</h3>
-									<div class="thumbnail">
+									<div class="thumbnail sp-hide">
 									<p><img src="{{$wwwroot}}/thumbs/img2.php{{$magic}}&filename=/cms_contents/images/{{$data.pic1}}&newxsize=370&newysize=247&trim=1" alt="{{$data.catchcopy}}"></p></div>
+									<div class="regist_bnr">
+										<a href="../regist/?d={{$data.id}}" title="登録申込み"><img src="img/bnr_regist.gif" width="300" height="56" alt="登録申込みフォームへ"/></a>
+									</div>
 									<dl>
 									<dt>予定勤務地</dt>
 									<dd>{{$area[$data.location]|nl2br}}</dd>
@@ -100,6 +104,12 @@ include('./sophia/include/header.php'); {{/php}}
 								</div>
 								</div><!-- end #primary-->
 
+								<div class="pc-hide">
+									<p class="outTitle00 other">◎ 他の求人を探す</p>
+											<div id="secondary">
+												{{php}} include('./sophia/include/search_box.php'); {{/php}}
+											</div></div>
+
 			<div class="mainPageTop"><a href="#pageTop">ページトップ</a></div>
 
 		</div><!--/.contentBox-->
@@ -107,7 +117,7 @@ include('./sophia/include/header.php'); {{/php}}
 	</div><!--/#contentMain-->
 
 	<!-- サイドバーエリア -->
-	
+
 {{php}} include('./sophia/include/sidebar.php'); {{/php}}
 
 </div><!--/#contentWrap-->

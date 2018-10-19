@@ -11,7 +11,7 @@ body {\
 	width: 100%;\
 	min-width: 940px;\
 	height: 65px;\
-	background: #555 url(http://www.evolve-max.com/globalheader/img/bg.gif) repeat 0 0;\
+	background: #555 url(/globalheader/img/bg.gif) repeat 0 0;\
 	line-height: 1;\
 	font-size: 0;\
 }\
@@ -114,31 +114,31 @@ body {\
 </style>\
 <div id=\"mfgh\">\
 	<div id=\"mfgh_inner\">\
-		<a id=\"mfgh_title\" href=\"http://www.evolve-max.com/\"><img src=\"http://www.evolve-max.com/globalheader/img/group.png\" alt=\"max fields. group マックスフィールズグループ\" width=\"345\" height=\"30\"></a>\
+		<a id=\"mfgh_title\" href=\"/\"><img src=\"/globalheader/img/group.png\" alt=\"max fields. group マックスフィールズグループ\" width=\"345\" height=\"30\"></a>\
 		<div id=\"mfgh_nav\">\
 			<div>\
-				<a href=\"http://www.evolve-max.com/maxfields/\"><img src=\"http://www.evolve-max.com/globalheader/img/max.png\" alt=\"max fields.\" width=\"60\" height=\"24\"></a>\
+				<a href=\"/maxfields/\"><img src=\"/globalheader/img/max.png\" alt=\"max fields.\" width=\"60\" height=\"24\"></a>\
 				<div>\
-					<a href=\"http://www.evolve-max.com/maxfields/about/\">マックスフィールズとは</a>\
-					<a href=\"http://www.evolve-max.com/maxfields/consult/\">コンサルティング事業</a>\
-					<a href=\"http://www.evolve-max.com/maxfields/outsource/\">アウトソーシング事業</a>\
-					<a href=\"http://www.evolve-max.com/maxfields/careerpro/\">職業紹介・人材派遣業</a>\
-					<a href=\"http://www.evolve-max.com/maxfields/recruit/\">自社リクルート</a>\
+					<a href=\"/maxfields/about/\">マックスフィールズとは</a>\
+					<a href=\"/maxfields/consult/\">コンサルティング事業</a>\
+					<a href=\"maxfields/outsource/\">アウトソーシング事業</a>\
+					<a href=\"/maxfields/careerpro/\">職業紹介・人材派遣業</a>\
+					<a href=\"/maxfields/recruit/\">自社リクルート</a>\
 				</div>\
 			</div>\
 			<div>\
-				<a href=\"http://www.evolve-max.com/sophia/\"><img src=\"http://www.evolve-max.com/globalheader/img/sophia.png\" alt=\"sophiamax\" width=\"65\" height=\"24\"></a>\
+				<a href=\"/sophia/\"><img src=\"/globalheader/img/sophia.png\" alt=\"sophiamax\" width=\"65\" height=\"24\"></a>\
 				<div>\
-					<a href=\"http://www.evolve-max.com/sophia/about/\">Sophiamaxとは</a>\
-					<a href=\"http://www.evolve-max.com/sophia/about/#anchor-outline\">会社概要</a>\
-					<a href=\"http://www.evolve-max.com/sophia/employer/\">企業経営者の皆様</a>\
-					<a href=\"http://www.evolve-max.com/sophia/employee/\">働く皆様</a>\
-					<a href=\"http://www.evolve-max.com/sophia/employee/2\
+					<a href=\"/sophia/about/\">Sophiamaxとは</a>\
+					<a href=\"/sophia/about/#anchor-outline\">会社概要</a>\
+					<a href=\"/sophia/employer/\">企業経営者の皆様</a>\
+					<a href=\"/sophia/employee/\">働く皆様</a>\
+					<a href=\"/sophia/employee/2\
 .html\">保険制度・基礎研修・フォロー制度</a>\
 				</div>\
 			</div>\
 			<div>\
-				<a href=\"http://www.dd-max.com/\"><img src=\"http://www.evolve-max.com/globalheader/img/dd.png\" alt=\"D&amp;D max\" width=\"54\" height=\"24\"></a>\
+				<a href=\"http://www.dd-max.com/\"><img src=\"/globalheader/img/dd.png\" alt=\"D&amp;D max\" width=\"54\" height=\"24\"></a>\
 				<div>\
 					<a href=\"http://www.dd-max.com/%E9%81%B8%E3%81%B0%E3%82%8C%E3%82%8B%E7%90%86%E7%94%B1.html\">選ばれる理由</a>\
 					<a href=\"http://www.dd-max.com/%E3%82%B9%E3%82%BF%E3%83%83%E3%83%95%E7%B4%B9%E4%BB%8B.html\">スタッフ紹介</a>\

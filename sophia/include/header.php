@@ -17,8 +17,14 @@ define('ROOT_PATH', is_top_dir('rapt_test')? '/rapt_test/' : '/');
 <meta charset="utf-8">
 <title><?php echo PAGE_TITLE?></title>
 <meta name="description" content="<?php echo PAGE_DESCRIPTION?>">
+<meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="<?php echo ROOT_PATH?>global/css/global.css">
+<link rel="stylesheet" href="<?php echo ROOT_PATH?>global/css/global_sp.css">
 <link rel="stylesheet" href="<?php echo ROOT_PATH?>sophia/css/gmi.css">
+<link rel="stylesheet" href="<?php echo ROOT_PATH?>sophia/css/gmi_sp.css">
+<link rel="stylesheet" href="<?php echo ROOT_PATH?>global/css/maxgroup_sp.css">
+<link rel="stylesheet" href="<?php echo ROOT_PATH?>maxfields/css/maxfields_sp.css">
+<link rel="stylesheet" href="<?php echo ROOT_PATH?>maxfields/css/menu.css">
 
 <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="<?php echo ROOT_PATH?>img/favicon.ico">
 
@@ -65,7 +71,7 @@ define('ROOT_PATH', is_top_dir('rapt_test')? '/rapt_test/' : '/');
 <a id="pageTop"></a>
 
 <!--マックスフィールズグループ グローバルヘッダー-->
-<script src="http://www.evolve-max.com/globalheader/include.js"></script>
+<script src="/globalheader/include.js"></script>
 
 <!-- ヘッダー -->
 <div id="siteHeader">
@@ -82,6 +88,37 @@ define('ROOT_PATH', is_top_dir('rapt_test')? '/rapt_test/' : '/');
 				<li><a href="<?php echo ROOT_PATH?>sophia/info/">インフォメーション</a></li>
 			</ul>
 		</div>
+
+		<header>
+		  <div id="nav-drawer">
+		      <input id="nav-input" type="checkbox" class="nav-unshown">
+		      <label id="nav-open" for="nav-input"><span></span></label>
+		      <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+		      <div id="nav-content">
+						<ul class="nav-ul">
+							<li><a href="<?php echo ROOT_PATH?>sophia/">HOME</a></li>
+							<li><a href="<?php echo ROOT_PATH?>sophia/about/">ソフィアマックスとは</a></li>
+							<li><a href="<?php echo ROOT_PATH?>sophia/about/#anchor-outline">会社概要</a></li>
+							<li><a href="<?php echo ROOT_PATH?>sophia/employer/">企業ご担当者の皆様</a></li>
+							<li><a href="<?php echo ROOT_PATH?>sophia/employee/">働く皆様</a></li>
+							<li><a href="<?php echo ROOT_PATH?>sophia/employee/2.html">保険制度・基礎研修・フォロー制度</a></li>
+							<li><a href="<?php echo ROOT_PATH?>sophia/contact/">お問い合わせ</a></li>
+							<li><a href="<?php echo ROOT_PATH?>sophia/info/">インフォメーション</a></li>
+							<li><a href="<?php echo ROOT_PATH?>sophia/search/">求人検索</a></li>
+							<li><a href="<?php echo ROOT_PATH?>privacy.html">個人情報保護方針</a></li>
+							<li><a href="<?php echo ROOT_PATH?>sitepolicy.html">サイトポリシー</a></li>
+							<li><a href="<?php echo ROOT_PATH?>sitemap.html">サイトマップ</a></li>
+  </ul>
+	<ul class="nav-ul2">
+		<li><a href="<?php echo ROOT_PATH?>maxfields/">▶︎ Maxfields</a></li>
+		<li><a href="<?php echo ROOT_PATH?>sophia/">▶︎ Sofia-max</a></li>
+		<li><a href="http://www.dd-max.com/">▶︎ D&D max</a></li>
+		<li><a href="http://www.jobmax.jp/">▶︎ Job max solutions</a></li>
+	</ul>
+					</div>
+		  </div>
+		</header>
+
 	</div><!--/#siteHeaderInner-->
 </div><!--/#siteHeader-->
 

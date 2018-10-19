@@ -1,0 +1,7 @@
+{{foreach name="defaultlist" from=$output_list key="key" item="value"}}
+<li class="menu">
+	<a href="{{$default_list_setting.link}}?d={{$value.ID}}">
+		<span class="name">{{$value.RELEASE_DATE|d_format:"Y/m/d"}}&nbsp;{{$value.TITLE}}</span><span class="arrow"></span>
+	</a>
+</li>
+{{/foreach}}

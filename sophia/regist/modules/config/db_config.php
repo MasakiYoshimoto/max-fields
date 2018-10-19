@@ -1,10 +1,10 @@
 <?php
 	return array(
-		'host' => 'localhost',
+		'host' => 'mysql5029.xserver.jp',
 		'port'=>'3306',
-		'id' => 'evolve-max',
-		'password' => 'JT72WuLt',
-		'database' => 'cms',
+		'id' => 'maxfields_admin',
+		'password' => 'maxlogin',
+		'database' => 'maxfields_localhost',
 		'encoding' => 'utf8',
 		'prefix' => 'cms_'
 	);

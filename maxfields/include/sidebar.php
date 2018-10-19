@@ -5,7 +5,7 @@
 		<a href="<?php echo ROOT_PATH?>maxfields/contact/"><img src="<?php echo ROOT_PATH?>maxfields/img/sidebar/bnr_contact.gif" alt="お問い合わせ" width="230" height="140"></a>
 	</div><!--/.sidebarBannar-->
 
-	<?php switch(BODY_CLASS): 
+	<?php switch(BODY_CLASS):
 		case 'hoge':?>
 		<?php break;?>
 		<?php case 'info':?>
@@ -28,7 +28,6 @@
 						<ul>
 							<li><a href="<?php echo ROOT_PATH?>maxfields/about/outline.html#anchor-business">事業内容</a></li>
 							<li><a href="<?php echo ROOT_PATH?>maxfields/about/outline.html#anchor-profile">会社情報</a></li>
-							<li><a href="<?php echo ROOT_PATH?>maxfields/about/outline.html#anchor-brunches">支社・支店</a></li>
 							<li><a href="<?php echo ROOT_PATH?>maxfields/about/outline.html#anchor-group">グループ企業</a></li>
 						</ul>
 					</li>
@@ -109,13 +108,13 @@
 				</h2>
 				<ul>
 					<li>
-						<a href="<?php echo ROOT_PATH?>maxfields/careerpro/index
+						<!--<a href="<?php echo ROOT_PATH?>maxfields/careerpro/index
 .html">紹介予定派遣</a>
 						<ul>
-							<!--<li><a href="<?php echo ROOT_PATH?>maxfields/careerpro/index.html#anchor-flow">紹介予定派遣までの流れ</a></li>-->
+							<li><a href="<?php echo ROOT_PATH?>maxfields/careerpro/index.html#anchor-flow">紹介予定派遣までの流れ</a></li>-->
 						</ul>
 					</li>
-					
+
 				</ul>
 			</div>
 		<?php break;?>
@@ -134,7 +133,14 @@
 
 
 	<div class="sidebarBannar">
-		<a href="http://www.evolve-max.com/sophia/search/"><img src="<?php echo ROOT_PATH?>maxfields/img/sidebar/bnr_kyujin.gif" alt="マックスフィールズグループ求人一覧" width="230" height="120"></a>
+		<a href="/sophia/search/"><img src="<?php echo ROOT_PATH?>maxfields/img/sidebar/bnr_kyujin.gif" alt="マックスフィールズグループ求人一覧" width="230" height="120"></a>
+	</div><!--/.sidebarBannar-->
+
+	<div class="sidebarBannar">
+	<a href="https://crosslearning.jp/max/"><img src="<?php echo ROOT_PATH?>maxfields/img/sidebar/cross-learning-logo1.png" style="width:230px; height:auto"></a>
+	</div><!--/.sidebarBannar-->
+	<div class="sidebarBannar">
+	<a href="https://reserve.resort.co.jp/reservation/cmc/co_top.html"><img src="<?php echo ROOT_PATH?>maxfields/img/sidebar/resorttrust-logo2.png" style="width:230px; height:auto"></a>
 	</div><!--/.sidebarBannar-->
 
 </div><!--/#sidebar-->

@@ -186,4 +186,15 @@ return array(
 				),
 			)
 	),
+	'privacy-policy'=>array(
+		'name'=>'個人情報取り扱い',
+		'list'=>array('同意'),
+		'default'=>'',
+		'validate'=>array(
+			'select'=>array(
+				'allowEmpty'=>false,
+				'message'=>':label の同意がなされておりません',
+			)
+		)
+	),
 );

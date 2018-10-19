@@ -1,0 +1,5 @@
+
+AuthUserFile "/var/www/vhosts/evolve-max.com//httpdocs/staging/.htpasswd"
+AuthName "Member Site"
+AuthType BASIC
+require valid-user

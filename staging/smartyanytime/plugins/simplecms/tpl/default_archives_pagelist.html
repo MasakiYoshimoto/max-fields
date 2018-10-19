@@ -1,0 +1,5 @@
+<ul>
+{{foreach name="defaultarchivespagelist" from=$output_pagelist key="key" item="value"}}
+<li><a href="{{$default_pagelist_setting.link}}?p={{$value}}&a={{$ym}}">{{if $output_page==$value}}<b>{{$value}}</b>{{else}}{{$value}}{{/if}}</a></li>
+{{/foreach}}
+</ul>

@@ -1,0 +1,416 @@
+@charset "utf-8";
+
+@media screen and (max-width: 480px) {
+
+/*
+ * gmi.css グローバルマックスインブルーメンツ（モバイル）
+ *
+ */
+ 
+/*********************************
+　　ヘッダー
+**********************************/
+body.jobsearch {
+	margin-top:45px!important;
+}
+body.regist {
+	margin-top:45px!important;
+}
+
+#siteHeader {
+	background: url(../img/header_bg.gif) repeat-x 0 bottom;
+}
+#mfgh {
+	height:auto !important;
+	min-width:100% !important;;
+}
+#mfgh_inner {
+	padding-top: 4px !important;
+    text-align: left !important;
+    width: 100% !important;
+    float: left;
+}
+#mfgh_inner img {
+	   width: 100%;
+	   height: auto;
+	   padding-left:10px;
+}
+#mfgh_nav {
+	display:none;
+}
+#siteHeaderInner {
+	padding:0 !important;
+	width: 100% !important;
+}
+
+#siteHeaderContact {
+	display:none;
+}
+#siteHeaderNav ul {
+	display:none;
+}
+#siteNav {
+	display:none;
+}
+#topicpath {
+	display:none;
+}
+
+#topicpath_sp {
+    margin: 20px auto 5px;
+    width: 100%;
+    background-color:#ad0003;
+    display: block;
+}
+#topicpath_sp ol {
+    font-size: 11px;
+    overflow: hidden;
+    padding: 5px 5px 5px 15px;
+}
+#topicpath_sp li {
+    color: #FFF;
+    float: left;
+    margin-right: 0.5em;
+}
+#topicpath_sp li::before {
+    content: ">";
+    margin-left: 0.5em;
+    padding-right: 10px;
+}
+#topicpath_sp li:first-child {
+    margin-right: 0;
+}
+#topicpath_sp li:first-child::before {
+    content: none;
+}
+#topicpath_sp li a {
+	color:#fff;
+	padding-right: 5px;
+}
+/*********************************
+　　サイド
+**********************************/
+
+#sidebar {
+	display:none;
+}
+/*********************************
+　　グループバナー
+**********************************/
+
+#groupBannar {
+	width: 100%;
+	padding-bottom:30px;
+}
+#groupBannar ul {
+	padding:10px;
+	}
+#groupBannar li {
+	width: 100%;
+    margin: 0 auto 10px;
+}
+#groupBannar li + li {
+	marign-left: initial;
+    margin-left: 0;
+}
+/*********************************
+　　フッター
+**********************************/
+
+#siteFooter {
+	min-width:100%;
+}
+#siteFooterInner {
+	width:100%;
+}
+div#siteFooterCopyright {
+	width:100%;
+	font-size:85%;
+}
+#siteFooterGrouptop {
+	display:none;
+}
+#siteFooterTotop {
+	background-color:#222;
+	width:100%;
+	right: inherit;
+	text-align:center;
+}
+#siteFooterTotop a {
+}
+#siteFooterNav {
+	display:none;
+}
+#siteFooterNav_sp {
+	display:block;
+}
+#siteFooterNav_sp ul {
+	text-align:center;
+	width:100%;
+	font-size:11px;
+}
+#siteFooterNav_sp ul:before {
+	content:"｜ ";
+}	
+#siteFooterNav_sp li {
+	padding:0;
+	display: -moz-inline-box;
+	display: block;
+	/display: inline;
+	/zoom: 1;
+}
+#siteFooterNav_sp li a:after {
+	content:" ｜";
+}
+
+/*********************************
+　　コンテンツ
+**********************************/
+
+#contentWrap {
+	width:100% !important;
+}
+#contentMain {
+	width:100% !important;
+}
+.mainHeader {
+	margin-bottom:10px !important;
+	padding-bottom:5px;
+}
+.contentBox {
+	padding:0px !importnat;
+	border:none !important;
+	padding:20px;
+}
+.contactLead {
+	margin:10px 0;
+	font-size:12px;
+}
+.contactStep {
+	display:none;
+}
+.contactNotes {
+	margin:10px 0 0 0;
+	font-size:12px;
+	padding-left:14px;
+	background-position:left center;
+}
+/*********************************
+　　トップページ
+**********************************/
+
+#jobinfo .thumbnail img {
+    width: 100%;
+    height: auto;
+}
+
+/*********************************
+　　登録申し込み
+**********************************/
+
+.formreg dt {
+    float: none;
+    width: 100% !important;
+    padding: 5px 0 5px 40px;
+}
+.formreg dd {
+    float: none;
+    width: 100% !important;
+    padding: 2px 0 7px 5px;
+    margin-left:0 !important;
+    border:none;
+}
+.formRequired2 {
+	right: inherit;
+    margin-left: 5px;
+    left: 0;
+}
+.formreg textarea,
+.formInput,
+.formInputTel,
+.formInputAddr {
+	width:100%;
+}
+dt.any {
+	padding-left:0;
+}
+.formBtn2 {
+	background-position: 255px 50%;
+	border-radius: 3px;	
+	width: 100%;
+	margin:0;
+}
+/*********************************
+　　求人案件
+**********************************/
+/*--検索ボックス----*/
+.searchbox01 h3 span  {
+	display:block;
+	margin:0;
+	text-align: center;
+}
+
+.searchbox01 ul li {
+	border-bottom:1px solid #ccc;
+	width:100%;
+	margin:0;
+	padding:5px 0;
+	text-indent:inherit;
+}
+.searchbox01 ul li ul {
+	margin:0;
+	width: 100%;
+}
+.searchbox_top {
+	width:100%;
+	float:left;
+}
+.searchbox01 ul li ul li {
+	border:none;
+	padding: 0 0 0 20px;
+}
+.accordion_ul {
+	float:none;
+	margin:0 !important;
+	width: 100% !important;
+}
+#secondary p span.wrap, li span.wrap {
+	position: relative;
+	display: block;
+	/*max-width: 320px;*/
+	max-width: 320px;
+	width: 100%;
+	margin: 0 auto;
+	text-indent:0px;
+}
+
+#secondary div p span.wrap:before {
+	position: absolute;
+	display: block;
+	content: "";
+	width: 100%;
+	height: auto;
+	margin-top: -10px;
+	top: 50%;
+	right: 5px;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	background: #ac0002;
+}
+
+#secondary div p span.wrap:after {
+	position: absolute;
+	display: block;
+	content: "";
+	width: 100%;
+	height: auto;
+	margin-top: -13px;
+	top: 50%;
+	right: 5px;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	background: #fff;
+}
+.searchbox02 {
+	border-left:none;
+    position: inherit;
+    right: inherit;
+    top: inherit;
+    float: left;
+    padding-left: 0;
+    width:100%;
+}
+.searchbox02 ul {
+	margin:5px 0;
+	padding:0;
+	width:100%;
+}
+.searchbox02 ul li {
+	border:none;
+}
+.search{
+	width:100% !important;
+}
+.search ul {
+	border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 7px 0;
+}
+.search ul li {
+	text-align:left;
+	text-ailgn:left !important;
+	padding:0;
+	border:none;
+	width: 100% !important;	
+	text-indent: 0;
+}
+.search ul li a::before {
+    background: #ac0002;
+    content: "";
+    display: block;
+    height: auto;
+    margin-top: -5px;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    -webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+    width: 100%;
+}
+.search ul li a::after {
+    background: #FFF;
+    content: "";
+    display: block;
+    height: auto;
+    margin-top: -5px;
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    -webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+    width: 100%;
+}
+#jobinfo {
+	border-bottom: 1px solid #ccc;
+	margin-bottom:10px;
+}
+
+#jobinfo ul li {
+	width:100%;
+	border-left:none;
+	padding:0;
+	border-top: 1px solid #ccc;
+}
+.readmore {
+	width:100%;
+	padding: 3px 0;
+}
+#jobinfo .thumbnail img {
+	width:100%;
+	height:auto;
+}
+#jobdetail .thumbnail img {
+	width:100%;
+	height:auto;
+}
+#jobdetail dt {
+    float: none;
+    width: 100% !important;
+    padding: 5px 0 5px 0px;
+    font-weight: bold;
+}
+#jobdetail dd {
+    float: none;
+    width: 100% !important;
+    padding: 2px 0 7px 0px;
+    margin-left:0 !important;
+    border:none;
+}
+#jobinfo li h3 {
+   height:auto;
+}
+#jobinfo li p.detail_s {
+	height:auto;
+	}
+
+}

@@ -1,0 +1,157 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#topInfo {
+	width: 610px;
+}
+
+#topInfo dl {
+	margin-bottom: 8px;
+	overflow: hidden;
+	position: relative;
+	background-image: url(../images/common/doted_line.jpg);
+	background-repeat: no-repeat;
+	background-position: bottom;
+	padding-bottom: 8px;
+}
+
+#topInfo dt {
+	width: 88px;
+	margin-right: 15px;
+	float: left;
+	display: block;
+	padding-left: 12px;
+	background-image: url(../images/common/arrow.gif);
+	background-repeat: no-repeat;
+	background-position: 0px 7px;
+}
+
+#topInfo dd {
+	width: 495px;
+	position: relative;
+	overflow: hidden;
+}
+
+/*インフォメーション３件吐出しヘッダー設定---------------------*/
+
+#info_itiranheader{
+	width:610px;
+	margin-bottom:20px;
+	}
+
+#info_itiranheader ul {
+	background-image: url(../images/index/saishin.gif);
+	background-repeat: no-repeat;
+	height: 29px;
+	width: 110px;
+	padding-left: 500px;
+	padding-top: 7px;
+}
+
+
+#info_itiranheader ul li#itiranBtn ,
+#info_itiranheader ul li#rssBtn {
+	float: left;
+	list-style: none;
+}
+
+#info_itiranheader ul li#itiranBtn a {
+	background-image: url(../images/index/itiran.gif);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	height: 20px;
+	width: 65px;
+	margin-right: 10px;
+	text-indent: -9999px;
+	display: block;
+}
+
+#info_itiranheader ul li#rssBtn a {
+	background-image: url(../images/index/rss.gif);
+	background-repeat: no-repeat;
+	height: 20px;
+	width: 20px;
+	text-indent: -9999px;
+	display: block;
+	background-position: 0px 0px;
+}
+	
+
+#info_itiranheader ul li#itiranBtn a:hover {
+	background-image: url(../images/index/itiran_hover.gif);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
+#info_itiranheader ul li#rssBtn a:hover {
+	background-image: url(../images/index/rss_hover.gif);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
+
+
+/*ヘッダー設定---------------------*/
+
+ul#album {
+	width: 900px;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #FFF;
+	margin-bottom: 15px;
+	display: block;
+	height: 230px;
+}
+
+ul#album li {
+	list-style: none;
+}
+
+
+/*バナー設定---------------------*/
+#topBnr {
+	width: 900px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 15px;
+}
+
+#topBnr ul {
+	overflow: hidden;
+	position: relative;
+}
+
+#topBnr ul li {
+	list-style-type: none;
+	float: left;
+	text-indent: -9999px;
+}
+
+#topBnr ul li a {
+	display: block;
+	height: 150px;
+	width: 290px;
+	margin-right: 15px;
+}
+
+#topBnr ul li#topBnr01 a {
+	background-image: url(../images/index/topBnr01.jpg);
+	background-repeat: no-repeat;
+}
+
+#topBnr ul li#topBnr02 a {
+	background-image: url(../images/index/topBnr03.jpg);
+	background-repeat: no-repeat;
+}
+
+#topBnr ul li#topBnr03 a{
+	margin: 0px;
+	background-image: url(../images/index/topBnr02.jpg);
+	background-repeat: no-repeat;
+}
+
+#topBnr ul li#topBnr01 a:hover ,
+#topBnr ul li#topBnr02 a:hover ,
+#topBnr ul li#topBnr03 a:hover {
+	background-position: 0px -150px;
+}
