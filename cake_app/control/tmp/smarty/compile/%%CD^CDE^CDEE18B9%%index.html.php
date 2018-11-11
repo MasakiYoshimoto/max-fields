@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2018-09-05 17:27:45
+<?php /* Smarty version 2.6.27, created on 2018-09-07 17:24:22
          compiled from /var/www/vhosts/evolve-max.com/httpdocs/cake_app/control/plugins/job2/views/job2_offers//index.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'trim', '/var/www/vhosts/evolve-max.com/httpdocs/cake_app/control/plugins/job2/views/job2_offers//index.html', 80, false),array('modifier', 'mb_truncate', '/var/www/vhosts/evolve-max.com/httpdocs/cake_app/control/plugins/job2/views/job2_offers//index.html', 80, false),array('modifier', 'yen', '/var/www/vhosts/evolve-max.com/httpdocs/cake_app/control/plugins/job2/views/job2_offers//index.html', 80, false),array('modifier', 'escape', '/var/www/vhosts/evolve-max.com/httpdocs/cake_app/control/plugins/job2/views/job2_offers//index.html', 80, false),array('modifier', 'd_format', '/var/www/vhosts/evolve-max.com/httpdocs/cake_app/control/plugins/job2/views/job2_offers//index.html', 81, false),)), $this); ?>

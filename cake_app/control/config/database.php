@@ -78,14 +78,14 @@
  */
 class DATABASE_CONFIG {
 
-	var $default = array(
+  var $default = array(
 		'driver' => 'mysql',
 		'persistent' => 'mysql_connect',
 		'host' => 'mysql5029.xserver.jp',
 		'port' => '3306',
 		'login' => 'maxfields_admin',
 		'password' => 'maxlogin',
-		'database' => 'cms',
+		'database' => 'maxfields_localhost',
 		'encoding' => 'utf8',
 		'prefix' => 'cms_',
 	);

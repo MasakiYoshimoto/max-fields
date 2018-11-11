@@ -19,7 +19,7 @@
  * デリミター
  */
 define('SMARTY_LEFT_DELIMITER','{{');
-define('SMARTY_RIGHT_DELIMITER','}}');echo "here";
+define('SMARTY_RIGHT_DELIMITER','}}');
 /**
  * プラグインディレクトリ
  */
@@ -46,7 +46,7 @@ define('SMARTY_CONFIG_DIR',ROOT . DS . APP_DIR . DS . 'config/smarty');
 define('SMARTY_EXT','.html');
 /**
  * サブディレクトリ
- *
+ * 
  * viewディレクトリ内の各ディレクトリの中にsmarty用のディレクトリ
  * を作る場合は、ディレクトリ名称を指定
  */

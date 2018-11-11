@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.27, created on 2018-09-05 17:27:34
+<?php /* Smarty version 2.6.27, created on 2018-11-11 22:11:20
          compiled from /var/www/vhosts/evolve-max.com/httpdocs/cake_app/control/views/pages//home.html */ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">

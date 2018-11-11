@@ -38,7 +38,7 @@
 
 class AppController extends Controller {
 
-	var $view = 'Smarty';
+	var $view = 'SmartyEx';
 	var $components = array();
 	var $uses = array("User","Editmanage","Cmscategory","Plugin","Site","Title");
 	var $group_id;
@@ -254,7 +254,7 @@ class AppController extends Controller {
 
 	/**
 	 *  画像の指定されたサイズ内になるように計算して返却
-	 *
+	 *  
 	 *  @author H.Kobayashi
 	 *  @access public
 	 *  @filename string ファイル名
